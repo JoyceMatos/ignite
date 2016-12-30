@@ -63,17 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */,
-				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
-				255AA4C31E15EE7F00B76FD4 /* Quote.swift */,
-				255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */,
-				255AA4AE1E15DC7000B76FD4 /* ViewController.swift */,
-				255AA4B01E15DC7000B76FD4 /* Main.storyboard */,
+				255AA4C71E16DA1300B76FD4 /* Model */,
+				255AA4C81E16DA3B00B76FD4 /* View */,
+				255AA4C91E16DA4900B76FD4 /* View Controller */,
 				255AA4B61E15DC7000B76FD4 /* Assets.xcassets */,
-				255AA4B81E15DC7000B76FD4 /* LaunchScreen.storyboard */,
 				255AA4BB1E15DC7000B76FD4 /* Info.plist */,
 				255AA4B31E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld */,
 			);
 			path = QuotesForYou;
+			sourceTree = "<group>";
+		};
+		255AA4C71E16DA1300B76FD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
+				255AA4C31E15EE7F00B76FD4 /* Quote.swift */,
+				255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		255AA4C81E16DA3B00B76FD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				255AA4B01E15DC7000B76FD4 /* Main.storyboard */,
+				255AA4B81E15DC7000B76FD4 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		255AA4C91E16DA4900B76FD4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				255AA4AE1E15DC7000B76FD4 /* ViewController.swift */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
