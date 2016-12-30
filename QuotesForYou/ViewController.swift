@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let store = QuoteDataStore.shared
     
     
     
@@ -19,9 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        QuoteAPIClient.getQuotes { (quote) in
-            
-            print(quote)
+        store.getQuotes { 
+            print("GETTING CALLED")
         }
     }
 }
