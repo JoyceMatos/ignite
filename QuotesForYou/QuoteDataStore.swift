@@ -13,13 +13,14 @@ class QuoteDataStore {
     static let shared = QuoteDataStore()
     var quote: Quote?
     
-    func getQuotes(completion: () -> Void) {
+    func getQuotes(completion: @escaping () -> Void) {
         
         QuoteAPIClient.getQuotes { (randomQuote) in
             
             self.quote = Quote(dictionary: randomQuote)
-            print(self.quote?.author)
-            
+            print(self.quote?.quote)
+            completion()
+
         }
         
     }
