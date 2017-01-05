@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */; };
 		253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BEB1E1C729400D82A84 /* TableViewController.swift */; };
+		253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */; };
+		253B0BF41E1DE73000D82A84 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B0BF21E1DE73000D82A84 /* TableViewCell1.xib */; };
 		255AA4AD1E15DC7000B76FD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */; };
 		255AA4AF1E15DC7000B76FD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4AE1E15DC7000B76FD4 /* ViewController.swift */; };
 		255AA4B21E15DC7000B76FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255AA4B01E15DC7000B76FD4 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesDataStore.swift; sourceTree = "<group>"; };
 		253B0BEB1E1C729400D82A84 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
+		253B0BF21E1DE73000D82A84 /* TableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell1.xib; sourceTree = "<group>"; };
 		255AA4A91E15DC6F00B76FD4 /* QuotesForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotesForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		255AA4AE1E15DC7000B76FD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			children = (
 				255AA4B01E15DC7000B76FD4 /* Main.storyboard */,
 				255AA4B81E15DC7000B76FD4 /* LaunchScreen.storyboard */,
+				253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */,
+				253B0BF21E1DE73000D82A84 /* TableViewCell1.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 				TargetAttributes = {
 					255AA4A81E15DC6F00B76FD4 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = A95Z7XMH9W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -168,6 +175,7 @@
 				255AA4BA1E15DC7000B76FD4 /* LaunchScreen.storyboard in Resources */,
 				255AA4B71E15DC7000B76FD4 /* Assets.xcassets in Resources */,
 				255AA4B21E15DC7000B76FD4 /* Main.storyboard in Resources */,
+				253B0BF41E1DE73000D82A84 /* TableViewCell1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */,
 				255AA4AF1E15DC7000B76FD4 /* ViewController.swift in Sources */,
 				255AA4B51E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld in Sources */,
 				255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */,
@@ -306,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A95Z7XMH9W;
 				INFOPLIST_FILE = QuotesForYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.QuotesForYou";
@@ -318,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A95Z7XMH9W;
 				INFOPLIST_FILE = QuotesForYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.QuotesForYou";

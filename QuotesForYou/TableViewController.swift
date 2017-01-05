@@ -32,34 +32,55 @@ class TableViewController: UITableViewController {
         
         tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return store.favorites.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell", for: indexPath)
-
         let quote = store.favorites[indexPath.row]
-        cell.textLabel?.text = quote.value(forKey: "quote") as? String
-        // Configure the cell...
 
+        let cell = Bundle.main.loadNibNamed("TableViewCell1", owner: self, options: nil)?.first as! TableViewCell1
+        cell.quoteLabel.sizeToFit()
+        cell.authorLabel.sizeToFit()
+        cell.quoteLabel.text = quote.value(forKey: "quote") as? String
+        cell.authorLabel.text = quote.value(forKey: "author") as? String
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 187
+    }
  
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            print("delete button tapped")
+        }
+        delete.backgroundColor = UIColor.red
+
+        
+        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = UIColor.blue
+        
+        return [share, delete]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
+    }
 
 }

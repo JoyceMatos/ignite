@@ -34,7 +34,6 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 self.configureViews()
-                
             }
         }
     }
@@ -58,14 +57,15 @@ class ViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
-        let quote = NSManagedObject(entity: entity, insertInto: managedContext)
-        quote.setValue(quote, forKeyPath: "quote")
-        quote.setValue(author, forKeyPath: "author")
+        let favQuote = NSManagedObject(entity: entity, insertInto: managedContext)
+        favQuote.setValue(quote, forKeyPath: "quote")
+        favQuote.setValue(author, forKey: "author")
         
         
         do {
             try managedContext.save()
-            favoriteStore.favorites.append(quote)
+            favoriteStore.favorites.append(favQuote)
+            print("Saved")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
