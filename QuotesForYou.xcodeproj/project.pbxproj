@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2501A90E1E203EF700C7CE28 /* DailyNotification.swift */; };
 		253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */; };
 		253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BEB1E1C729400D82A84 /* TableViewController.swift */; };
 		253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2501A90E1E203EF700C7CE28 /* DailyNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNotification.swift; sourceTree = "<group>"; };
 		253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesDataStore.swift; sourceTree = "<group>"; };
 		253B0BEB1E1C729400D82A84 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
 				255AA4C31E15EE7F00B76FD4 /* Quote.swift */,
 				255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */,
+				2501A90E1E203EF700C7CE28 /* DailyNotification.swift */,
 				253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */,
 			);
 			name = Model;
@@ -197,6 +200,7 @@
 				253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */,
 				253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */,
 				255AA4C21E15DC8900B76FD4 /* QuoteAPIClient.swift in Sources */,
+				2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */,
 				255AA4C41E15EE7F00B76FD4 /* Quote.swift in Sources */,
 				255AA4AD1E15DC7000B76FD4 /* AppDelegate.swift in Sources */,
 			);

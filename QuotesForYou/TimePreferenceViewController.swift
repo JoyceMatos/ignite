@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class TimePreferenceViewController: UIViewController {
     
@@ -75,6 +76,15 @@ class TimePreferenceViewController: UIViewController {
         }
 
     }
+    
+    @IBAction func testNotificationButton(_ sender: Any) {
+        
+        //Call dailynotification's schedule function
+        // Look up a class struct or how to call a function on a class
+        DailyNotification.scheduleLocal()
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +92,16 @@ class TimePreferenceViewController: UIViewController {
         instructionLabel.sizeToFit()
         
         timePicker.datePickerMode = .time
-        // Do any additional setup after loading the view.
+
+    
+        // Request authorization for notification
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
+            
+            if !didAllow {
+                // TODO:- notify user's that they will be unable to receive notifications
+            }
+        }
     }
 
 
