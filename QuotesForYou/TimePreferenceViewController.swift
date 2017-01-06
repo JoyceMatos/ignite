@@ -12,26 +12,79 @@ class TimePreferenceViewController: UIViewController {
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    let currentDate = Date()
+    let chosenTimeforDay = Date()
+    let currentDay = Date()
+    
     @IBAction func setTimeButton(_ sender: Any) {
         
-        print(timePicker.date.timeIntervalSince1970)
+        print(timePicker.date)
+        let chosenTime = timePicker.date
         
-        // 9:09 AM ------ 1483625374.0
-        // 9:00 AM ------ 1483668015.0
-        // 9:00 PM ------ 1483668056.0
+        let dateFormatter = DateFormatter()
+        
+        // ----------- TESTING ------------- \\
+        
+        var dateChosenAsString = "05-01-2017 13:00"   // "Jan 6, 2015, 1:00 PM"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        var newChosenDate = dateFormatter.date(from: dateChosenAsString)!
+        print("Test: \(newChosenDate)")
+        
+        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.date(from: dateChosenAsString)
+        
+        var testingCurrent = "05-01-2017 13:00"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        var newTestDate = dateFormatter.date(from: testingCurrent)!
+        print("Test: \(newTestDate)")
         
         
-        // One hour ago
         
-        let earlyDate = NSCalendar.currentCalendar.date
+        print("Test: \(currentDate)")
         
         
-        dateByAddingUnit(
-            .Hour,
-            value: -1,
-            toDate: NSDate(),
-            options: [])
-
+        if newTestDate.compare(newChosenDate) == .orderedDescending {
+            
+            // Add 24 hours to chosen time
+            // Compare hours
+            
+            var calculateChosen = Calendar.current.date(byAdding: .day, value: 1, to: newChosenDate)
+            
+            if newTestDate >= newChosenDate {
+                print("New TestDate can display quote")
+                let chosenHourComp = Calendar.current.component(.hour, from: newChosenDate)
+                let chosenMinComp = Calendar.current.component(.minute, from: newChosenDate)
+                
+                let testDateComp = Calendar.current.component(.hour, from: newTestDate)
+                let testMinComp = Calendar.current.component(.minute, from: newTestDate)
+                
+                
+                if (testDateComp, testMinComp) >= (chosenHourComp, chosenMinComp) {
+                    print("YES! SHOW QUOTE")
+                } else {
+                    print("Ehh, gotta wait a little longer")
+                }
+                
+            }
+            
+            
+            print ("Chosen Date is earlier than currentDate")
+        } else if newTestDate.compare(newChosenDate) == .orderedSame {
+            print("Chosen Date is the same as currentDate")
+            let chosenHourComp = Calendar.current.component(.hour, from: newChosenDate)
+            let chosenMinComp = Calendar.current.component(.minute, from: newChosenDate)
+            
+            let testDateComp = Calendar.current.component(.hour, from: newTestDate)
+            let testMinComp = Calendar.current.component(.minute, from: newTestDate)
+            
+            
+            if (testDateComp, testMinComp) >= (chosenHourComp, chosenMinComp) {
+                print("YES! SHOW QUOTE")
+            } else {
+                print("Ehh, gotta wait a little longer")
+            }
+            
+        }
 
 
         
