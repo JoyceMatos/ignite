@@ -59,28 +59,23 @@ class TableViewController: UITableViewController {
         return 187
     }
  
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
-            print("delete button tapped")
-        }
-        delete.backgroundColor = UIColor.red
-
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
-            print("share button tapped")
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            
+            print("********** The delete button is tapped ********** ")
+            // TODO: - Delete from CoreData and remove cell
+            
         }
-        share.backgroundColor = UIColor.blue
         
-        return [share, delete]
-    }
+        let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
+            print("share is tapped")
+            
+            // TODO: - Deep linking? Option to share across social media (FB,Twitter, etc)?
+            
+        }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
-        return true
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        // you need to implement this method too or you can't swipe to display the actions
+        return [delete, share]
     }
 
 }
