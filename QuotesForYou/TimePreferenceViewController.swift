@@ -10,89 +10,77 @@ import UIKit
 
 class TimePreferenceViewController: UIViewController {
     
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
+    
     
     let currentDate = Date()
     let chosenTimeforDay = Date()
-    let currentDay = Date()
     
     @IBAction func setTimeButton(_ sender: Any) {
         
-        print(timePicker.date)
-        let chosenTime = timePicker.date
-        
+        let chosenTimeforDay = timePicker.date
         let dateFormatter = DateFormatter()
         
-        // ----------- TESTING ------------- \\
+        print("Test With Picker: \(chosenTimeforDay)")
         
-        var dateChosenAsString = "05-01-2017 13:00"   // "Jan 6, 2015, 1:00 PM"
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        var newChosenDate = dateFormatter.date(from: dateChosenAsString)!
-        print("Test: \(newChosenDate)")
-        
-        dateFormatter.dateFormat = "HH:mm:ss"
-        dateFormatter.date(from: dateChosenAsString)
-        
-        var testingCurrent = "05-01-2017 13:00"
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        var newTestDate = dateFormatter.date(from: testingCurrent)!
-        print("Test: \(newTestDate)")
+
+        // ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
+//        var testingCurrent = "07-01-2017 10:00"
+//        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+//        var currentDate = dateFormatter.date(from: testingCurrent)!
+//        print("Test: \(currentDate)")
         
         
         
-        print("Test: \(currentDate)")
-        
-        
-        if newTestDate.compare(newChosenDate) == .orderedDescending {
+        if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             
-            // Add 24 hours to chosen time
-            // Compare hours
+            print ("Chosen Date is earlier than currentDate")
+
+            var calculateChosen = Calendar.current.date(byAdding: .day, value: 1, to: chosenTimeforDay)
             
-            var calculateChosen = Calendar.current.date(byAdding: .day, value: 1, to: newChosenDate)
-            
-            if newTestDate >= newChosenDate {
-                print("New TestDate can display quote")
-                let chosenHourComp = Calendar.current.component(.hour, from: newChosenDate)
-                let chosenMinComp = Calendar.current.component(.minute, from: newChosenDate)
+            if currentDate >= chosenTimeforDay {
                 
-                let testDateComp = Calendar.current.component(.hour, from: newTestDate)
-                let testMinComp = Calendar.current.component(.minute, from: newTestDate)
+                //  Eventually, these lines of code can be a protocol or extension
                 
+                print("New TestDate is one step closer to displaying quote")
+                let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
+                let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
                 
-                if (testDateComp, testMinComp) >= (chosenHourComp, chosenMinComp) {
+                let currentHour = Calendar.current.component(.hour, from: currentDate)
+                let currentMin = Calendar.current.component(.minute, from: currentDate)
+                
+                if (currentHour, currentMin) >= (chosenHour, chosenMin) {
                     print("YES! SHOW QUOTE")
                 } else {
                     print("Ehh, gotta wait a little longer")
                 }
-                
             }
             
+        } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
+            print("New TestDate is the same as Chosen Date")
+            print("New TestDate is one step closer to displaying quote")
+            let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
+            let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
             
-            print ("Chosen Date is earlier than currentDate")
-        } else if newTestDate.compare(newChosenDate) == .orderedSame {
-            print("Chosen Date is the same as currentDate")
-            let chosenHourComp = Calendar.current.component(.hour, from: newChosenDate)
-            let chosenMinComp = Calendar.current.component(.minute, from: newChosenDate)
+            let currentHour = Calendar.current.component(.hour, from: currentDate)
+            let currentMin = Calendar.current.component(.minute, from: currentDate)
             
-            let testDateComp = Calendar.current.component(.hour, from: newTestDate)
-            let testMinComp = Calendar.current.component(.minute, from: newTestDate)
-            
-            
-            if (testDateComp, testMinComp) >= (chosenHourComp, chosenMinComp) {
+            if (currentHour, currentMin) >= (chosenHour, chosenMin) {
                 print("YES! SHOW QUOTE")
             } else {
                 print("Ehh, gotta wait a little longer")
             }
-            
         }
 
-
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        instructionLabel.sizeToFit()
+        
         timePicker.datePickerMode = .time
         // Do any additional setup after loading the view.
     }

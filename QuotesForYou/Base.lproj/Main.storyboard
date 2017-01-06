@@ -21,25 +21,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-3D-zRS">
-                                <rect key="frame" x="157" y="435" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kxR-4h-lmR">
+                                <rect key="frame" x="0.0" y="207" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="505352625.39981103">
+                                    <!--2017-01-05 23:43:45 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-Nr-rvo">
+                                <rect key="frame" x="136" y="47" width="106" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select a time for your daily quote:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yag-Xj-HIJ">
+                                <rect key="frame" x="51" y="157" width="272" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-3D-zRS">
+                                <rect key="frame" x="146" y="490" width="83" height="32"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Set Time"/>
                                 <connections>
                                     <action selector="setTimeButton:" destination="96i-pt-8g4" eventType="touchUpInside" id="tac-zX-VJI"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kxR-4h-lmR">
-                                <rect key="frame" x="0.0" y="62" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="505352625.39981103">
-                                    <!--2017-01-05 23:43:45 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="centerX" secondItem="kxR-4h-lmR" secondAttribute="centerX" id="3sj-yc-FG3"/>
+                            <constraint firstAttribute="trailing" secondItem="yag-Xj-HIJ" secondAttribute="trailing" constant="51" id="4Id-9J-ICn"/>
+                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="leading" secondItem="AhZ-M0-1V7" secondAttribute="leading" constant="51" id="6MG-GI-e21"/>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="top" secondItem="kxR-4h-lmR" secondAttribute="bottom" constant="67" id="FEq-b5-tFX"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="top" secondItem="yag-Xj-HIJ" secondAttribute="bottom" constant="25" id="Ltq-Ta-0On"/>
+                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="top" secondItem="xGF-G4-wwb" secondAttribute="bottom" constant="26" id="MYt-co-3yt"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="centerX" secondItem="yag-Xj-HIJ" secondAttribute="centerX" id="TUv-uz-v6z"/>
+                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="top" secondItem="W8h-Nr-rvo" secondAttribute="bottom" constant="76" id="Yg2-Ri-25Q"/>
+                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="sHn-rE-b1U"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerLabel" destination="W8h-Nr-rvo" id="8OP-YS-PTT"/>
+                        <outlet property="instructionLabel" destination="yag-Xj-HIJ" id="tn3-eM-Nec"/>
                         <outlet property="timePicker" destination="kxR-4h-lmR" id="HwY-1Z-NpL"/>
                     </connections>
                 </viewController>
@@ -79,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
