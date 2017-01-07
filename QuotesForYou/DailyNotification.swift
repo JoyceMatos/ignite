@@ -22,10 +22,15 @@ class DailyNotification {
         print("scheduled hour: \(hourComponent)")
         print("scheduled minute: \(minuteComponent)")
         
+        
         var dateComponents = DateComponents()
         // 3:11 PM everyday
         dateComponents.hour = hourComponent
         dateComponents.minute = minuteComponent
+        
+        print("dateComponent: \(dateComponents.hour)")
+        print("dateComponent: \(dateComponents.minute)")
+
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         
@@ -41,6 +46,7 @@ class DailyNotification {
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
+        center.removeAllPendingNotificationRequests()
         center.add(request)
         
         //cancel pending notifications – i.e., notifications you have scheduled that have yet to be delivered because their trigger hasn’t been met

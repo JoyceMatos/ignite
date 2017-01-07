@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class TimePreferenceViewController: UIViewController {
+class TimePreferenceViewController: UIViewController{
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -54,6 +54,7 @@ class TimePreferenceViewController: UIViewController {
         
         timePicker.datePickerMode = .time
 
+    //    UNUserNotificationCenter.current().delegate = self
     
         // Request authorization for notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
