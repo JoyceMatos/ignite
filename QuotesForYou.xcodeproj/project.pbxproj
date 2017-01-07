@@ -14,7 +14,7 @@
 		253B0BF41E1DE73000D82A84 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B0BF21E1DE73000D82A84 /* TableViewCell1.xib */; };
 		253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0C371E1F121500D82A84 /* TimePreferenceViewController.swift */; };
 		255AA4AD1E15DC7000B76FD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */; };
-		255AA4AF1E15DC7000B76FD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4AE1E15DC7000B76FD4 /* ViewController.swift */; };
+		255AA4AF1E15DC7000B76FD4 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4AE1E15DC7000B76FD4 /* QuoteViewController.swift */; };
 		255AA4B21E15DC7000B76FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255AA4B01E15DC7000B76FD4 /* Main.storyboard */; };
 		255AA4B51E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4B31E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld */; };
 		255AA4B71E15DC7000B76FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255AA4B61E15DC7000B76FD4 /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		253B0C371E1F121500D82A84 /* TimePreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePreferenceViewController.swift; sourceTree = "<group>"; };
 		255AA4A91E15DC6F00B76FD4 /* QuotesForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotesForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		255AA4AE1E15DC7000B76FD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		255AA4AE1E15DC7000B76FD4 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		255AA4B11E15DC7000B76FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		255AA4B41E15DC7000B76FD4 /* QuotesForYou.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuotesForYou.xcdatamodel; sourceTree = "<group>"; };
 		255AA4B61E15DC7000B76FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				25FBBE4C1E216E7B00B7D4BB /* MasterViewController.swift */,
-				255AA4AE1E15DC7000B76FD4 /* ViewController.swift */,
+				255AA4AE1E15DC7000B76FD4 /* QuoteViewController.swift */,
 				253B0C371E1F121500D82A84 /* TimePreferenceViewController.swift */,
 				253B0BEB1E1C729400D82A84 /* TableViewController.swift */,
 			);
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */,
-				255AA4AF1E15DC7000B76FD4 /* ViewController.swift in Sources */,
+				255AA4AF1E15DC7000B76FD4 /* QuoteViewController.swift in Sources */,
 				255AA4B51E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld in Sources */,
 				255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */,
 				253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */,
