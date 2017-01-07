@@ -45,14 +45,7 @@
                                 <state key="normal" title="Set Time"/>
                                 <connections>
                                     <action selector="setTimeButton:" destination="96i-pt-8g4" eventType="touchUpInside" id="tac-zX-VJI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXq-wp-RH6">
-                                <rect key="frame" x="134" y="604" width="110" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test notification"/>
-                                <connections>
-                                    <action selector="testNotificationButton:" destination="96i-pt-8g4" eventType="touchUpInside" id="dJF-xW-dhM"/>
+                                    <segue destination="3Lr-K6-TuD" kind="show" identifier="showTabBar" id="Egv-VC-vxx"/>
                                 </connections>
                             </button>
                         </subviews>

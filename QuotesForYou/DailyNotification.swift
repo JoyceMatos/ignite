@@ -11,20 +11,22 @@ import UserNotifications
 
 class DailyNotification {
     
-    class func scheduleLocal() {
+    class func scheduleLocal(on date: Date) {
         
         let center = UNUserNotificationCenter.current()
         
+        let hourComponent = Calendar.current.component(.hour, from: date)
+        let minuteComponent = Calendar.current.component(.day, from: date)
+        
         var dateComponents = DateComponents()
         // 3:11 PM everyday
-        dateComponents.hour = 15
-        dateComponents.minute = 11
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        dateComponents.hour = hourComponent
+        dateComponents.minute = minuteComponent
+    //    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         
         // Test Request
-        //  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
+          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
         
         let content = UNMutableNotificationContent()
         content.title = "Motivate"
