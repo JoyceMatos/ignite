@@ -42,8 +42,8 @@ class QuoteViewController: UIViewController {
     
     func configureViews() {
 
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("byeDefault"); return }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("byeDefault"); return }
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("configureQuote: byeDefault"); return }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
         
         // Quote Label
         quoteLabel.sizeToFit()
@@ -121,7 +121,7 @@ class QuoteViewController: UIViewController {
 //                print("Test: \(currentDate)")
         
         // Get value from user defaults
-        guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
+        guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("CompareTime: byeDefault"); return }
         
         let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
         let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
@@ -169,8 +169,8 @@ class QuoteViewController: UIViewController {
         defaults.set(quote, forKey: "quoteOfTheDay")
         defaults.set(author, forKey: "authorOfTheDay")
         
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("byeDefault"); return }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("byeDefault"); return }
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("StoreQuote: byeDefault"); return }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("StoreAuthor: byeDefault"); return }
      
         print("This is the quote default: \(storedQuote)")
         print("This is the author default: \(storedAuthor)")

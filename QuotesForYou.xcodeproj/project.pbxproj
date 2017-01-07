@@ -22,6 +22,7 @@
 		255AA4C21E15DC8900B76FD4 /* QuoteAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */; };
 		255AA4C41E15EE7F00B76FD4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4C31E15EE7F00B76FD4 /* Quote.swift */; };
 		255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */; };
+		25CF6EE61E21AAD70016C66E /* ChangeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */; };
 		25FBBE4D1E216E7B00B7D4BB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FBBE4C1E216E7B00B7D4BB /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteAPIClient.swift; sourceTree = "<group>"; };
 		255AA4C31E15EE7F00B76FD4 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDataStore.swift; sourceTree = "<group>"; };
+		25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTimeViewController.swift; sourceTree = "<group>"; };
 		25FBBE4C1E216E7B00B7D4BB /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				255AA4AE1E15DC7000B76FD4 /* QuoteViewController.swift */,
 				253B0C371E1F121500D82A84 /* TimePreferenceViewController.swift */,
 				253B0BEB1E1C729400D82A84 /* TableViewController.swift */,
+				25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				25FBBE4D1E216E7B00B7D4BB /* MasterViewController.swift in Sources */,
 				2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */,
 				255AA4C41E15EE7F00B76FD4 /* Quote.swift in Sources */,
+				25CF6EE61E21AAD70016C66E /* ChangeTimeViewController.swift in Sources */,
 				255AA4AD1E15DC7000B76FD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,8 +25,10 @@ class DailyNotification {
         
         var dateComponents = DateComponents()
         // 3:11 PM everyday
-        dateComponents.hour = hourComponent
-        dateComponents.minute = minuteComponent
+        
+        // Hard Coded Components
+        dateComponents.hour = 23 //hourComponent
+        dateComponents.minute = 17 //minuteComponent
         
         print("dateComponent: \(dateComponents.hour)")
         print("dateComponent: \(dateComponents.minute)")
