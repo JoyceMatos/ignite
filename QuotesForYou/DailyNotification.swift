@@ -15,22 +15,26 @@ class DailyNotification {
         
         let center = UNUserNotificationCenter.current()
         
+        
         let hourComponent = Calendar.current.component(.hour, from: date)
         let minuteComponent = Calendar.current.component(.day, from: date)
+        
+        print("scheduled hour: \(hourComponent)")
+        print("scheduled minute: \(minuteComponent)")
         
         var dateComponents = DateComponents()
         // 3:11 PM everyday
         dateComponents.hour = hourComponent
         dateComponents.minute = minuteComponent
-    //    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         
         // Test Request
-          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
+      //    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
         
         let content = UNMutableNotificationContent()
         content.title = "Motivate"
-        content.body = "Your Quote Of The Day is Rady"
+        content.body = "Your Quote Of The Day is Ready"
         content.categoryIdentifier = "customIdentifier"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default()
