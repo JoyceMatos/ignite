@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="96i-pt-8g4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Lr-K6-TuD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Master View Controller-->
+        <scene sceneID="lR0-A5-Y4U">
+            <objects>
+                <viewController id="lW8-Fl-5vC" customClass="MasterViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OjS-H0-iSa"/>
+                        <viewControllerLayoutGuide type="bottom" id="fo3-Su-faU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SBI-Bb-FXk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atw-Q6-Gbz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2C-TP-taU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerViewA" destination="atw-Q6-Gbz" id="7p8-3S-fcI"/>
+                        <outlet property="containerViewB" destination="t2C-TP-taU" id="chS-D2-w9w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3b-qD-3FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2748" y="-1492"/>
+        </scene>
         <!--Time Preference View Controller-->
         <scene sceneID="pml-2x-Bzm">
             <objects>
-                <viewController id="96i-pt-8g4" customClass="TimePreferenceViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeVC" id="96i-pt-8g4" customClass="TimePreferenceViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xGF-G4-wwb"/>
                         <viewControllerLayoutGuide type="bottom" id="5R4-ec-by4"/>
@@ -70,12 +102,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quH-EZ-OeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2412" y="-529.38530734632684"/>
+            <point key="canvasLocation" x="-2748" y="-752"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="stH-nK-FVJ">
             <objects>
-                <tabBarController id="3Lr-K6-TuD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarVC" id="3Lr-K6-TuD" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mZF-WZ-TcT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +121,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIl-B3-D9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1622" y="-519"/>
+            <point key="canvasLocation" x="-1758" y="-1068"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="IfV-Hp-Z8d">
@@ -104,7 +136,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -127,7 +159,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663" y="-312"/>
+            <point key="canvasLocation" x="-663" y="-96"/>
         </scene>
         <!--Settings-->
         <scene sceneID="YW6-kh-6S2">
@@ -146,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaR-MT-LI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-734" y="451"/>
+            <point key="canvasLocation" x="-1353" y="-97"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -218,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663.20000000000005" y="-1093.4032983508246"/>
+            <point key="canvasLocation" x="-2057" y="-98"/>
         </scene>
     </scenes>
 </document>

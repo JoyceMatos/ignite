@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let favoriteStore = FavoritesDataStore.shared
     let currentDate = Date()
     let chosenTimeforDay = Date()
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -32,29 +33,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         compareTime()
+        retrieveQuote()
         
-        // Think about storing in user defaults ---> can transition to realm/ other database later.
-        self.store.getQuotes {
-            print("GETTING CALLED")
-            DispatchQueue.main.async {
-                
-                self.configureViews()
-            }
-        }
     }
+    
+    // MARK:- View Methods
     
     func configureViews() {
 
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("byeDefault"); return }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("byeDefault"); return }
+        
         // Quote Label
         quoteLabel.sizeToFit()
-        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
-        quoteLabel.text = quote
+//        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
+        quoteLabel.text = storedQuote
         
         // Author Label
         authorLabel.sizeToFit()
-        guard let author = store.quote?.author else { print("no author - leaving"); return }
-        authorLabel.text = author
+//        guard let author = store.quote?.author else { print("no author - leaving"); return }
+        authorLabel.text = storedAuthor
     }
+    
+    // MARK:- Core Data Methods
     
     func save(quote: String, author: String?) {
         
@@ -75,6 +76,34 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK:- Actions 
+    
+    func retrieveQuote() {
+        
+        let quote = defaults.object(forKey: "quoteOfTheDay") as? String
+        let author = defaults.object(forKey: "authorOfTheDay") as? String
+        
+        if quote == nil && author == nil {
+            
+            self.store.getQuotes {
+                print("GETTING CALLED")
+                DispatchQueue.main.async {
+                    
+                    self.storeQuoteToUserDefaults()
+                    self.configureViews()
+                }
+            }
+            
+        } else {
+            print("---Keep showing current quote")
+            configureViews()
+            
+            print(quote)
+            print(author)
+        }
+
+    }
+    
     func compareTime() {
         
         // ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
@@ -84,7 +113,7 @@ class ViewController: UIViewController {
         //        print("Test: \(currentDate)")
         
         // Get value from user defaults
-        let defaults = UserDefaults.standard
+//        let defaults = UserDefaults.standard
         guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         
         print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
@@ -128,6 +157,30 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    // MARK:- User Default Methods
+    
+    func storeQuoteToUserDefaults() {
+        
+        // This gets repeated multiple times (refactos
+        guard let quote = store.quote?.quote else { print("leaving user defaults"); return }
+        guard let author = store.quote?.author else { print("leaving user defaults"); return }
+
+        
+        defaults.set(quote, forKey: "quoteOfTheDay")
+        defaults.set(author, forKey: "authorOfTheDay")
+        
+        
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("byeDefault"); return }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("byeDefault"); return }
+        
+        
+        print("This is the quote default: \(storedQuote)")
+        print("This is the author default: \(storedAuthor)")
+        
+    }
+    
+    
     
     
     

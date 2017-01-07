@@ -15,6 +15,7 @@ class TimePreferenceViewController: UIViewController {
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    let store = QuoteDataStore.shared
     let defaults = UserDefaults.standard
     let currentDate = Date()
     let chosenTimeforDay = Date()
@@ -39,6 +40,9 @@ class TimePreferenceViewController: UIViewController {
         
         performSegue(withIdentifier: "showTabBar", sender: self)
 
+        
+        
+        // TODO:- Add launch screen to user defaults; next time it opens ---> strait to quotes page.
     }
     
     
@@ -60,6 +64,7 @@ class TimePreferenceViewController: UIViewController {
         }
     }
     
+
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        
 //        if segue.identifier == "showTabBar" {

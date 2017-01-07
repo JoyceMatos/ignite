@@ -25,5 +25,11 @@ class QuoteDataStore {
         
     }
     
+    func storeQuote() {
+        
+        
+        
+    }
+    
     
 }
