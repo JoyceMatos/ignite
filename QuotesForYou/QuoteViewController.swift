@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class QuoteViewController: UIViewController {
     
     let store = QuoteDataStore.shared
     let favoriteStore = FavoritesDataStore.shared
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Actions 
+    // MARK:- Helper Methods
     
     func retrieveQuote() {
         
@@ -84,18 +84,11 @@ class ViewController: UIViewController {
         let author = defaults.object(forKey: "authorOfTheDay") as? String
         
         if quote == nil && author == nil {
-            
-            self.store.getQuotes {
-                print("GETTING CALLED")
-                DispatchQueue.main.async {
-                    
-                    self.storeQuoteToUserDefaults()
-                    self.configureViews()
-                }
-            }
+
+            showNewQuote()
             
         } else {
-            print("---Keep showing current quote")
+            print("---Keep showing current quote--")
             configureViews()
             
             print(quote)
@@ -104,38 +97,47 @@ class ViewController: UIViewController {
 
     }
     
+    func showNewQuote() {
+        
+        self.store.getQuotes {
+            print("GETTING CALLED")
+            DispatchQueue.main.async {
+                
+                self.storeQuoteToUserDefaults()
+                self.configureViews()
+            }
+        }
+
+    }
+    
     func compareTime() {
         
-        // ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
-        //        var testingCurrent = "07-01-2017 10:00"
-        //        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        //        var currentDate = dateFormatter.date(from: testingCurrent)!
-        //        print("Test: \(currentDate)")
+      //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
+//                var testingCurrent = "08-01-2017 14:00"
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+//                var currentDate = dateFormatter.date(from: testingCurrent)!
+//                print("Test: \(currentDate)")
         
         // Get value from user defaults
-//        let defaults = UserDefaults.standard
         guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         
+        let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
+        let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
+        
+        let currentHour = Calendar.current.component(.hour, from: currentDate)
+        let currentMin = Calendar.current.component(.minute, from: currentDate)
         print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
 
         // Compare dates
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
             
-          //  var calculateChosen = Calendar.current.date(byAdding: .day, value: 1, to: chosenTimeforDay)
-            
             if currentDate >= chosenTimeforDay {
-                //  Eventually, these lines of code can be a protocol or extension
-                
                 print("New TestDate is one step closer to displaying quote")
-                let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
-                let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
-                
-                let currentHour = Calendar.current.component(.hour, from: currentDate)
-                let currentMin = Calendar.current.component(.minute, from: currentDate)
-                
                 if (currentHour, currentMin) >= (chosenHour, chosenMin) {
                     print("YES! SHOW QUOTE")
+                    showNewQuote()
                 } else {
                     print("Ehh, gotta wait a little longer")
                 }
@@ -144,37 +146,31 @@ class ViewController: UIViewController {
         } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
             print("New TestDate is the same as Chosen Date")
             print("New TestDate is one step closer to displaying quote")
-            let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
-            let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
-            
-            let currentHour = Calendar.current.component(.hour, from: currentDate)
-            let currentMin = Calendar.current.component(.minute, from: currentDate)
             
             if (currentHour, currentMin) >= (chosenHour, chosenMin) {
                 print("YES! SHOW QUOTE")
+                showNewQuote()
             } else {
                 print("Ehh, gotta wait a little longer")
             }
         }
+        
+        
     }
     
     // MARK:- User Default Methods
     
     func storeQuoteToUserDefaults() {
         
-        // This gets repeated multiple times (refactos
         guard let quote = store.quote?.quote else { print("leaving user defaults"); return }
         guard let author = store.quote?.author else { print("leaving user defaults"); return }
-
         
         defaults.set(quote, forKey: "quoteOfTheDay")
         defaults.set(author, forKey: "authorOfTheDay")
         
-        
         guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("byeDefault"); return }
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("byeDefault"); return }
-        
-        
+     
         print("This is the quote default: \(storedQuote)")
         print("This is the author default: \(storedAuthor)")
         
