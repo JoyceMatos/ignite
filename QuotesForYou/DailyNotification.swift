@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 
+
 class DailyNotification {
     
     class func scheduleLocal(on date: Date) {
@@ -27,17 +28,18 @@ class DailyNotification {
         // 3:11 PM everyday
         
         // Hard Coded Components
-        dateComponents.hour = 23 //hourComponent
-        dateComponents.minute = 17 //minuteComponent
+        dateComponents.hour = 6 //hourComponent
+        dateComponents.minute = 33 //minuteComponent
+     //   dateComponents.timeZone
         
         print("dateComponent: \(dateComponents.hour)")
         print("dateComponent: \(dateComponents.minute)")
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+      //  let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         
         // Test Request
-      //    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
+          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
         
         let content = UNMutableNotificationContent()
         content.title = "Motivate"

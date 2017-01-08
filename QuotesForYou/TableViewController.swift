@@ -76,9 +76,33 @@ class TableViewController: UITableViewController {
             
             // TODO: - Deep linking? Option to share across social media (FB,Twitter, etc)?
             
+         //   let quote = self.store.favorites[indexPath.row]
+            var shareArray = [String]()
+            shareArray.append("hello")
+            shareArray.append("hi")
+            
+            let activityVC = UIActivityViewController(activityItems: shareArray, applicationActivities: nil)
+            
+          //  activityVC.excludedActivityTypes =
+            
+            //TODO: - This is for ipads, must adjust
+            if let popoverController = activityVC.popoverPresentationController {
+                popoverController.sourceView = self.view as? UIView
+                popoverController.sourceRect = self.view.bounds
+                
+                self.present(activityVC, animated: true, completion: nil)
+            }
         }
     
         return [delete, share]
     }
 
+    
+    func shareContent() {
+        
+        
+    }
+    
+    
+    
 }
