@@ -76,11 +76,17 @@ class TableViewController: UITableViewController {
             
             // TODO: - Deep linking? Option to share across social media (FB,Twitter, etc)?
             
-         //   let quote = self.store.favorites[indexPath.row]
-            var shareArray = [String]()
-            shareArray.append("hello")
-            shareArray.append("hi")
+            let quote = self.store.favorites[indexPath.row]
+            let message = "Check out my quote of the day: "
+            guard let shareQuote = quote.value(forKey: "quote") as? String else { print("leaveActivity- no quote"); return }
+            guard let shareAuthor = quote.value(forKey: "author") as? String else { print("leaveActivity- no author"); return }
             
+            var shareArray = [String]()
+
+            shareArray.append(message)
+            shareArray.append("\"\(shareQuote)\" - ")
+            shareArray.append(shareAuthor)
+
             let activityVC = UIActivityViewController(activityItems: shareArray, applicationActivities: nil)
             
           //  activityVC.excludedActivityTypes =
