@@ -67,7 +67,27 @@ class TableViewController: UITableViewController {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             
             print("********** The delete button is tapped ********** ")
-            // TODO: - Delete from CoreData and remove cell
+            
+            // TODO: - Refactor             
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
+            
+            let quote = self.store.favorites[indexPath.row]
+            context.delete(quote)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                self.store.favorites = try context.fetch(fetchRequest)
+            } catch {
+                print("Fetching Failed")
+            }
+            
+            // TODO: - Add Notification once it's been deleted (feedback)
+
+            
+            tableView.reloadData()
+  
             
         }
         
@@ -75,7 +95,7 @@ class TableViewController: UITableViewController {
             print("share is tapped")
             
             // TODO: - Deep linking? Option to share across social media (FB,Twitter, etc)?
-            
+            // TODO: - Refactor
             let quote = self.store.favorites[indexPath.row]
             let message = "Check out my quote of the day: "
             guard let shareQuote = quote.value(forKey: "quote") as? String else { print("leaveActivity- no quote"); return }
@@ -103,12 +123,7 @@ class TableViewController: UITableViewController {
         return [delete, share]
     }
 
-    
-    func shareContent() {
-        
-        
-    }
-    
+
     
     
 }
