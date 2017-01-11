@@ -46,14 +46,17 @@ class QuoteViewController: UIViewController {
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
         
         // Quote Label
-        quoteLabel.sizeToFit()
+     //   quoteLabel.sizeToFit()
 //        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
         quoteLabel.text = storedQuote
+        quoteLabel.sizeToFit()
+
         
         // Author Label
-        authorLabel.sizeToFit()
+     //   authorLabel.sizeToFit()
 //        guard let author = store.quote?.author else { print("no author - leaving"); return }
         authorLabel.text = storedAuthor
+        authorLabel.sizeToFit()
     }
     
     // MARK:- Core Data Methods
