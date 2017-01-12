@@ -33,7 +33,12 @@ class ChangeTimeViewController: UIViewController {
         
         // NOTE: - This is in test mode
         // TODO: - Remove test data from scheduleLocal function
-        DailyNotification.scheduleLocal(on: storredDefault)
+        
+        
+        let dailyNotifier = DailyNotification()
+        dailyNotifier.scheduleLocal(on: storredDefault)
+        
+       // DailyNotification.scheduleLocal(on: storredDefault)
 
         
         
