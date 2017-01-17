@@ -31,19 +31,10 @@ class ChangeTimeViewController: UIViewController {
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         print("This is the stored default: \(storredDefault)")
         
-        // NOTE: - This is in test mode
-        // TODO: - Remove test data from scheduleLocal function
-        
+        // Initiate daily notifications
         
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
-        
-       // DailyNotification.scheduleLocal(on: storredDefault)
-
-        
-        
-        
-        
         
         
     }

@@ -33,8 +33,7 @@ class TimePreferenceViewController: UIViewController{
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         print("This is the stored default: \(storredDefault)")
 
-        // NOTE: - This is in test mode
-        // TODO: - Remove test data from scheduleLocal function
+        // Initiate daily notifications
         
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
@@ -44,7 +43,6 @@ class TimePreferenceViewController: UIViewController{
         
         performSegue(withIdentifier: "showTabBar", sender: self)
 
-        
         
         // TODO:- Add launch screen to user defaults; next time it opens ---> strait to quotes page.
     }

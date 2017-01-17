@@ -13,6 +13,7 @@ import UIKit
 
 class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
     
+    // MARK: - Delegate method
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // pull out the buried userInfo dictionary
         let userInfo = response.notification.request.content.userInfo
@@ -59,34 +60,7 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         print(test.hour ?? "OK")
         print(test.minute)
 
-        
-        var dateComponents = DateComponents()
-        dateComponents.hour = 12
-        dateComponents.minute = 25
         let trigger = UNCalendarNotificationTrigger(dateMatching: test, repeats: true)
-        
-        
-        
-        
-        
-        
-        //var dateComponents = DateComponents()
-        // 3:11 PM everyday
-        
-        // Hard Coded Components
-        //dateComponents.hour = 6 //hourComponent
-       // dateComponents.minute = 33 //minuteComponent
-     //   dateComponents.timeZone
-        
-        
-   
-
-       // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-       // let realTrigger = UNTimeIntervalNotificationTrigger(timeInterval: <#T##TimeInterval#>, repeats: <#T##Bool#>)
-        
-        // Test Request
-    //      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(hourComponent), repeats: false)
         
         let content = UNMutableNotificationContent()
         content.title = "Motivate"
@@ -95,7 +69,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default()
 
-        
         
        // center.removeAllPendingNotificationRequests()
         
@@ -106,17 +79,10 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
                 print("UNABLE TO ADD .... \(error.localizedDescription)")
                 // Do something with error
             } else {
-                
                 print("WERE IN!!!!")
-                
                 // Request was added successfully
             }
         }
-        
-        
-        //cancel pending notifications – i.e., notifications you have scheduled that have yet to be delivered because their trigger hasn’t been met
-        //     center.removeAllPendingNotificationRequests()
-        
         
     }
     
