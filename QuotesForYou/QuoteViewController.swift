@@ -49,9 +49,9 @@ class QuoteViewController: UIViewController {
      //   quoteLabel.sizeToFit()
 //        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
         quoteLabel.text = storedQuote
+//        quoteLabel.font = UIFont(name: SourceSansPro-Regular, size: 25)
         quoteLabel.sizeToFit()
 
-        
         // Author Label
      //   authorLabel.sizeToFit()
 //        guard let author = store.quote?.author else { print("no author - leaving"); return }
@@ -141,6 +141,8 @@ class QuoteViewController: UIViewController {
                 print("New TestDate is one step closer to displaying quote")
                 if (currentHour, currentMin) >= (chosenHour, chosenMin) {
                     print("YES! SHOW QUOTE")
+                    
+                    // NOTE:- Prevent quote from showing twice after the time has passed
                     showNewQuote()
                 } else {
                     print("Ehh, gotta wait a little longer")

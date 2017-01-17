@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="-1758" y="-1068"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favorite-->
         <scene sceneID="IfV-Hp-Z8d">
             <objects>
                 <tableViewController id="7Sa-Kx-gfS" customClass="TableViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -156,7 +156,7 @@
                             <outlet property="delegate" destination="7Sa-Kx-gfS" id="fbA-Pe-hCe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Xyg-a4-eEr"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="Fav" id="Xyg-a4-eEr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +208,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Spc-cH-BU3"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="Spc-cH-BU3"/>
                     <connections>
                         <outlet property="headerLabel" destination="1IF-E6-VPE" id="FBg-5b-ayA"/>
                         <outlet property="instructionLabel" destination="4Kw-Js-khG" id="diL-bK-5Zt"/>
@@ -274,21 +274,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vo8-JJ-Ksi" firstAttribute="centerX" secondItem="blE-nk-rgs" secondAttribute="centerX" id="2fF-Tg-80Y"/>
-                            <constraint firstItem="eeI-U6-hfe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Dj-hd-5b9"/>
-                            <constraint firstItem="blE-nk-rgs" firstAttribute="centerX" secondItem="PGa-TA-2p9" secondAttribute="centerX" id="9Is-2q-bfH"/>
-                            <constraint firstItem="PGa-TA-2p9" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" constant="8" id="DDC-dM-LkL"/>
-                            <constraint firstItem="vo8-JJ-Ksi" firstAttribute="top" secondItem="blE-nk-rgs" secondAttribute="bottom" constant="45" id="Ipx-86-jHd"/>
-                            <constraint firstItem="blE-nk-rgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="JOU-vY-eRg"/>
-                            <constraint firstItem="eeI-U6-hfe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-236" id="Rvz-re-JZZ"/>
-                            <constraint firstItem="blE-nk-rgs" firstAttribute="top" secondItem="PGa-TA-2p9" secondAttribute="bottom" constant="66" id="c3I-58-eUW"/>
-                            <constraint firstItem="Xlh-dq-ect" firstAttribute="centerX" secondItem="vo8-JJ-Ksi" secondAttribute="centerX" id="jv4-IL-DJR"/>
-                            <constraint firstItem="Xlh-dq-ect" firstAttribute="top" secondItem="vo8-JJ-Ksi" secondAttribute="bottom" constant="158" id="nek-3P-ce5"/>
-                            <constraint firstItem="PGa-TA-2p9" firstAttribute="centerX" secondItem="eeI-U6-hfe" secondAttribute="centerX" id="pFU-Yc-dbc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="blE-nk-rgs" secondAttribute="trailing" constant="24" id="rcb-3P-bxc"/>
+                            <constraint firstItem="vo8-JJ-Ksi" firstAttribute="centerX" secondItem="blE-nk-rgs" secondAttribute="centerX" id="8O3-BU-dc1"/>
+                            <constraint firstItem="PGa-TA-2p9" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" id="8l3-hT-Rdr"/>
+                            <constraint firstItem="vo8-JJ-Ksi" firstAttribute="top" secondItem="blE-nk-rgs" secondAttribute="bottom" constant="45" id="Gxw-LO-HC3"/>
+                            <constraint firstItem="blE-nk-rgs" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" constant="95" id="OYY-Ro-sv8"/>
+                            <constraint firstItem="eeI-U6-hfe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PNJ-m2-dQd"/>
+                            <constraint firstItem="Xlh-dq-ect" firstAttribute="top" secondItem="vo8-JJ-Ksi" secondAttribute="bottom" constant="144" id="ZoB-Rf-aAP"/>
+                            <constraint firstAttribute="trailing" secondItem="blE-nk-rgs" secondAttribute="trailing" constant="40" id="jL3-88-UtN"/>
+                            <constraint firstItem="blE-nk-rgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="mcE-LM-hhs"/>
+                            <constraint firstItem="Xlh-dq-ect" firstAttribute="centerX" secondItem="vo8-JJ-Ksi" secondAttribute="centerX" id="qWy-7H-JUG"/>
+                            <constraint firstItem="eeI-U6-hfe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xrm-wR-lQt"/>
+                            <constraint firstItem="PGa-TA-2p9" firstAttribute="centerX" secondItem="eeI-U6-hfe" secondAttribute="centerX" id="zwo-Sg-gXY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="9jp-1U-sCt"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt"/>
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
                         <outlet property="dateLabel" destination="PGa-TA-2p9" id="YBe-KQ-oXB"/>
@@ -301,4 +300,9 @@
             <point key="canvasLocation" x="-2057" y="-98"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fav" width="32" height="32"/>
+        <image name="HomeLine" width="30" height="32"/>
+        <image name="Settings" width="30" height="30"/>
+    </resources>
 </document>
