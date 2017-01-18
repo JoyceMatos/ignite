@@ -159,7 +159,7 @@
 				TargetAttributes = {
 					255AA4A81E15DC6F00B76FD4 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = A95Z7XMH9W;
+						DevelopmentTeam = U442XCZ4BT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -335,7 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A95Z7XMH9W;
+				DEVELOPMENT_TEAM = U442XCZ4BT;
 				INFOPLIST_FILE = QuotesForYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.QuotesForYou";
@@ -348,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A95Z7XMH9W;
+				DEVELOPMENT_TEAM = U442XCZ4BT;
 				INFOPLIST_FILE = QuotesForYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.QuotesForYou";

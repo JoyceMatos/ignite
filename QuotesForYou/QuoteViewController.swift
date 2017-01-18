@@ -93,6 +93,7 @@ class QuoteViewController: UIViewController {
             
         } else {
             print("---Keep showing current quote--")
+            hasSeenQuote(false)
             configureViews()
             
             print(quote)
@@ -116,12 +117,20 @@ class QuoteViewController: UIViewController {
     
     func compareTime() {
         
+        
+        
       //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
 //                var testingCurrent = "08-01-2017 14:00"
 //                let dateFormatter = DateFormatter()
 //                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
 //                var currentDate = dateFormatter.date(from: testingCurrent)!
 //                print("Test: \(currentDate)")
+        
+        // Testing with hasSeenBool
+          //  hasSeenQuote(false)
+        guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
+        
+        print("-==-=-=-=- USER HAS SEEN QUOTE: \(userHasSeenQuote)-=-=-=-=-=-=")
         
         // Get value from user defaults
         guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("CompareTime: byeDefault"); return }
@@ -136,18 +145,37 @@ class QuoteViewController: UIViewController {
         // Compare dates
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
-            
-            if currentDate >= chosenTimeforDay {
+//            if currentDate >= chosenTimeforDay {
                 print("New TestDate is one step closer to displaying quote")
-                if (currentHour, currentMin) >= (chosenHour, chosenMin) {
-                    print("YES! SHOW QUOTE")
-                    
-                    // NOTE:- Prevent quote from showing twice after the time has passed
-                    showNewQuote()
-                } else {
-                    print("Ehh, gotta wait a little longer")
+            
+                if currentHour < chosenHour {
+                    print("ORDER ASCENDING -- Ehh, gotta wait a little longer")
+                    hasSeenQuote(false)
                 }
+                else if userHasSeenQuote {
+                    print("ORDER ASCENDING -- User has seen quote: Keep current Quote")
+                    hasSeenQuote(true)
+                }
+                else if currentHour > chosenHour && !userHasSeenQuote {
+                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
+                    showNewQuote()
+                    hasSeenQuote(true)
+                }
+                else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
+                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
+                    showNewQuote()
+                    hasSeenQuote(true)
+                    
             }
+                else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote{
+                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
+                    showNewQuote()
+                    hasSeenQuote(true)
+                    
+                    
+            }
+            
+//            }
             
         } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
             print("New TestDate is the same as Chosen Date")
@@ -160,6 +188,10 @@ class QuoteViewController: UIViewController {
                 print("Ehh, gotta wait a little longer")
             }
         }
+        
+      
+        
+    
         
         
     }
@@ -179,6 +211,13 @@ class QuoteViewController: UIViewController {
      
         print("This is the quote default: \(storedQuote)")
         print("This is the author default: \(storedAuthor)")
+        
+    }
+    
+    func hasSeenQuote(_ value: Bool = false) {
+        
+        defaults.set(value, forKey: "hasSeenQuote")
+        print("USERDEFAULT: hasSeenQuote ----> \(value)")
         
     }
     
