@@ -93,7 +93,7 @@ class QuoteViewController: UIViewController {
             
         } else {
             print("---Keep showing current quote--")
-            hasSeenQuote(false)
+          //  hasSeenQuote(false)
             configureViews()
             
             print(quote)
@@ -157,17 +157,20 @@ class QuoteViewController: UIViewController {
                     hasSeenQuote(true)
                 }
                 else if currentHour > chosenHour && !userHasSeenQuote {
+                    print("currentHour > chosenHour && !userHasSeenQuote")
                     print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
                     showNewQuote()
                     hasSeenQuote(true)
                 }
                 else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
+                    print("currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote")
                     print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
                     showNewQuote()
                     hasSeenQuote(true)
                     
             }
-                else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote{
+                else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote {
+                    print("currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote")
                     print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
                     showNewQuote()
                     hasSeenQuote(true)
@@ -175,19 +178,19 @@ class QuoteViewController: UIViewController {
                     
             }
             
+            }
+        
+//        } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
+//            print("New TestDate is the same as Chosen Date")
+//            print("New TestDate is one step closer to displaying quote")
+//            
+//            if (currentHour, currentMin) >= (chosenHour, chosenMin) {
+//                print("YES! SHOW QUOTE")
+//                showNewQuote()
+//            } else {
+//                print("Ehh, gotta wait a little longer")
 //            }
-            
-        } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
-            print("New TestDate is the same as Chosen Date")
-            print("New TestDate is one step closer to displaying quote")
-            
-            if (currentHour, currentMin) >= (chosenHour, chosenMin) {
-                print("YES! SHOW QUOTE")
-                showNewQuote()
-            } else {
-                print("Ehh, gotta wait a little longer")
-            }
-        }
+//        }
         
       
         
