@@ -31,30 +31,35 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         retrieveQuote()
         compareTime()
-
+        
         
     }
+    
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        retrieveQuote()
+    //        compareTime()
+    //    }
     
     // MARK:- View Methods
     
     func configureViews() {
-
+        
         guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("configureQuote: byeDefault"); return }
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
         
         // Quote Label
-     //   quoteLabel.sizeToFit()
-//        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
+        //   quoteLabel.sizeToFit()
+        //        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
         quoteLabel.text = storedQuote
-//        quoteLabel.font = UIFont(name: SourceSansPro-Regular, size: 25)
+        //        quoteLabel.font = UIFont(name: SourceSansPro-Regular, size: 25)
         quoteLabel.sizeToFit()
-
+        
         // Author Label
-     //   authorLabel.sizeToFit()
-//        guard let author = store.quote?.author else { print("no author - leaving"); return }
+        //   authorLabel.sizeToFit()
+        //        guard let author = store.quote?.author else { print("no author - leaving"); return }
         authorLabel.text = storedAuthor
         authorLabel.sizeToFit()
     }
@@ -88,18 +93,18 @@ class QuoteViewController: UIViewController {
         let author = defaults.object(forKey: "authorOfTheDay") as? String
         
         if quote == nil && author == nil {
-
+            
             showNewQuote()
             
         } else {
             print("---Keep showing current quote--")
-          //  hasSeenQuote(false)
+            //  hasSeenQuote(false)
             configureViews()
             
             print(quote)
             print(author)
         }
-
+        
     }
     
     func showNewQuote() {
@@ -112,22 +117,22 @@ class QuoteViewController: UIViewController {
                 self.configureViews()
             }
         }
-
+        
     }
     
     func compareTime() {
         
         
         
-      //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
-//                var testingCurrent = "08-01-2017 14:00"
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-//                var currentDate = dateFormatter.date(from: testingCurrent)!
-//                print("Test: \(currentDate)")
+        //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
+        //                var testingCurrent = "08-01-2017 14:00"
+        //                let dateFormatter = DateFormatter()
+        //                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        //                var currentDate = dateFormatter.date(from: testingCurrent)!
+        //                print("Test: \(currentDate)")
         
         // Testing with hasSeenBool
-          //  hasSeenQuote(false)
+        //  hasSeenQuote(false)
         guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
         
         print("-==-=-=-=- USER HAS SEEN QUOTE: \(userHasSeenQuote)-=-=-=-=-=-=")
@@ -141,60 +146,76 @@ class QuoteViewController: UIViewController {
         let currentHour = Calendar.current.component(.hour, from: currentDate)
         let currentMin = Calendar.current.component(.minute, from: currentDate)
         print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
-
+        
         // Compare dates
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
-//            if currentDate >= chosenTimeforDay {
-                print("New TestDate is one step closer to displaying quote")
+            //            if currentDate >= chosenTimeforDay {
+            print("New TestDate is one step closer to displaying quote")
             
-                if currentHour < chosenHour {
-                    print("ORDER ASCENDING -- Ehh, gotta wait a little longer")
-                    hasSeenQuote(false)
-                }
-                else if userHasSeenQuote {
-                    print("ORDER ASCENDING -- User has seen quote: Keep current Quote")
-                    hasSeenQuote(true)
-                }
-                else if currentHour > chosenHour && !userHasSeenQuote {
-                    print("currentHour > chosenHour && !userHasSeenQuote")
-                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
-                    showNewQuote()
-                    hasSeenQuote(true)
-                }
-                else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
-                    print("currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote")
-                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
-                    showNewQuote()
-                    hasSeenQuote(true)
-                    
+            if currentHour < chosenHour || currentHour == chosenHour && currentMin < chosenMin {
+                print("ORDER ASCENDING 1 -- Ehh, gotta wait a little longer")
+                hasSeenQuote(false)
             }
-                else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote {
-                    print("currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote")
-                    print("ORDER ASCENDING -- User has not seen current quote: SHOW NEW QUOTE")
-                    showNewQuote()
-                    hasSeenQuote(true)
-                    
-                    
+            else if userHasSeenQuote {
+                print("ORDER ASCENDING 2 -- User has seen quote: Keep current Quote")
+                hasSeenQuote(true)
+            }
+            else if currentHour > chosenHour && !userHasSeenQuote {
+                print("currentHour > chosenHour && !userHasSeenQuote")
+                print("ORDER ASCENDING 3 -- User has not seen current quote: SHOW NEW QUOTE")
+                showNewQuote()
+                hasSeenQuote(true)
+            }
+                
+                // These two else if statements may belong on their own:
+                // ie:chosenTimeforDay.compare(currentDate) == .orderedSame
+            else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
+                print("currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote")
+                print("ORDER ASCENDING 4 -- User has not seen current quote: SHOW NEW QUOTE")
+                showNewQuote()
+                hasSeenQuote(true)
+                
+            }
+            else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote {
+                print("currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote")
+                print("ORDER ASCENDING 5 -- User has not seen current quote: SHOW NEW QUOTE")
+                showNewQuote()
+                hasSeenQuote(true)
+                
+                
             }
             
+        }
+            
+        else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
+            print ("Chosen Time is later than currentDate's time")
+            
+            if chosenHour >= currentHour && chosenMin > currentMin {
+                print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
+                hasSeenQuote(false)
             }
+            
+            
+            
+            
+            
+        }
+        //        else if currentDate.compare(chosenTimeforDay) == .orderedSame {
+        //            print("New TestDate is the same as Chosen Date")
+        //            print("New TestDate is one step closer to displaying quote")
+        //
+        //            if (currentHour, currentMin) >= (chosenHour, chosenMin) {
+        //                print("YES! SHOW QUOTE")
+        //                showNewQuote()
+        //            } else {
+        //                print("Ehh, gotta wait a little longer")
+        //            }
+        //        }
         
-//        } else if currentDate.compare(chosenTimeforDay) == .orderedSame {
-//            print("New TestDate is the same as Chosen Date")
-//            print("New TestDate is one step closer to displaying quote")
-//            
-//            if (currentHour, currentMin) >= (chosenHour, chosenMin) {
-//                print("YES! SHOW QUOTE")
-//                showNewQuote()
-//            } else {
-//                print("Ehh, gotta wait a little longer")
-//            }
-//        }
         
-      
         
-    
+        
         
         
     }
@@ -211,7 +232,7 @@ class QuoteViewController: UIViewController {
         
         guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("StoreQuote: byeDefault"); return }
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("StoreAuthor: byeDefault"); return }
-     
+        
         print("This is the quote default: \(storedQuote)")
         print("This is the author default: \(storedAuthor)")
         
