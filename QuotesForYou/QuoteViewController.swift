@@ -121,12 +121,6 @@ class QuoteViewController: UIViewController {
     }
     
     func compareTime() {
-        //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
-        //                var testingCurrent = "08-01-2017 14:00"
-        //                let dateFormatter = DateFormatter()
-        //                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        //                var currentDate = dateFormatter.date(from: testingCurrent)!
-        //                print("Test: \(currentDate)")
           let currentDate = Date()
 
         guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
@@ -144,7 +138,7 @@ class QuoteViewController: UIViewController {
         print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
         
         // Compare dates
-        // NOTE - Try comparing dates without the orderascending/descending
+        // NOTE - Works but is a little delayed by the seconds
         
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
@@ -153,33 +147,20 @@ class QuoteViewController: UIViewController {
             if userHasSeenQuote {
                 print("ORDER ASCENDING IF -- User has seen quote: Keep current Quote")
                 hasSeenQuote(true)
-            }
-            else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
+            } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
                 ("ORDER ASCENDING 2")
                 showNewQuote()
                 hasSeenQuote(true)
-            }
-            else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
+            } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
                 ("ORDER ASCENDING 3")
                 showNewQuote()
                 hasSeenQuote(true)
-            }
-            else if chosenHour < currentHour && !userHasSeenQuote {
+            } else if chosenHour < currentHour && !userHasSeenQuote {
                 ("ORDER ASCENDING 4")
                 showNewQuote()
                 hasSeenQuote(true)
             }
-                
-                
-//            else {
-//                print("ORDER ASCENDING ELSE -- User has not seen current quote: SHOW NEW QUOTE")
-//
-//                showNewQuote()
-//                hasSeenQuote(true)
-//                
-//            }
-            
-            ////////////////////
+
 //            if currentHour < chosenHour || currentHour == chosenHour && currentMin < chosenMin {
 //                print("ORDER ASCENDING 1 -- Ehh, gotta wait a little longer")
 //                hasSeenQuote(false)
@@ -213,17 +194,14 @@ class QuoteViewController: UIViewController {
 //                
 //            }
             
-        }
-            
-        else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
+        } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
             print ("Chosen Time is later than currentDate's time")
             
             if chosenHour == currentHour {
                 print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
                           hasSeenQuote(false)
                 
-            }
-            else if chosenHour > currentHour {
+            } else if chosenHour > currentHour {
                 print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
                          hasSeenQuote(false)
             }
