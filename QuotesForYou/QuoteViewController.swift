@@ -32,6 +32,7 @@ class QuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dateLabel.isHidden = true
       //  retrieveQuote()
       //  compareTime()
         
