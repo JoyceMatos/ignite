@@ -32,16 +32,21 @@ class QuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        retrieveQuote()
-        compareTime()
+      //  retrieveQuote()
+      //  compareTime()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        
+    
+        
         
         
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        retrieveQuote()
-    //        compareTime()
-    //    }
+    func applicationDidBecomeActive(_ notification: NSNotification) {
+        retrieveQuote()
+        compareTime()
+    }
     
     // MARK:- View Methods
     
@@ -148,43 +153,56 @@ class QuoteViewController: UIViewController {
         print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
         
         // Compare dates
+        // NOTE - Try comparing dates without the orderascending/descending
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
-            //            if currentDate >= chosenTimeforDay {
             print("New TestDate is one step closer to displaying quote")
             
-            if currentHour < chosenHour || currentHour == chosenHour && currentMin < chosenMin {
-                print("ORDER ASCENDING 1 -- Ehh, gotta wait a little longer")
-                hasSeenQuote(false)
-            }
-            else if userHasSeenQuote {
-                print("ORDER ASCENDING 2 -- User has seen quote: Keep current Quote")
+            if userHasSeenQuote {
+                print("ORDER ASCENDING IF -- User has seen quote: Keep current Quote")
                 hasSeenQuote(true)
             }
-            else if currentHour > chosenHour && !userHasSeenQuote {
-                print("currentHour > chosenHour && !userHasSeenQuote")
-                print("ORDER ASCENDING 3 -- User has not seen current quote: SHOW NEW QUOTE")
-                showNewQuote()
-                hasSeenQuote(true)
-            }
-                
-                // These two else if statements may belong on their own:
-                // ie:chosenTimeforDay.compare(currentDate) == .orderedSame
-            else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
-                print("currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote")
-                print("ORDER ASCENDING 4 -- User has not seen current quote: SHOW NEW QUOTE")
+            else {
+                print("ORDER ASCENDING ELSE -- User has not seen current quote: SHOW NEW QUOTE")
+
                 showNewQuote()
                 hasSeenQuote(true)
                 
             }
-            else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote {
-                print("currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote")
-                print("ORDER ASCENDING 5 -- User has not seen current quote: SHOW NEW QUOTE")
-                showNewQuote()
-                hasSeenQuote(true)
-                
-                
-            }
+            
+            ////////////////////
+//            if currentHour < chosenHour || currentHour == chosenHour && currentMin < chosenMin {
+//                print("ORDER ASCENDING 1 -- Ehh, gotta wait a little longer")
+//                hasSeenQuote(false)
+//            }
+//            else if userHasSeenQuote {
+//                print("ORDER ASCENDING 2 -- User has seen quote: Keep current Quote")
+//                hasSeenQuote(true)
+//            }
+//            else if currentHour > chosenHour && !userHasSeenQuote {
+//                print("currentHour > chosenHour && !userHasSeenQuote")
+//                print("ORDER ASCENDING 3 -- User has not seen current quote: SHOW NEW QUOTE")
+//                showNewQuote()
+//                hasSeenQuote(true)
+//            }
+//                
+//                // These two else if statements may belong on their own:
+//                // ie:chosenTimeforDay.compare(currentDate) == .orderedSame
+//            else if currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote {
+//                print("currentHour == chosenHour && currentMin == chosenMin && !userHasSeenQuote")
+//                print("ORDER ASCENDING 4 -- User has not seen current quote: SHOW NEW QUOTE")
+//                showNewQuote()
+//                hasSeenQuote(true)
+//                
+//            }
+//            else if currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote {
+//                print("currentHour == chosenHour && currentMin > currentMin && !userHasSeenQuote")
+//                print("ORDER ASCENDING 5 -- User has not seen current quote: SHOW NEW QUOTE")
+//                showNewQuote()
+//                hasSeenQuote(true)
+//                
+//                
+//            }
             
         }
             
@@ -195,12 +213,14 @@ class QuoteViewController: UIViewController {
                 print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
                 hasSeenQuote(false)
             }
+        }
+        else if chosenTimeforDay.compare(currentDate) == .orderedSame {
+            print ("Chosen Time is equal to currentDate's time")
             
-            
-            
-            
+    
             
         }
+        
         //        else if currentDate.compare(chosenTimeforDay) == .orderedSame {
         //            print("New TestDate is the same as Chosen Date")
         //            print("New TestDate is one step closer to displaying quote")
