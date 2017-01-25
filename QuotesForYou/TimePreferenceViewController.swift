@@ -38,8 +38,8 @@ class TimePreferenceViewController: UIViewController{
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
         
-        //DailyNotification.scheduleLocal(on: storredDefault)
-    
+        // hasSeenQuote set to false
+        hasSeenQuote()
         
         performSegue(withIdentifier: "showTabBar", sender: self)
 
@@ -53,10 +53,7 @@ class TimePreferenceViewController: UIViewController{
         super.viewDidLoad()
         
         instructionLabel.sizeToFit()
-        
         timePicker.datePickerMode = .time
-
-    //    UNUserNotificationCenter.current().delegate = self
     
         // Request authorization for notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
@@ -67,17 +64,13 @@ class TimePreferenceViewController: UIViewController{
         }
     }
     
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "showTabBar" {
-//            
-//            let destination = segue.destination as! ViewController
-//
-//            
-//        }
-//        
-//    }
+    // This is called twice and can be turned into a protocol
+    func hasSeenQuote(_ value: Bool = false) {
+        
+        defaults.set(value, forKey: "hasSeenQuote")
+        print("USERDEFAULT: hasSeenQuote ----> \(value)")
+        
+    }
 
 
 }
