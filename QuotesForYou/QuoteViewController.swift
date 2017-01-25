@@ -35,14 +35,13 @@ class QuoteViewController: UIViewController {
       //  retrieveQuote()
       //  compareTime()
         
+        
+        // Notify when app becomes active
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
-    
-        
-        
-        
     }
-    
+
+    // MARK: - Notification Methods
     func applicationDidBecomeActive(_ notification: NSNotification) {
         retrieveQuote()
         compareTime()
@@ -56,15 +55,11 @@ class QuoteViewController: UIViewController {
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
         
         // Quote Label
-        //   quoteLabel.sizeToFit()
-        //        guard let quote = store.quote?.quote else { print("no quote - leaving"); return }
         quoteLabel.text = storedQuote
         //        quoteLabel.font = UIFont(name: SourceSansPro-Regular, size: 25)
         quoteLabel.sizeToFit()
         
         // Author Label
-        //   authorLabel.sizeToFit()
-        //        guard let author = store.quote?.author else { print("no author - leaving"); return }
         authorLabel.text = storedAuthor
         authorLabel.sizeToFit()
     }
@@ -126,9 +121,6 @@ class QuoteViewController: UIViewController {
     }
     
     func compareTime() {
-        
-        
-        
         //   ----------- TESTING WITH DUMMY CURRENT DATE ------------- \\
         //                var testingCurrent = "08-01-2017 14:00"
         //                let dateFormatter = DateFormatter()
@@ -136,8 +128,6 @@ class QuoteViewController: UIViewController {
         //                var currentDate = dateFormatter.date(from: testingCurrent)!
         //                print("Test: \(currentDate)")
         
-        // Testing with hasSeenBool
-        //  hasSeenQuote(false)
         guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
         
         print("-==-=-=-=- USER HAS SEEN QUOTE: \(userHasSeenQuote)-=-=-=-=-=-=")
@@ -154,6 +144,7 @@ class QuoteViewController: UIViewController {
         
         // Compare dates
         // NOTE - Try comparing dates without the orderascending/descending
+        
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             print ("Chosen Date is earlier than currentDate")
             print("New TestDate is one step closer to displaying quote")
@@ -216,8 +207,7 @@ class QuoteViewController: UIViewController {
         }
         else if chosenTimeforDay.compare(currentDate) == .orderedSame {
             print ("Chosen Time is equal to currentDate's time")
-            
-    
+
             
         }
         
@@ -232,10 +222,6 @@ class QuoteViewController: UIViewController {
         //                print("Ehh, gotta wait a little longer")
         //            }
         //        }
-        
-        
-        
-        
         
         
     }
