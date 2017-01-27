@@ -198,12 +198,20 @@ class QuoteViewController: UIViewController {
         } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
             print ("Chosen Time is later than currentDate's time")
             
-            if chosenHour == currentHour {
-                print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
-                          hasSeenQuote(false)
+            if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
+                print("ORDER DESCENDING 1 -- Show Quote \(userHasSeenQuote)")
+                // TODO: -
+                showNewQuote()
+                hasSeenQuote(true)
+                
+            } else if chosenHour == currentHour && chosenMin > currentHour {
+                print("ORDER DESCENDING 2 -- Ehh, gotta wait a little longer")
+                hasSeenQuote(false)
+                
+                
                 
             } else if chosenHour > currentHour {
-                print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
+                print("ORDER DESCENDING 3 -- Ehh, gotta wait a little longer")
                          hasSeenQuote(false)
             }
             
