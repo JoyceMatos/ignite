@@ -43,9 +43,7 @@ class TimePreferenceViewController: UIViewController{
         
         performSegue(withIdentifier: "showTabBar", sender: self)
 
-        
-        // TODO:- Add launch screen to user defaults; next time it opens ---> strait to quotes page.
-    }
+        }
     
     
 

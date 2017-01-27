@@ -40,9 +40,6 @@ class ChangeTimeViewController: UIViewController {
     }
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,7 +48,6 @@ class ChangeTimeViewController: UIViewController {
         timePicker.datePickerMode = .time
         
 
-        
         }
 
    
