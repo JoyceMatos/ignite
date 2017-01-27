@@ -32,9 +32,17 @@
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="be inspired daily." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHq-OI-Iyw">
+                                <rect key="frame" x="114" y="398" width="146" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aHq-OI-Iyw" firstAttribute="top" secondItem="vrL-cS-7Ci" secondAttribute="bottom" constant="-2" id="Bss-DY-sxv"/>
+                            <constraint firstItem="aHq-OI-Iyw" firstAttribute="centerX" secondItem="vrL-cS-7Ci" secondAttribute="centerX" id="CiR-wf-qKA"/>
                             <constraint firstItem="v0a-hV-8VW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="240:667" id="F8g-oT-WAm"/>
                             <constraint firstItem="v0a-hV-8VW" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="89" id="LZr-Hc-YDY"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="v0a-hV-8VW" secondAttribute="bottom" constant="314" id="LlP-En-7oE"/>
