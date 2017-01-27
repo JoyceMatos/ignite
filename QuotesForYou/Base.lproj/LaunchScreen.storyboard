@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,12 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-vh-aVU">
-                                <rect key="frame" x="64" y="97" width="247" height="256"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-hV-8VW">
+                                <rect key="frame" x="67" y="109" width="240" height="244"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ignite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-cS-7Ci">
-                                <rect key="frame" x="114" y="351" width="146" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ignite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-cS-7Ci">
+                                <rect key="frame" x="114" y="352" width="146" height="48"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="37"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -35,10 +35,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lV2-vh-aVU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="77" id="D9b-Ut-WU0"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lV2-vh-aVU" secondAttribute="bottom" constant="314" id="WpV-aN-XoU"/>
-                            <constraint firstItem="lV2-vh-aVU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="48" id="ZHB-dC-Cir"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lV2-vh-aVU" secondAttribute="trailing" constant="48" id="gDh-uX-g5e"/>
+                            <constraint firstItem="v0a-hV-8VW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="240:667" id="F8g-oT-WAm"/>
+                            <constraint firstItem="v0a-hV-8VW" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="89" id="LZr-Hc-YDY"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="v0a-hV-8VW" secondAttribute="bottom" constant="314" id="LlP-En-7oE"/>
+                            <constraint firstItem="vrL-cS-7Ci" firstAttribute="centerX" secondItem="v0a-hV-8VW" secondAttribute="centerX" id="NaY-ZX-Rzm"/>
+                            <constraint firstItem="vrL-cS-7Ci" firstAttribute="top" secondItem="v0a-hV-8VW" secondAttribute="bottom" id="QF0-Zc-gpO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0a-hV-8VW" secondAttribute="trailing" constant="52" id="euh-8t-7kL"/>
+                            <constraint firstItem="v0a-hV-8VW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="w7C-67-bcq"/>
                         </constraints>
                     </view>
                 </viewController>
