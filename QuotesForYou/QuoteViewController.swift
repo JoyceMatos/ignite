@@ -204,11 +204,9 @@ class QuoteViewController: UIViewController {
                 showNewQuote()
                 hasSeenQuote(true)
                 
-            } else if chosenHour == currentHour && chosenMin > currentHour {
+            } else if chosenHour == currentHour && chosenMin > currentMin {
                 print("ORDER DESCENDING 2 -- Ehh, gotta wait a little longer")
                 hasSeenQuote(false)
-                
-                
                 
             } else if chosenHour > currentHour {
                 print("ORDER DESCENDING 3 -- Ehh, gotta wait a little longer")

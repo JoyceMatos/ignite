@@ -63,8 +63,8 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         let trigger = UNCalendarNotificationTrigger(dateMatching: test, repeats: true)
         
         let content = UNMutableNotificationContent()
-        content.title = "Motivate"
-        content.body = "Your Quote Of The Day is Ready"
+        content.title = "Daily Reminder"
+        content.body = "Your quote of the day is ready!"
         content.categoryIdentifier = "customIdentifier"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default()
