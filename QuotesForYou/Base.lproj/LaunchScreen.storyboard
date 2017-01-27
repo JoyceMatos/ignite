@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,16 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1KB-PG-Mfw">
-                                <rect key="frame" x="67" y="149" width="240" height="237"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-vh-aVU">
+                                <rect key="frame" x="64" y="97" width="247" height="256"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ignite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-cS-7Ci">
+                                <rect key="frame" x="114" y="351" width="146" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="37"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1KB-PG-Mfw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="129" id="cye-Yw-sFj"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1KB-PG-Mfw" secondAttribute="bottom" constant="281" id="tFm-KJ-Xya"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1KB-PG-Mfw" secondAttribute="trailing" constant="52" id="tWw-sx-q2u"/>
-                            <constraint firstItem="1KB-PG-Mfw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="tv5-Wb-k0v"/>
+                            <constraint firstItem="lV2-vh-aVU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="77" id="D9b-Ut-WU0"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lV2-vh-aVU" secondAttribute="bottom" constant="314" id="WpV-aN-XoU"/>
+                            <constraint firstItem="lV2-vh-aVU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="48" id="ZHB-dC-Cir"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lV2-vh-aVU" secondAttribute="trailing" constant="48" id="gDh-uX-g5e"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="my_logo" width="271" height="272"/>
+        <image name="Ignite2" width="512" height="512"/>
     </resources>
 </document>
