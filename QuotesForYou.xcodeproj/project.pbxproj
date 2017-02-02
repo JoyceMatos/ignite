@@ -347,6 +347,7 @@
 				PROVISIONING_PROFILE = "67186afc-dac1-4746-a404-a6a5a67cd1f1";
 				PROVISIONING_PROFILE_SPECIFIER = igniteDevelopment;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,6 +363,7 @@
 				PROVISIONING_PROFILE = "2c466f24-bd44-4736-805b-2c6e6bc06f57";
 				PROVISIONING_PROFILE_SPECIFIER = igniteDistribution;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
