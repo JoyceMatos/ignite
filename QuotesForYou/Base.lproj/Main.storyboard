@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -136,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -208,6 +209,7 @@
                             <constraint firstItem="yLi-TE-w8I" firstAttribute="centerX" secondItem="IDJ-J6-JSg" secondAttribute="centerX" id="F6r-PY-en5"/>
                             <constraint firstItem="IDJ-J6-JSg" firstAttribute="centerX" secondItem="iRm-Vf-7Lz" secondAttribute="centerX" id="JkT-TV-mpg"/>
                             <constraint firstItem="IDJ-J6-JSg" firstAttribute="centerY" secondItem="iRm-Vf-7Lz" secondAttribute="centerY" id="Lxj-io-Wh6"/>
+                            <constraint firstItem="IDJ-J6-JSg" firstAttribute="width" secondItem="iRm-Vf-7Lz" secondAttribute="height" multiplier="10:23" id="Slf-iT-la1"/>
                             <constraint firstItem="1IF-E6-VPE" firstAttribute="centerX" secondItem="iRm-Vf-7Lz" secondAttribute="centerX" id="XnH-IO-7ra"/>
                             <constraint firstItem="4Kw-Js-khG" firstAttribute="centerX" secondItem="IDJ-J6-JSg" secondAttribute="centerX" id="iUc-oG-HY4"/>
                             <constraint firstItem="1IF-E6-VPE" firstAttribute="top" secondItem="KyF-Xo-FZr" secondAttribute="bottom" constant="61" id="rrQ-23-NTb"/>
