@@ -61,7 +61,7 @@
                                     <!--2017-01-05 23:43:45 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-Nr-rvo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reminders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-Nr-rvo">
                                 <rect key="frame" x="136" y="47" width="106" height="36"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,14 +85,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="7Ot-tv-G1n"/>
-                            <constraint firstItem="vgs-3D-zRS" firstAttribute="centerX" secondItem="kxR-4h-lmR" secondAttribute="centerX" id="EJ6-C1-ac2"/>
-                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="centerX" secondItem="kxR-4h-lmR" secondAttribute="centerX" id="F1k-jb-dDK"/>
-                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="top" secondItem="xGF-G4-wwb" secondAttribute="bottom" constant="27" id="ONU-cb-LK6"/>
-                            <constraint firstItem="kxR-4h-lmR" firstAttribute="centerY" secondItem="AhZ-M0-1V7" secondAttribute="centerY" id="UsX-AK-Q5e"/>
-                            <constraint firstItem="vgs-3D-zRS" firstAttribute="top" secondItem="kxR-4h-lmR" secondAttribute="bottom" constant="46" id="c4S-Hf-n1L"/>
-                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="bottom" secondItem="kxR-4h-lmR" secondAttribute="top" constant="27" id="lHC-Ui-c9R"/>
-                            <constraint firstItem="kxR-4h-lmR" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="nF8-ii-Bk2"/>
+                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="00z-T3-AeC"/>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" multiplier="0.9" id="09d-eG-ROv"/>
+                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="top" secondItem="W8h-Nr-rvo" secondAttribute="bottom" constant="50" id="3cQ-8e-fFj"/>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="top" secondItem="kxR-4h-lmR" secondAttribute="bottom" constant="43" id="4DK-hS-mqK"/>
+                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" id="4Tg-55-4X3"/>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="9SF-Gd-Eqw"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="top" secondItem="yag-Xj-HIJ" secondAttribute="bottom" constant="25" id="Dag-NT-WDc"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" multiplier="0.8" id="Pth-7D-UaQ"/>
+                            <constraint firstItem="W8h-Nr-rvo" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" id="TTl-AH-nK9"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="height" secondItem="AhZ-M0-1V7" secondAttribute="height" multiplier="0.3" id="UjD-K9-QKC"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="a16-GF-2Kp"/>
+                            <constraint firstItem="kxR-4h-lmR" firstAttribute="centerY" secondItem="AhZ-M0-1V7" secondAttribute="centerY" id="hiL-Rg-rJg"/>
+                            <constraint firstItem="yag-Xj-HIJ" firstAttribute="centerX" secondItem="kxR-4h-lmR" secondAttribute="centerX" id="iH3-aS-jk9"/>
                         </constraints>
                     </view>
                     <connections>
