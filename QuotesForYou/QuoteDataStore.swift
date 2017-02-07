@@ -16,13 +16,9 @@ class QuoteDataStore {
     func getQuotes(completion: @escaping () -> Void) {
         
         QuoteAPIClient.getQuotes { (randomQuote) in
-            
             self.quote = Quote(dictionary: randomQuote)
             print(self.quote?.quote)
             completion()
-
         }
-        
     }
-        
 }

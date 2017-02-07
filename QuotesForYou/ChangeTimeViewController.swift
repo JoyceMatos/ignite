@@ -9,14 +9,14 @@
 import UIKit
 
 class ChangeTimeViewController: UIViewController {
-
+    
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     
     let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
-
+    
     
     @IBAction func setTimeButton(_ sender: Any) {
         
@@ -42,13 +42,10 @@ class ChangeTimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         instructionLabel.sizeToFit()
-        
         timePicker.datePickerMode = .time
-        
-
-        }
-
-   
+    }
+    
+    
 }

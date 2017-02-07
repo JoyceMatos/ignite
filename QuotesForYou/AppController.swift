@@ -20,7 +20,6 @@ class AppController: UIViewController {
         loadInitialViewController()
     }
     
-    
 }
 
 extension AppController {

@@ -30,7 +30,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
                 // the user tapped our "show more info…" button
                 print("Show more information…")
                 break
-                
             default:
                 break
             }
@@ -51,10 +50,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         
         center.setNotificationCategories([category])
         
-//        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: date)
-//        let hour = dateComponents.hour ?? 9999
-//        let minute = dateComponents.minute ?? 11
-        
         let test = Calendar.current.dateComponents([.hour, .minute], from: date)
         
         print(test.hour ?? "OK")
@@ -70,9 +65,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         content.sound = UNNotificationSound.default()
 
         
-       // center.removeAllPendingNotificationRequests()
-        
-        
         let request = UNNotificationRequest(identifier: "MyTrigger", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -83,8 +75,5 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
                 // Request was added successfully
             }
         }
-        
     }
-    
-   
 }

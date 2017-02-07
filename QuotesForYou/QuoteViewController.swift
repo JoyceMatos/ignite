@@ -13,7 +13,6 @@ class QuoteViewController: UIViewController {
     
     let store = QuoteDataStore.shared
     let favoriteStore = FavoritesDataStore.shared
- //   let currentDate = Date()
     let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
     
@@ -33,15 +32,12 @@ class QuoteViewController: UIViewController {
         super.viewDidLoad()
         
         dateLabel.isHidden = true
-      //  retrieveQuote()
-      //  compareTime()
-        
         
         // Notify when app becomes active
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
     }
-
+    
     // MARK: - Notification Methods
     func applicationDidBecomeActive(_ notification: NSNotification) {
         retrieveQuote()
@@ -98,13 +94,8 @@ class QuoteViewController: UIViewController {
             
         } else {
             print("---Keep showing current quote--")
-            //  hasSeenQuote(false)
             configureViews()
-            
-            print(quote)
-            print(author)
         }
-        
     }
     
     func showNewQuote() {
@@ -121,8 +112,8 @@ class QuoteViewController: UIViewController {
     }
     
     func compareTime() {
-          let currentDate = Date()
-
+        let currentDate = Date()
+        
         guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
         
         print("-==-=-=-=- USER HAS SEEN QUOTE: \(userHasSeenQuote)-=-=-=-=-=-=")
@@ -166,7 +157,6 @@ class QuoteViewController: UIViewController {
             
             if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
                 print("ORDER DESCENDING 1 -- Show Quote \(userHasSeenQuote)")
-                // TODO: -
                 showNewQuote()
                 hasSeenQuote(true)
                 
@@ -176,20 +166,10 @@ class QuoteViewController: UIViewController {
                 
             } else if chosenHour > currentHour {
                 print("ORDER DESCENDING 3 -- Ehh, gotta wait a little longer")
-                         hasSeenQuote(false)
+                hasSeenQuote(false)
             }
             
-            
-//            
-//            if chosenHour >= currentHour && chosenMin > currentMin {
-//                print("ORDER DESCENDING 1 -- Ehh, gotta wait a little longer")
-//                hasSeenQuote(false)
-//            }
-        }
-            
-            
-            
-        else if chosenTimeforDay.compare(currentDate) == .orderedSame {
+        } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
             print ("Chosen Time is equal to currentDate's time")
             showNewQuote()
             hasSeenQuote(true)
@@ -222,10 +202,6 @@ class QuoteViewController: UIViewController {
         print("USERDEFAULT: hasSeenQuote ----> \(value)")
         
     }
-    
-    
-    
-    
     
 }
 

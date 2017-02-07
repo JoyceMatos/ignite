@@ -92,10 +92,7 @@ class TableViewController: UITableViewController {
         }
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
-            print("share is tapped")
-            
-            // TODO: - Deep linking? Option to share across social media (FB,Twitter, etc)?
-            // TODO: - Refactor
+
             let quote = self.store.favorites[indexPath.row]
             let message = "Check out my quote of the day: "
             guard let shareQuote = quote.value(forKey: "quote") as? String else { print("leaveActivity- no quote"); return }
@@ -124,6 +121,5 @@ class TableViewController: UITableViewController {
     }
 
 
-    
     
 }
