@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="-2748" y="-752"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="stH-nK-FVJ">
             <objects>
-                <tabBarController storyboardIdentifier="tab-view-controller" id="3Lr-K6-TuD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab-view-controller" id="3Lr-K6-TuD" customClass="AnimatedTabBarController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mZF-WZ-TcT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -156,7 +156,7 @@
                             <outlet property="delegate" destination="7Sa-Kx-gfS" id="fbA-Pe-hCe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorite" image="Fav" id="Xyg-a4-eEr"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Favorite" image="Fav" id="Xyg-a4-eEr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,7 +214,7 @@
                             <constraint firstItem="1IF-E6-VPE" firstAttribute="top" secondItem="KyF-Xo-FZr" secondAttribute="bottom" constant="61" id="rrQ-23-NTb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="Spc-cH-BU3"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Settings" image="Settings" id="Spc-cH-BU3"/>
                     <connections>
                         <outlet property="headerLabel" destination="1IF-E6-VPE" id="FBg-5b-ayA"/>
                         <outlet property="instructionLabel" destination="4Kw-Js-khG" id="diL-bK-5Zt"/>
@@ -293,7 +293,7 @@
                             <constraint firstItem="PGa-TA-2p9" firstAttribute="centerX" secondItem="eeI-U6-hfe" secondAttribute="centerX" id="zwo-Sg-gXY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt"/>
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
                         <outlet property="dateLabel" destination="PGa-TA-2p9" id="YBe-KQ-oXB"/>
