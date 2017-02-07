@@ -25,6 +25,7 @@
 		257A73411E2E75A7005EAB30 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A73401E2E75A7005EAB30 /* AppController.swift */; };
 		257A73431E2E863F005EAB30 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A73421E2E863F005EAB30 /* StoryboardID.swift */; };
 		25A136F31E4686FD002C6799 /* AnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A136F21E4686FD002C6799 /* AnimatedTabBarController.swift */; };
+		25A136F51E4A6B5C002C6799 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A136F41E4A6B5C002C6799 /* RandomViewController.swift */; };
 		25CF6EE61E21AAD70016C66E /* ChangeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		257A73401E2E75A7005EAB30 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		257A73421E2E863F005EAB30 /* StoryboardID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		25A136F21E4686FD002C6799 /* AnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarController.swift; sourceTree = "<group>"; };
+		25A136F41E4A6B5C002C6799 /* RandomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				253B0BEB1E1C729400D82A84 /* TableViewController.swift */,
 				25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */,
 				257A73401E2E75A7005EAB30 /* AppController.swift */,
+				25A136F41E4A6B5C002C6799 /* RandomViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */,
 				253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */,
 				253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */,
+				25A136F51E4A6B5C002C6799 /* RandomViewController.swift in Sources */,
 				255AA4C21E15DC8900B76FD4 /* QuoteAPIClient.swift in Sources */,
 				257A73431E2E863F005EAB30 /* StoryboardID.swift in Sources */,
 				2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */,
