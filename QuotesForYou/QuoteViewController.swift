@@ -29,11 +29,7 @@ class QuoteViewController: UIViewController {
         if sender.currentImage == #imageLiteral(resourceName: "Fill 71") {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
 
-            UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in
-                
-                sender.transform = .identity
-                },
-                           completion: nil)
+            UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in sender.transform = .identity }, completion: nil)
             
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
             
@@ -42,14 +38,15 @@ class QuoteViewController: UIViewController {
             save(quote: quote, author: author)
             
         } else {
-           // sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
             
             // TODO: - Unfavorite/delete quote
+           // sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
+            
         }
     }
     
  
-    
+    // TODO: - Add pan gesture
     func initializeGesture() {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(recognizeLongPressGesture))
