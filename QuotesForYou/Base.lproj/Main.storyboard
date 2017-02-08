@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="-2609" y="-1069"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="stH-nK-FVJ">
             <objects>
-                <tabBarController storyboardIdentifier="tab-view-controller" id="3Lr-K6-TuD" customClass="AnimatedTabBarController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab-view-controller" id="3Lr-K6-TuD" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mZF-WZ-TcT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -225,78 +225,6 @@
             </objects>
             <point key="canvasLocation" x="-505.79710144927537" y="-99.456521739130437"/>
         </scene>
-        <!--Random View Controller-->
-        <scene sceneID="dP2-ZY-o6t">
-            <objects>
-                <viewController id="Jt7-4v-SWy" customClass="RandomViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FvQ-wf-e4O"/>
-                        <viewControllerLayoutGuide type="bottom" id="JT7-WE-a7y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cz1-cB-Jqx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBN-nR-5yb">
-                                <rect key="frame" x="135" y="569" width="144" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Generate New Quote"/>
-                                <connections>
-                                    <action selector="newQuoteButton:" destination="Jt7-4v-SWy" eventType="touchUpInside" id="O2g-KE-Rz0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQT-aw-Ke3">
-                                <rect key="frame" x="59" y="186" width="296" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confucius" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-Q2-Jng">
-                                <rect key="frame" x="168" y="325" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="authorLabel" destination="XhD-Q2-Jng" id="EOh-td-aPH"/>
-                        <outlet property="quoteLabel" destination="nQT-aw-Ke3" id="F3j-xB-9Sz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2nJ-31-LcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="432" y="-108"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XYH-AZ-HvZ">
-            <objects>
-                <viewController id="HNR-gO-nY0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ytx-2W-AbO"/>
-                        <viewControllerLayoutGuide type="bottom" id="chW-oX-H9Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T2H-8A-7nz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LPk-2g-tpT">
-                                <rect key="frame" x="0.0" y="68" width="414" height="668"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="BQQ-aG-uaZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O6h-gQ-R9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2240.5797101449275" y="-108.42391304347827"/>
-        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -330,6 +258,9 @@
                                     <tabBarItem systemItem="favorites" id="HTN-ju-IyE"/>
                                 </items>
                             </tabBar>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkR-rb-Xqf">
+                                <rect key="frame" x="39" y="251" width="296" height="131"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blE-nk-rgs">
                                 <rect key="frame" x="39" y="207" width="296" height="131"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -349,6 +280,21 @@
                                     <action selector="favoriteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Abx-wO-9Gd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-vg-Ufi">
+                                <rect key="frame" x="170" y="494" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="Fill 71"/>
+                                <connections>
+                                    <action selector="favButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iF5-PU-i3w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcD-GC-sdg">
+                                <rect key="frame" x="170" y="586" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="Fill 71 Full"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -356,11 +302,15 @@
                             <constraint firstItem="PGa-TA-2p9" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" id="8l3-hT-Rdr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xlh-dq-ect" secondAttribute="bottom" constant="40" id="BRx-7P-eL3"/>
                             <constraint firstItem="vo8-JJ-Ksi" firstAttribute="top" secondItem="blE-nk-rgs" secondAttribute="bottom" constant="45" id="Gxw-LO-HC3"/>
+                            <constraint firstItem="hkR-rb-Xqf" firstAttribute="width" secondItem="blE-nk-rgs" secondAttribute="width" id="MEd-BO-ahu"/>
+                            <constraint firstItem="hkR-rb-Xqf" firstAttribute="centerY" secondItem="blE-nk-rgs" secondAttribute="centerY" id="NvJ-JB-t6G"/>
                             <constraint firstItem="blE-nk-rgs" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" constant="95" id="OYY-Ro-sv8"/>
                             <constraint firstItem="eeI-U6-hfe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PNJ-m2-dQd"/>
+                            <constraint firstItem="hkR-rb-Xqf" firstAttribute="centerX" secondItem="blE-nk-rgs" secondAttribute="centerX" id="ZVA-Q8-psO"/>
                             <constraint firstAttribute="trailing" secondItem="blE-nk-rgs" secondAttribute="trailing" constant="40" id="jL3-88-UtN"/>
                             <constraint firstItem="blE-nk-rgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="mcE-LM-hhs"/>
                             <constraint firstItem="Xlh-dq-ect" firstAttribute="centerX" secondItem="vo8-JJ-Ksi" secondAttribute="centerX" id="qWy-7H-JUG"/>
+                            <constraint firstItem="hkR-rb-Xqf" firstAttribute="height" secondItem="blE-nk-rgs" secondAttribute="height" id="reZ-Bg-aGB"/>
                             <constraint firstItem="eeI-U6-hfe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xrm-wR-lQt"/>
                             <constraint firstItem="PGa-TA-2p9" firstAttribute="centerX" secondItem="eeI-U6-hfe" secondAttribute="centerX" id="zwo-Sg-gXY"/>
                         </constraints>
@@ -369,35 +319,20 @@
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
                         <outlet property="dateLabel" destination="PGa-TA-2p9" id="YBe-KQ-oXB"/>
+                        <outlet property="gestureView" destination="hkR-rb-Xqf" id="Lga-6J-7gr"/>
                         <outlet property="headerLabel" destination="eeI-U6-hfe" id="eEe-iQ-rUE"/>
                         <outlet property="quoteLabel" destination="blE-nk-rgs" id="9Mq-jZ-3w1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2057" y="-98"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aYS-aL-nlc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jjm-78-pNQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AqL-Ny-14q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="HNR-gO-nY0" kind="relationship" relationship="rootViewController" id="Aps-ya-pxE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IVQ-yl-ipK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1333.3333333333335" y="-108.42391304347827"/>
+            <point key="canvasLocation" x="-2059.4202898550725" y="-98.641304347826093"/>
         </scene>
     </scenes>
     <resources>
         <image name="Fav" width="32" height="32"/>
+        <image name="Fill 71" width="32" height="32"/>
+        <image name="Fill 71 Full" width="32" height="32"/>
         <image name="HomeLine" width="30" height="32"/>
         <image name="Settings" width="30" height="30"/>
     </resources>
