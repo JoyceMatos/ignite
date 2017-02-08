@@ -25,12 +25,6 @@ class QuoteViewController: UIViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func favoriteButton(_ sender: Any) {
-        guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
-        let author = authorLabel.text
-        save(quote: quote, author: author)
-    }
-    
     @IBAction func favButton(_ sender: UIButton) {
         if sender.currentImage == #imageLiteral(resourceName: "Fill 71") {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -41,10 +35,16 @@ class QuoteViewController: UIViewController {
                 },
                            completion: nil)
             
-            
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
+            
+            guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+            let author = authorLabel.text
+            save(quote: quote, author: author)
+            
         } else {
-            sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
+           // sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
+            
+            // TODO: - Unfavorite/delete quote
         }
     }
     
