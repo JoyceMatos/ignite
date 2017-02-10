@@ -35,7 +35,7 @@ class QuoteViewController: UIViewController {
             
             guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
             let author = authorLabel.text
-            save(quote: quote, author: author)
+            favoriteStore.saveToCoreDate(quote: quote, author: author)
             
         } else {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -79,11 +79,8 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dateLabel.isHidden = true
-        
         initializeGesture()
-        
         // Notify when app becomes active
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
@@ -111,26 +108,6 @@ class QuoteViewController: UIViewController {
         authorLabel.sizeToFit()
     }
     
-    // MARK:- Core Data Methods
-    
-    func save(quote: String, author: String?) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
-        let favQuote = NSManagedObject(entity: entity, insertInto: managedContext)
-        favQuote.setValue(quote, forKeyPath: "quote")
-        favQuote.setValue(author, forKey: "author")
-        
-        do {
-            try managedContext.save()
-            favoriteStore.favorites.append(favQuote)
-            print("Saved")
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
     
     // MARK:- Helper Methods
     
@@ -183,48 +160,39 @@ class QuoteViewController: UIViewController {
         // NOTE - Works but is a little delayed by the seconds
         
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
-            print ("Chosen Date is earlier than currentDate")
-            print("New TestDate is one step closer to displaying quote")
-            
+
             if userHasSeenQuote {
-                print("ORDER ASCENDING IF -- User has seen quote: Keep current Quote")
                 hasSeenQuote(true)
+                
             } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                ("ORDER ASCENDING 2")
                 showNewQuote()
                 hasSeenQuote(true)
+                
             } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
-                ("ORDER ASCENDING 3")
                 showNewQuote()
                 hasSeenQuote(true)
+                
             } else if chosenHour < currentHour && !userHasSeenQuote {
-                ("ORDER ASCENDING 4")
                 showNewQuote()
                 hasSeenQuote(true)
             }
             
         } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
-            print ("Chosen Time is later than currentDate's time")
             
             if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                print("ORDER DESCENDING 1 -- Show Quote \(userHasSeenQuote)")
                 showNewQuote()
                 hasSeenQuote(true)
                 
             } else if chosenHour == currentHour && chosenMin > currentMin {
-                print("ORDER DESCENDING 2 -- Ehh, gotta wait a little longer")
                 hasSeenQuote(false)
                 
             } else if chosenHour > currentHour {
-                print("ORDER DESCENDING 3 -- Ehh, gotta wait a little longer")
                 hasSeenQuote(false)
             }
             
         } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
-            print ("Chosen Time is equal to currentDate's time")
             showNewQuote()
             hasSeenQuote(true)
-            
         }
     }
     

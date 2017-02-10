@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class FavoritesDataStore {
     
@@ -15,5 +16,27 @@ class FavoritesDataStore {
     var favorites: [NSManagedObject] = []
     
     private init() { }
+    
+    func saveToCoreDate(quote: String, author: String?) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
+        let favQuote = NSManagedObject(entity: entity, insertInto: managedContext)
+        favQuote.setValue(quote, forKeyPath: "quote")
+        favQuote.setValue(author, forKey: "author")
+        
+        do {
+            try managedContext.save()
+            favorites.append(favQuote)
+            print("Saved")
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    
+
     
 }

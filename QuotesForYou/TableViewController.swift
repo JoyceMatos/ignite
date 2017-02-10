@@ -105,9 +105,7 @@ class TableViewController: UITableViewController {
             shareArray.append(shareAuthor)
 
             let activityVC = UIActivityViewController(activityItems: shareArray, applicationActivities: nil)
-            
-          //  activityVC.excludedActivityTypes =
-            
+                        
             //TODO: - This is for ipads, must adjust
             if let popoverController = activityVC.popoverPresentationController {
                 popoverController.sourceView = self.view as? UIView

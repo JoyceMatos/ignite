@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class QuoteDataStore {
     
     static let shared = QuoteDataStore()
@@ -21,4 +22,6 @@ class QuoteDataStore {
             completion()
         }
     }
+    
+    
 }
