@@ -22,7 +22,14 @@ class ChangeTimeViewController: UIViewController {
         
         // TODO: - Change animation and add Time image spin
         sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in sender.transform = .identity }, completion: nil)
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in
+            
+            
+            sender.transform = .identity
+          //  sender.setImage(#imageLiteral(resourceName: "Time"), for: .normal)
+            
+            
+            }, completion: nil)
         
         let chosenTimeforDay = timePicker.date
         let dateFormatter = DateFormatter()

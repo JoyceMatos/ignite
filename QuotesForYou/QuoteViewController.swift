@@ -38,10 +38,26 @@ class QuoteViewController: UIViewController {
             save(quote: quote, author: author)
             
         } else {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
             
-            // TODO: - Unfavorite/delete quote
-           // sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
-            
+            for (index, value) in self.favoriteStore.favorites.enumerated() {
+                
+                guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+                
+                if quote == value.value(forKey: "quote") as! String {
+                    context.delete(favoriteStore.favorites[index])
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    
+                    do {
+                        self.favoriteStore.favorites = try context.fetch(fetchRequest)
+                    } catch {
+                        print("Fetching Failed")
+                    }
+                }
+            }
+            sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
         }
     }
     

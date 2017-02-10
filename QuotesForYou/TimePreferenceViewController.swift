@@ -20,7 +20,7 @@ class TimePreferenceViewController: UIViewController{
     let currentDate = Date()
     let chosenTimeforDay = Date()
     
-    @IBAction func setTimeButton(_ sender: Any) {
+    @IBAction func setTimeButton(_ sender: UIButton) {
         
         // TODO: - Change animation and add Time image spin
         sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
