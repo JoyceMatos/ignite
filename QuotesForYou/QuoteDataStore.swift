@@ -23,5 +23,12 @@ class QuoteDataStore {
         }
     }
     
+   class func hasSeenQuote(_ value: Bool = false) {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(value, forKey: "hasSeenQuote")
+        print("USERDEFAULT: hasSeenQuote ----> \(value)")
+        
+    }
     
 }

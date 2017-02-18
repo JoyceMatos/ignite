@@ -13,7 +13,7 @@ class QuoteViewController: UIViewController {
     
     let store = QuoteDataStore.shared
     let favoriteStore = FavoritesDataStore.shared
-    let chosenTimeforDay = Date()
+    //   let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -28,7 +28,7 @@ class QuoteViewController: UIViewController {
     @IBAction func favButton(_ sender: UIButton) {
         if sender.currentImage == #imageLiteral(resourceName: "Fill 71") {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-
+            
             UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in sender.transform = .identity }, completion: nil)
             
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
@@ -61,7 +61,7 @@ class QuoteViewController: UIViewController {
         }
     }
     
- 
+    
     // TODO: - Add pan gesture
     func initializeGesture() {
         
@@ -141,59 +141,13 @@ class QuoteViewController: UIViewController {
     
     func compareTime() {
         let currentDate = Date()
+        var timeManager = TimeManager()
         
-        guard let userHasSeenQuote = defaults.object(forKey: "hasSeenQuote") as? Bool else { print("hasSeenQuote not found- byedefault"); return }
-        
-        print("-==-=-=-=- USER HAS SEEN QUOTE: \(userHasSeenQuote)-=-=-=-=-=-=")
-        
-        // Get value from user defaults
-        guard let chosenTimeforDay = defaults.object(forKey: "chosenTime") as? Date else { print("CompareTime: byeDefault"); return }
-        
-        let chosenHour = Calendar.current.component(.hour, from: chosenTimeforDay)
-        let chosenMin = Calendar.current.component(.minute, from: chosenTimeforDay)
-        
-        let currentHour = Calendar.current.component(.hour, from: currentDate)
-        let currentMin = Calendar.current.component(.minute, from: currentDate)
-        print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
-        
-        // Compare dates
-        // NOTE - Works but is a little delayed by the seconds
-        
-        if chosenTimeforDay.compare(currentDate) == .orderedAscending {
-
-            if userHasSeenQuote {
-                hasSeenQuote(true)
-                
-            } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                showNewQuote()
-                hasSeenQuote(true)
-                
-            } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
-                showNewQuote()
-                hasSeenQuote(true)
-                
-            } else if chosenHour < currentHour && !userHasSeenQuote {
-                showNewQuote()
-                hasSeenQuote(true)
-            }
-            
-        } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
-            
-            if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                showNewQuote()
-                hasSeenQuote(true)
-                
-            } else if chosenHour == currentHour && chosenMin > currentMin {
-                hasSeenQuote(false)
-                
-            } else if chosenHour > currentHour {
-                hasSeenQuote(false)
-            }
-            
-        } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
-            showNewQuote()
-            hasSeenQuote(true)
+        timeManager.compareTime(using: currentDate) {
+            self.showNewQuote()
         }
+        
+        
     }
     
     
@@ -215,12 +169,6 @@ class QuoteViewController: UIViewController {
         
     }
     
-    func hasSeenQuote(_ value: Bool = false) {
-        
-        defaults.set(value, forKey: "hasSeenQuote")
-        print("USERDEFAULT: hasSeenQuote ----> \(value)")
-        
-    }
     
 }
 

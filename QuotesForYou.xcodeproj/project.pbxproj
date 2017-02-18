@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2501A90E1E203EF700C7CE28 /* DailyNotification.swift */; };
+		251BC0A41E57E176008D439B /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BC0A31E57E176008D439B /* TimeManager.swift */; };
 		253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */; };
 		253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BEB1E1C729400D82A84 /* TableViewController.swift */; };
 		253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2501A90E1E203EF700C7CE28 /* DailyNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNotification.swift; sourceTree = "<group>"; };
+		251BC0A31E57E176008D439B /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesDataStore.swift; sourceTree = "<group>"; };
 		253B0BEB1E1C729400D82A84 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2501A90E1E203EF700C7CE28 /* DailyNotification.swift */,
 				253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */,
 				257A73421E2E863F005EAB30 /* StoryboardID.swift */,
+				251BC0A31E57E176008D439B /* TimeManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */,
 				257A73411E2E75A7005EAB30 /* AppController.swift in Sources */,
 				253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */,
+				251BC0A41E57E176008D439B /* TimeManager.swift in Sources */,
 				253B0BEC1E1C729400D82A84 /* TableViewController.swift in Sources */,
 				253B0BEA1E1C6F5E00D82A84 /* FavoritesDataStore.swift in Sources */,
 				25A136F51E4A6B5C002C6799 /* RandomViewController.swift in Sources */,
