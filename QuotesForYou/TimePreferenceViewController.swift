@@ -20,6 +20,22 @@ class TimePreferenceViewController: UIViewController{
     let currentDate = Date()
     let chosenTimeforDay = Date()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        instructionLabel.sizeToFit()
+        timePicker.datePickerMode = .time
+        
+        // Request authorization for notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
+            
+            if !didAllow {
+                // TODO:- notify user's that they will be unable to receive notifications
+            }
+        }
+    }
+
+    
     @IBAction func setTimeButton(_ sender: UIButton) {
         
         // TODO: - Change animation and add Time image spin
@@ -43,36 +59,11 @@ class TimePreferenceViewController: UIViewController{
         dailyNotifier.scheduleLocal(on: storredDefault)
         
         // hasSeenQuote set to false
-        hasSeenQuote()
+        QuoteDataStore.hasSeenQuote()
         
         performSegue(withIdentifier: "showTabBar", sender: self)
 
         }
     
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        instructionLabel.sizeToFit()
-        timePicker.datePickerMode = .time
-    
-        // Request authorization for notification
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
-            
-            if !didAllow {
-                // TODO:- notify user's that they will be unable to receive notifications
-            }
-        }
-    }
-    
-    // This is called twice and can be turned into a protocol
-    func hasSeenQuote(_ value: Bool = false) {
-        
-        defaults.set(value, forKey: "hasSeenQuote")
-        print("USERDEFAULT: hasSeenQuote ----> \(value)")
-        
-    }
-
 
 }

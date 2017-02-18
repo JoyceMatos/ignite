@@ -13,7 +13,6 @@ class QuoteViewController: UIViewController {
     
     let store = QuoteDataStore.shared
     let favoriteStore = FavoritesDataStore.shared
-    //   let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -22,6 +21,34 @@ class QuoteViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var gestureView: UIView!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dateLabel.isHidden = true
+        initializeGesture()
+        beginToObserve()
+        
+    }
+    
+    // MARK: - Notification Methods
+    
+    func applicationDidBecomeActive(_ notification: NSNotification) {
+        
+        QuoteDataStore.retrieveQuote(with: {
+            self.showNewQuote()
+        }) {
+            self.configureViews()
+        }
+        
+        // retrieveQuote()
+        compareTime()
+    }
+    
+    func beginToObserve() {
+        // Notify when app becomes active
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        
+    }
     
     // MARK: - Action Methods
     
@@ -63,6 +90,7 @@ class QuoteViewController: UIViewController {
     
     
     // TODO: - Add pan gesture
+    
     func initializeGesture() {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(recognizeLongPressGesture))
@@ -76,21 +104,6 @@ class QuoteViewController: UIViewController {
         
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dateLabel.isHidden = true
-        initializeGesture()
-        // Notify when app becomes active
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
-    }
-    
-    // MARK: - Notification Methods
-    func applicationDidBecomeActive(_ notification: NSNotification) {
-        retrieveQuote()
-        compareTime()
-    }
     
     // MARK:- View Methods
     
@@ -111,32 +124,15 @@ class QuoteViewController: UIViewController {
     
     // MARK:- Helper Methods
     
-    func retrieveQuote() {
-        
-        let quote = defaults.object(forKey: "quoteOfTheDay") as? String
-        let author = defaults.object(forKey: "authorOfTheDay") as? String
-        
-        if quote == nil && author == nil {
-            
-            showNewQuote()
-            
-        } else {
-            print("---Keep showing current quote--")
-            configureViews()
-        }
-    }
-    
     func showNewQuote() {
         
         self.store.getQuotes {
-            print("GETTING CALLED")
             DispatchQueue.main.async {
                 
-                self.storeQuoteToUserDefaults()
+                QuoteDataStore.storeQuoteToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
                 self.configureViews()
             }
         }
-        
     }
     
     func compareTime() {
@@ -150,24 +146,6 @@ class QuoteViewController: UIViewController {
         
     }
     
-    
-    // MARK:- User Default Methods
-    
-    func storeQuoteToUserDefaults() {
-        
-        guard let quote = store.quote?.quote else { print("leaving user defaults"); return }
-        guard let author = store.quote?.author else { print("leaving user defaults"); return }
-        
-        defaults.set(quote, forKey: "quoteOfTheDay")
-        defaults.set(author, forKey: "authorOfTheDay")
-        
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("StoreQuote: byeDefault"); return }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("StoreAuthor: byeDefault"); return }
-        
-        print("This is the quote default: \(storedQuote)")
-        print("This is the author default: \(storedAuthor)")
-        
-    }
     
     
 }

@@ -13,6 +13,8 @@ class QuoteDataStore {
     
     static let shared = QuoteDataStore()
     var quote: Quote?
+    static let defaults = UserDefaults.standard
+    
     
     func getQuotes(completion: @escaping () -> Void) {
         
@@ -23,12 +25,41 @@ class QuoteDataStore {
         }
     }
     
-   class func hasSeenQuote(_ value: Bool = false) {
-        let defaults = UserDefaults.standard
+    static func hasSeenQuote(_ value: Bool = false) {
         
         defaults.set(value, forKey: "hasSeenQuote")
         print("USERDEFAULT: hasSeenQuote ----> \(value)")
         
+    }
+    
+    static func storeQuoteToUserDefaults(using currentQuote: String?, and currentAuthor: String?) {
+        
+        guard let quote = currentQuote else { print("leaving user defaults"); return }
+        guard let author = currentAuthor else { print("leaving user defaults"); return }
+        
+        defaults.set(quote, forKey: "quoteOfTheDay")
+        defaults.set(author, forKey: "authorOfTheDay")
+        
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("StoreQuote: byeDefault"); return }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("StoreAuthor: byeDefault"); return }
+        
+        print("This is the quote default: \(storedQuote)")
+        print("This is the author default: \(storedAuthor)")
+        
+    }
+    
+    static func retrieveQuote(with completion1: @escaping () -> Void, and completion2: @escaping () -> Void) {
+        
+        let quote = defaults.object(forKey: "quoteOfTheDay") as? String
+        let author = defaults.object(forKey: "authorOfTheDay") as? String
+        
+        if quote == nil && author == nil {
+            
+            completion1()
+        } else {
+            print("---Keep showing current quote--")
+            completion2()
+        }
     }
     
 }

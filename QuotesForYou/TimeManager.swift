@@ -38,17 +38,17 @@ class TimeManager {
             } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
                 completion()
                 QuoteDataStore.hasSeenQuote(true)
-
+                
                 
             } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
                 completion()
                 QuoteDataStore.hasSeenQuote(true)
-
+                
                 
             } else if chosenHour < currentHour && !userHasSeenQuote {
                 completion()
                 QuoteDataStore.hasSeenQuote(true)
-
+                
             }
             
         } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
@@ -59,11 +59,11 @@ class TimeManager {
                 
             } else if chosenHour == currentHour && chosenMin > currentMin {
                 QuoteDataStore.hasSeenQuote(false)
-
+                
                 
             } else if chosenHour > currentHour {
                 QuoteDataStore.hasSeenQuote(false)
-
+                
             }
             
         } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
@@ -73,6 +73,6 @@ class TimeManager {
         
     }
     
- 
+    
     
 }
