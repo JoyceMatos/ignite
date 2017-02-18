@@ -36,7 +36,49 @@ class FavoritesDataStore {
         
     }
     
+    func fetchFavorites() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
+        
+        do {
+            favorites = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
     
-
+    func deleteFavorite(quote: NSManagedObject) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
+        
+       // let quote = self.store.favorites[indexPath.row]
+        context.delete(quote)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        do {
+            favorites = try context.fetch(fetchRequest)
+        } catch {
+            print("Fetching Failed")
+        }
+        
+    }
     
+    func shareFavorite(quote: NSManagedObject) -> [String] {
+        
+        //  let quote = self.store.favorites[indexPath.row]
+        let message = "Check out my quote of the day: "
+        var shareArray = [String]()
+        
+        if let shareQuote = quote.value(forKey: "quote") as? String, let shareAuthor = quote.value(forKey: "author") as? String {
+            
+            shareArray.append(message)
+            shareArray.append("\"\(shareQuote)\" - ")
+            shareArray.append(shareAuthor)
+        }
+        return shareArray
+    }
 }

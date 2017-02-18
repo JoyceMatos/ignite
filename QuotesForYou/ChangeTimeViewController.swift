@@ -17,6 +17,12 @@ class ChangeTimeViewController: UIViewController {
     let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        instructionLabel.sizeToFit()
+        timePicker.datePickerMode = .time
+    }
     
     @IBAction func setTimeButton(_ sender: UIButton) {
         
@@ -48,14 +54,6 @@ class ChangeTimeViewController: UIViewController {
         dailyNotifier.scheduleLocal(on: storredDefault)
         
         
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        instructionLabel.sizeToFit()
-        timePicker.datePickerMode = .time
     }
     
     
