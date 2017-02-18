@@ -40,14 +40,12 @@ class QuoteViewController: UIViewController {
             self.configureViews()
         }
         
-        // retrieveQuote()
         compareTime()
     }
     
     func beginToObserve() {
-        // Notify when app becomes active
+
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name:NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
     }
     
     // MARK: - Action Methods
@@ -126,11 +124,10 @@ class QuoteViewController: UIViewController {
         timeManager.compareTime(using: currentDate) {
             self.showNewQuote()
         }
-        
-        
     }
-    
+
     
     
 }
+
 

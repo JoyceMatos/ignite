@@ -26,15 +26,11 @@ class TimePreferenceViewController: UIViewController{
         instructionLabel.sizeToFit()
         timePicker.datePickerMode = .time
         
-        // Request authorization for notification
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
-            
-            if !didAllow {
-                // TODO:- notify user's that they will be unable to receive notifications
-            }
-        }
-    }
+        requestAuthorization()
 
+    }
+    
+    // MARK: - Action methods
     
     @IBAction func setTimeButton(_ sender: UIButton) {
         
@@ -64,6 +60,20 @@ class TimePreferenceViewController: UIViewController{
         performSegue(withIdentifier: "showTabBar", sender: self)
 
         }
+    
+  //  MARK: - Notification methods
+    
+    func requestAuthorization() {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
+            
+            if !didAllow {
+                // TODO:- notify user's that they will be unable to receive notifications
+            }
+        }
+
+        
+    }
     
 
 }
