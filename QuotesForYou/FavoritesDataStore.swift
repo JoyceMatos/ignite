@@ -17,7 +17,7 @@ class FavoritesDataStore {
     
     private init() { }
     
-    func saveToCoreDate(quote: String, author: String?) {
+    func favorite(quote: String, author: String?) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -32,6 +32,27 @@ class FavoritesDataStore {
             print("Saved")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func unFavorite(selected quote: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
+        
+        for (index, value) in favorites.enumerated() {
+            
+            if quote == value.value(forKey: "quote") as! String {
+                context.delete(favorites[index])
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                
+                do {
+                    favorites = try context.fetch(fetchRequest)
+                } catch {
+                    print("Fetching Failed")
+                }
+            }
         }
         
     }
@@ -55,7 +76,6 @@ class FavoritesDataStore {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
         
-       // let quote = self.store.favorites[indexPath.row]
         context.delete(quote)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -69,7 +89,6 @@ class FavoritesDataStore {
     
     func shareFavorite(quote: NSManagedObject) -> [String] {
         
-        //  let quote = self.store.favorites[indexPath.row]
         let message = "Check out my quote of the day: "
         var shareArray = [String]()
         
