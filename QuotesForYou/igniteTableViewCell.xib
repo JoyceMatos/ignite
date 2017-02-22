@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,34 +19,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="348" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzz-JP-RnQ">
-                        <rect key="frame" x="28" y="40" width="278" height="75"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confucious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoK-7F-46p">
-                        <rect key="frame" x="117" y="148" width="87" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
                         <rect key="frame" x="295" y="8" width="45" height="46"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="CFR-WH-z7a"/>
+                            <constraint firstAttribute="width" constant="45" id="Swx-pw-5Bh"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                         <state key="normal" image="Fill 71"/>
                         <connections>
                             <action selector="favoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KVy-NH-VPf"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confucious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHu-zg-8tV">
+                        <rect key="frame" x="130" y="150" width="87" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CPw-fd-VWV"/>
+                            <constraint firstAttribute="width" constant="87" id="jex-sn-Rli"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oka-yq-744">
+                        <rect key="frame" x="34" y="51" width="278" height="75"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="RHu-zg-8tV" secondAttribute="bottom" constant="19" id="Bg8-OP-rjV"/>
+                    <constraint firstItem="oka-yq-744" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="43" id="CEe-bc-KGc"/>
+                    <constraint firstItem="goh-LZ-s3h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="M7Q-YV-FLh"/>
+                    <constraint firstItem="RHu-zg-8tV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MLw-uj-rkR"/>
+                    <constraint firstItem="oka-yq-744" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="26" id="hgc-QZ-hb1"/>
+                    <constraint firstItem="oka-yq-744" firstAttribute="centerX" secondItem="RHu-zg-8tV" secondAttribute="centerX" id="pTl-Pt-Chg"/>
+                    <constraint firstItem="goh-LZ-s3h" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yOj-I5-m7D"/>
+                    <constraint firstItem="RHu-zg-8tV" firstAttribute="top" secondItem="oka-yq-744" secondAttribute="bottom" constant="24" id="ytg-1L-oZP"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="authorLabel" destination="BoK-7F-46p" id="eKP-oS-oOp"/>
-                <outlet property="quoteLabel" destination="qzz-JP-RnQ" id="xah-ZY-OeB"/>
+                <outlet property="authorLabel" destination="RHu-zg-8tV" id="EAK-8G-zIF"/>
+                <outlet property="quoteLabel" destination="oka-yq-744" id="beQ-gw-tYu"/>
             </connections>
             <point key="canvasLocation" x="49" y="112.5"/>
         </tableViewCell>

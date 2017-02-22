@@ -13,7 +13,6 @@ class igniteTableViewCell: UITableViewCell {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,10 +35,16 @@ class igniteTableViewCell: UITableViewCell {
             
             guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
             let author = authorLabel.text
+            
+            // TODO: Figure out how to store to favorite
+            
           //  favoriteStore.favorite(quote: quote, author: author)
             
         } else {
             guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+            
+            // TODO: Figure out how to store to favorite
+
             
          //   favoriteStore.unFavorite(selected: quote)
             sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)

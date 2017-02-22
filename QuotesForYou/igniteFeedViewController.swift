@@ -40,6 +40,16 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
     }
+    
+    @IBAction func postButton(_ sender: Any) {
+        
+        // TODO: - Show window with text field input
+        
+        
+        
+        
+    }
+    
 
 
 
