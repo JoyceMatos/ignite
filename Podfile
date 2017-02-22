@@ -6,7 +6,8 @@ target 'QuotesForYou' do
   use_frameworks!
 
   # Pods for QuotesForYou
-    pod 'RealmSwift'
+    pod 'Firebase'
+    pod 'Firebase/Database'
 
 
     post_install do |installer|
