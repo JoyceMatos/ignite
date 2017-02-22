@@ -12,15 +12,20 @@ class Quote {
     
     var quote: String?
     var author: String?
-    var quoteLink: String?
     
     init(dictionary: [String : String]) {
         
         if let quote = dictionary["quoteText"], let author = dictionary["quoteAuthor"], let link = dictionary["quoteLink"] {
         self.quote = quote
         self.author = author
-        self.quoteLink = link
         }
+    }
+    
+    init(with quote: String, author: String) {
+        
+        self.quote = quote
+        self.author = author
+        
     }
  
 }

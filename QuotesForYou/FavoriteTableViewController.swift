@@ -9,13 +9,13 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController {
+class FavoriteTableViewController: UITableViewController {
 
     let store = FavoritesDataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189
 

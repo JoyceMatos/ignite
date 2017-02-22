@@ -121,8 +121,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6c8-Ou-6vp"/>
-                        <segue destination="7Sa-Kx-gfS" kind="relationship" relationship="viewControllers" id="HGN-04-0qm"/>
                         <segue destination="66J-nr-czc" kind="relationship" relationship="viewControllers" id="SbC-GH-lDI"/>
+                        <segue destination="7Sa-Kx-gfS" kind="relationship" relationship="viewControllers" id="HGN-04-0qm"/>
                         <segue destination="EaL-Ky-f19" kind="relationship" relationship="viewControllers" id="hCr-Sy-luU"/>
                     </connections>
                 </tabBarController>
@@ -133,7 +133,7 @@
         <!--Favorite-->
         <scene sceneID="IfV-Hp-Z8d">
             <objects>
-                <tableViewController id="7Sa-Kx-gfS" customClass="TableViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7Sa-Kx-gfS" customClass="FavoriteTableViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Cd-GW-Jtt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1533" y="-215"/>
+            <point key="canvasLocation" x="-1368" y="-238"/>
         </scene>
         <!--Settings-->
         <scene sceneID="YW6-kh-6S2">
@@ -238,12 +238,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaR-MT-LI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858" y="-215"/>
+            <point key="canvasLocation" x="-629" y="-238"/>
         </scene>
         <!--Item-->
         <scene sceneID="RBf-J5-NrQ">
             <objects>
-                <viewController id="66J-nr-czc" sceneMemberID="viewController">
+                <viewController id="66J-nr-czc" customClass="igniteFeedViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5z-hA-d5f"/>
                         <viewControllerLayoutGuide type="bottom" id="omy-uG-Fma"/>
@@ -261,39 +261,18 @@
                                         <rect key="frame" x="0.0" y="28" width="422" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgQ-G1-xI1" id="Owo-6N-JQ7">
-                                            <rect key="frame" x="0.0" y="0.0" width="422" height="199.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="422" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye0-0v-Qul">
-                                                    <rect key="frame" x="358" y="8" width="45" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                    <state key="normal" image="Fill 71"/>
-                                                    <connections>
-                                                        <action selector="favButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xk4-Io-WvO"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-7T-IYs">
-                                                    <rect key="frame" x="63" y="8" width="296" height="131"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confucius" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd1-J0-Gfu">
-                                                    <rect key="frame" x="172" y="137" width="78" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
+                                <rect key="frame" x="158" y="28" width="75" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-C9-WeF">
-                                <rect key="frame" x="361" y="42" width="45" height="46"/>
+                                <rect key="frame" x="362" y="50" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="greyPost"/>
@@ -301,18 +280,17 @@
                                     <action selector="favButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uBS-I3-lFs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
-                                <rect key="frame" x="158" y="28" width="75" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="x35-Y7-gmX"/>
+                    <connections>
+                        <outlet property="tableView" destination="NjA-DS-Bhy" id="HxO-EM-8Ls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBj-3F-J0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="-215"/>
+            <point key="canvasLocation" x="-2071.0144927536235" y="-238.04347826086959"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -403,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2217" y="-185"/>
+            <point key="canvasLocation" x="-2767" y="-238"/>
         </scene>
     </scenes>
     <resources>
