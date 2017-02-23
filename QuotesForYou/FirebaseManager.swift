@@ -32,5 +32,20 @@ final class FirebaseManager {
   
     }
     
+    func createQuote(from id: String) {
+        
+        let feedRef = FIRDatabase.database().reference().child("newsfeed").observe(.value, with: { (snapshot) in
+            
+         // TODO: - get dictionary values 
+            
+            
+            
+        })
+        
+        
+    }
+    
+    
+    
     
 }
