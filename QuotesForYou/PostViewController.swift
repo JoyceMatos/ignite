@@ -19,26 +19,25 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - Action methods
     
     @IBAction func postButton(_ sender: Any) {
-        
-        
         guard let quote = addQuoteTextView.text else { return }
         guard let author = addAuthorTextField.text else { return }
         
        // TODO: - Check to see if quote is valid
         
         firebaseManager.add(quote: quote, author: author)
-        
     }
   
-    @IBAction func exitButton(_ sender: Any) {
-            dismiss(animated: true, completion: nil)
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+
     }
+    
     
     
 
