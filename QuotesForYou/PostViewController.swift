@@ -10,6 +10,8 @@ import UIKit
 
 class PostViewController: UIViewController {
     
+    let firebaseManager = FirebaseManager.shared
+    
     @IBOutlet weak var addQuoteTextView: UITextView!
     @IBOutlet weak var addAuthorTextField: UITextField!
     
@@ -24,9 +26,13 @@ class PostViewController: UIViewController {
     
     @IBAction func postButton(_ sender: Any) {
         
-        // TODO: - Add functionality for posting a quote
-        // TODO: - Check to see if quote is valid 
-
+        
+        guard let quote = addQuoteTextView.text else { return }
+        guard let author = addAuthorTextField.text else { return }
+        
+       // TODO: - Check to see if quote is valid
+        
+        firebaseManager.add(quote: quote, author: author)
         
     }
   
