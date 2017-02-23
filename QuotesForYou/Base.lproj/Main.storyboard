@@ -339,14 +339,14 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
                                         <rect key="frame" x="23" y="55" width="365" height="206"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
                                         <rect key="frame" x="23" y="274" width="369" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -399,6 +399,8 @@
                     <connections>
                         <outlet property="addAuthorTextField" destination="rto-ZK-ftk" id="uXr-yR-iIZ"/>
                         <outlet property="addQuoteTextView" destination="X9N-ZF-Aig" id="Ngl-hM-X0f"/>
+                        <outlet property="cancel" destination="8hZ-gQ-zoK" id="ILL-GJ-iLg"/>
+                        <outlet property="post" destination="h5c-Ij-bUW" id="qnt-5B-axR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gc-Sb-Cbg" userLabel="First Responder" sceneMemberID="firstResponder"/>

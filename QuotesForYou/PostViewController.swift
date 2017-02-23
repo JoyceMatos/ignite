@@ -8,18 +8,40 @@
 
 import UIKit
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     let firebaseManager = FirebaseManager.shared
     
     @IBOutlet weak var addQuoteTextView: UITextView!
     @IBOutlet weak var addAuthorTextField: UITextField!
-    
+    @IBOutlet weak var post: UIButton!
+    @IBOutlet weak var cancel: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addQuoteTextView.delegate = self
+        addAuthorTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
+    
+    // MARK: - Delegate methods
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        addQuoteTextView.text = nil
+        addQuoteTextView.textColor = UIColor.orange
+        post.isEnabled = true
+        cancel.isEnabled = true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        addAuthorTextField.text = nil
+        addAuthorTextField.textColor = UIColor.orange
+        post.isEnabled = true
+        cancel.isEnabled = true
+        
+    }
+    
 
     // MARK: - Action methods
     
@@ -37,8 +59,16 @@ class PostViewController: UIViewController {
         dismiss(animated: true, completion: nil)
 
     }
-    
-    
-    
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
