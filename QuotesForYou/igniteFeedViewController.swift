@@ -12,6 +12,7 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     let igniteCell = igniteTableViewCell()
+    let firebaseManager = FirebaseManager.shared
     var content = [Quote]()
     
 
@@ -35,6 +36,8 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         content.append(quote2)
         content.append(quote3)
         content.append(quote4)
+        
+        firebaseManager.createQuote()
 
         
         

@@ -32,13 +32,19 @@ final class FirebaseManager {
   
     }
     
-    func createQuote(from id: String) {
+    func createQuote() {
         
-        let feedRef = FIRDatabase.database().reference().child("newsfeed").observe(.value, with: { (snapshot) in
+        let feedRef = FIRDatabase.database().reference().child("newsfeed").observe(.childAdded, with: { (snapshot) in
             
          // TODO: - get dictionary values 
             
+        let quoteDict = snapshot.value as! [String: Any]
             
+        let quote = quoteDict["quote"]
+        let author = quoteDict["author"]
+            print(quote)
+            print(author)
+
             
         })
         

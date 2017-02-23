@@ -333,32 +333,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
                                         <rect key="frame" x="23" y="55" width="365" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
                                         <rect key="frame" x="23" y="274" width="369" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
                                         <rect key="frame" x="280" y="308" width="31" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Post"/>
                                         <connections>
                                             <action selector="postButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="JCF-3s-Ydd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
                                         <rect key="frame" x="85" y="305" width="52" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -368,33 +373,9 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="8hZ-gQ-zoK" firstAttribute="top" secondItem="rto-ZK-ftk" secondAttribute="bottom" constant="33" id="1Sv-lk-BxD"/>
-                                    <constraint firstItem="rto-ZK-ftk" firstAttribute="centerX" secondItem="X9N-ZF-Aig" secondAttribute="centerX" id="3Ax-nP-ZIB"/>
-                                    <constraint firstAttribute="bottom" secondItem="8hZ-gQ-zoK" secondAttribute="bottom" constant="29" id="5WY-OX-zDD"/>
-                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="width" secondItem="UvD-W8-E5J" secondAttribute="width" constant="-340" id="62Q-Hs-gmM"/>
-                                    <constraint firstItem="X9N-ZF-Aig" firstAttribute="centerX" secondItem="UvD-W8-E5J" secondAttribute="centerX" id="HT5-Hm-9aq"/>
-                                    <constraint firstItem="rto-ZK-ftk" firstAttribute="height" secondItem="X9N-ZF-Aig" secondAttribute="height" multiplier="0.15" id="IcC-HY-3Wm"/>
-                                    <constraint firstItem="X9N-ZF-Aig" firstAttribute="height" secondItem="UvD-W8-E5J" secondAttribute="height" multiplier="0.6" id="czJ-XK-xjY"/>
-                                    <constraint firstAttribute="bottom" secondItem="h5c-Ij-bUW" secondAttribute="bottom" constant="32" id="ghS-0p-QQe"/>
-                                    <constraint firstItem="8hZ-gQ-zoK" firstAttribute="leading" secondItem="UvD-W8-E5J" secondAttribute="leading" constant="85" id="hBp-h7-gWI"/>
-                                    <constraint firstAttribute="trailing" secondItem="h5c-Ij-bUW" secondAttribute="trailing" constant="103" id="hjg-Ap-Ofp"/>
-                                    <constraint firstItem="X9N-ZF-Aig" firstAttribute="top" secondItem="UvD-W8-E5J" secondAttribute="top" constant="55" id="ioi-gD-x0k"/>
-                                    <constraint firstItem="8hZ-gQ-zoK" firstAttribute="width" secondItem="h5c-Ij-bUW" secondAttribute="width" constant="21" id="lzC-8U-WPe"/>
-                                    <constraint firstItem="rto-ZK-ftk" firstAttribute="width" secondItem="X9N-ZF-Aig" secondAttribute="width" id="pHw-7x-Qmr"/>
-                                    <constraint firstItem="rto-ZK-ftk" firstAttribute="top" secondItem="X9N-ZF-Aig" secondAttribute="bottom" constant="13" id="tMQ-V3-cU7"/>
-                                    <constraint firstItem="8hZ-gQ-zoK" firstAttribute="height" secondItem="h5c-Ij-bUW" secondAttribute="height" constant="6" id="y3p-SG-RHX"/>
-                                    <constraint firstItem="X9N-ZF-Aig" firstAttribute="width" secondItem="UvD-W8-E5J" secondAttribute="width" multiplier="0.9" id="yKT-ce-hfo"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UvD-W8-E5J" firstAttribute="height" secondItem="QZf-zE-Q8h" secondAttribute="height" multiplier="0.6" id="OJo-sg-gCn"/>
-                            <constraint firstItem="UvD-W8-E5J" firstAttribute="top" secondItem="Bm8-GN-Mro" secondAttribute="bottom" constant="-20" id="taK-vS-FNP"/>
-                            <constraint firstItem="UvD-W8-E5J" firstAttribute="centerX" secondItem="QZf-zE-Q8h" secondAttribute="centerX" id="wIW-vN-lT9"/>
-                            <constraint firstItem="UvD-W8-E5J" firstAttribute="width" secondItem="QZf-zE-Q8h" secondAttribute="width" id="xSA-EL-gCR"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addAuthorTextField" destination="rto-ZK-ftk" id="uXr-yR-iIZ"/>
