@@ -240,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="-629" y="-238"/>
         </scene>
-        <!--Item-->
+        <!--Explore-->
         <scene sceneID="RBf-J5-NrQ">
             <objects>
                 <viewController id="66J-nr-czc" customClass="igniteFeedViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,46 +266,53 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-C9-WeF">
-                                <rect key="frame" x="344" y="93" width="32" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
+                                <rect key="frame" x="168.66666666666666" y="0.0" width="69" height="84"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AF0-v3-rLd"/>
+                                    <constraint firstAttribute="width" constant="69" id="GDq-Ko-yhw"/>
                                 </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ignite Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU">
+                                <rect key="frame" x="82" y="81" width="242" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="9vK-BD-MHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-C9-WeF">
+                                <rect key="frame" x="352" y="73" width="25" height="25"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="greyPost"/>
                                 <connections>
                                     <action selector="favButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uBS-I3-lFs"/>
                                     <action selector="postButton:" destination="66J-nr-czc" eventType="touchUpInside" id="A5c-e1-Hku"/>
+                                    <segue destination="7Qu-t6-ODS" kind="presentation" modalPresentationStyle="overCurrentContext" id="MYP-tt-4DF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ignite Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU">
-                                <rect key="frame" x="82" y="93" width="242" height="33"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
-                                <rect key="frame" x="153" y="8" width="108" height="93"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SvH-C9-WeF" firstAttribute="leading" secondItem="9h9-hJ-HzU" secondAttribute="trailing" constant="20" id="2PO-U0-sQa"/>
-                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="3Ts-qU-inj" secondAttribute="bottom" constant="40" id="2ec-dJ-VQp"/>
-                            <constraint firstAttribute="trailing" secondItem="NjA-DS-Bhy" secondAttribute="trailing" id="6DY-VJ-iLy"/>
-                            <constraint firstItem="3Ts-qU-inj" firstAttribute="centerX" secondItem="xCc-sI-UA8" secondAttribute="centerX" id="EMT-nl-2Gd"/>
-                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="leading" secondItem="xCc-sI-UA8" secondAttribute="leadingMargin" constant="-28" id="L9v-4H-SD9"/>
-                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="leading" secondItem="xCc-sI-UA8" secondAttribute="leadingMargin" constant="62" id="SNT-MJ-Lfj"/>
-                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="73" id="Uxp-Gz-0lN"/>
-                            <constraint firstAttribute="bottom" secondItem="NjA-DS-Bhy" secondAttribute="bottom" id="Vzl-aG-q5S"/>
-                            <constraint firstItem="3Ts-qU-inj" firstAttribute="top" secondItem="xCc-sI-UA8" secondAttribute="topMargin" constant="8" id="hLm-BM-M7h"/>
-                            <constraint firstItem="SvH-C9-WeF" firstAttribute="leading" secondItem="3Ts-qU-inj" secondAttribute="trailing" constant="83" id="kag-L0-UwZ"/>
-                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="centerX" secondItem="NjA-DS-Bhy" secondAttribute="centerX" id="nS5-r5-Dxt"/>
-                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="top" secondItem="SvH-C9-WeF" secondAttribute="top" id="sjc-wI-AYv"/>
-                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="SvH-C9-WeF" secondAttribute="bottom" constant="18" id="vbL-ov-6yB"/>
+                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="leading" secondItem="xCc-sI-UA8" secondAttribute="leadingMargin" constant="62" id="0Ia-0D-Gqk"/>
+                            <constraint firstAttribute="trailing" secondItem="NjA-DS-Bhy" secondAttribute="trailing" id="CUA-0e-m38"/>
+                            <constraint firstItem="3Ts-qU-inj" firstAttribute="top" secondItem="xCc-sI-UA8" secondAttribute="topMargin" id="IMG-Iq-EVo"/>
+                            <constraint firstItem="SvH-C9-WeF" firstAttribute="leading" secondItem="9h9-hJ-HzU" secondAttribute="trailing" constant="32" id="Igt-wE-lIS"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="3Ts-qU-inj" secondAttribute="bottom" constant="57" id="MY8-9T-aXd"/>
+                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="top" secondItem="SvH-C9-WeF" secondAttribute="top" id="RXT-qG-Lzm"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="9h9-hJ-HzU" secondAttribute="bottom" constant="35" id="TCe-t6-iS3"/>
+                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="bottom" secondItem="SvH-C9-WeF" secondAttribute="bottom" id="Tjd-Lt-fDy"/>
+                            <constraint firstItem="3Ts-qU-inj" firstAttribute="centerX" secondItem="9h9-hJ-HzU" secondAttribute="centerX" id="YXK-GX-ubE"/>
+                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="centerX" secondItem="NjA-DS-Bhy" secondAttribute="centerX" id="kdc-6r-6Cm"/>
+                            <constraint firstItem="9h9-hJ-HzU" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="61" id="ogt-iS-p8S"/>
+                            <constraint firstAttribute="bottom" secondItem="NjA-DS-Bhy" secondAttribute="bottom" id="snB-mz-e4J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SvH-C9-WeF" secondAttribute="trailing" constant="13" id="vdM-1B-dwF"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="leading" secondItem="xCc-sI-UA8" secondAttribute="leadingMargin" constant="-28" id="wNg-PQ-zdj"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="x35-Y7-gmX"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="ExploreIcon" id="x35-Y7-gmX">
+                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="NjA-DS-Bhy" id="HxO-EM-8Ls"/>
                     </connections>
@@ -314,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="-2071.0144927536235" y="-238.04347826086959"/>
         </scene>
-        <!--View Controller-->
+        <!--Post View Controller-->
         <scene sceneID="8N7-Py-Rh9">
             <objects>
-                <viewController id="7Qu-t6-ODS" sceneMemberID="viewController">
+                <viewController id="7Qu-t6-ODS" customClass="PostViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bm8-GN-Mro"/>
                         <viewControllerLayoutGuide type="bottom" id="0gn-0Z-R2T"/>
@@ -327,50 +334,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
-                                <rect key="frame" x="0.0" y="2" width="414" height="494"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
-                                        <rect key="frame" x="368" y="37" width="30" height="30"/>
+                                        <rect key="frame" x="371" y="25" width="30" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="exitButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="jHt-uE-vZv"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-pl-sBl">
-                                        <rect key="frame" x="171" y="58" width="52" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
-                                        <rect key="frame" x="37" y="91" width="340" height="204"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
+                                        <rect key="frame" x="23" y="55" width="365" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCA-Z8-Nbo">
-                                        <rect key="frame" x="180" y="317" width="55" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
-                                        <rect key="frame" x="37" y="359" width="340" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
+                                        <rect key="frame" x="23" y="274" width="369" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
-                                        <rect key="frame" x="192" y="435" width="31" height="30"/>
+                                        <rect key="frame" x="192" y="304" width="31" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="postButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="JCF-3s-Ydd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -378,10 +376,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addAuthorTextField" destination="rto-ZK-ftk" id="uXr-yR-iIZ"/>
+                        <outlet property="addQuoteTextView" destination="X9N-ZF-Aig" id="Ngl-hM-X0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gc-Sb-Cbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1797.1014492753625" y="423.09782608695656"/>
+            <point key="canvasLocation" x="-2071.0144927536235" y="496.46739130434787"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -476,6 +478,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ExploreIcon" width="32" height="32"/>
         <image name="Fav" width="32" height="32"/>
         <image name="Fill 71" width="32" height="32"/>
         <image name="HomeLine" width="30" height="32"/>

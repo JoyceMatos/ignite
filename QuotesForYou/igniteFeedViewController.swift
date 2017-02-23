@@ -13,7 +13,6 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     let igniteCell = igniteTableViewCell()
     var content = [Quote]()
-
     
 
     override func viewDidLoad() {
@@ -41,6 +40,10 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
+    
+    // TODO: - Change header to "Explore what keeps others motivated"
+    // MARK: - Action methods
+    
     @IBAction func postButton(_ sender: Any) {
         
         // TODO: - Show window with text field input
@@ -49,11 +52,13 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
     }
-    
-
-
 
 }
+
+
+
+
+// MARK:- TableView methods
 
 extension igniteFeedViewController {
     
