@@ -143,7 +143,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -163,7 +163,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="2" title="Favorite" image="Fav" id="Xyg-a4-eEr">
-                        <inset key="imageInsets" minX="2" minY="2" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="4" minY="5" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,7 +228,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Settings" image="Settings" id="Spc-cH-BU3">
-                        <inset key="imageInsets" minX="2" minY="2" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="4" minY="5" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="headerLabel" destination="1IF-E6-VPE" id="FBg-5b-ayA"/>
@@ -282,7 +282,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-C9-WeF">
-                                <rect key="frame" x="352" y="73" width="25" height="25"/>
+                                <rect key="frame" x="356" y="84" width="19" height="19"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="greyPost"/>
                                 <connections>
@@ -311,7 +311,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="ExploreIcon" id="x35-Y7-gmX">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="4" minY="5" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="NjA-DS-Bhy" id="HxO-EM-8Ls"/>
@@ -465,7 +465,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="4" minY="5" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
