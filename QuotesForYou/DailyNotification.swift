@@ -41,7 +41,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
     
     
      func scheduleLocal(on date: Date) {
-        
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         
@@ -50,12 +49,9 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         
         center.setNotificationCategories([category])
         
-        let test = Calendar.current.dateComponents([.hour, .minute], from: date)
-        
-        print(test.hour ?? "OK")
-        print(test.minute)
+        let date = Calendar.current.dateComponents([.hour, .minute], from: date)
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: test, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         
         let content = UNMutableNotificationContent()
         content.title = "Daily Reminder"
@@ -63,7 +59,6 @@ class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         content.categoryIdentifier = "customIdentifier"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default()
-
         
         let request = UNNotificationRequest(identifier: "MyTrigger", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in

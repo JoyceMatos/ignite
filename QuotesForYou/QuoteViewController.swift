@@ -24,7 +24,6 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.isHidden = true
         initializeGesture()
         beginToObserve()
         
@@ -33,13 +32,11 @@ class QuoteViewController: UIViewController {
     // MARK: - Notification Methods
     
     func applicationDidBecomeActive(_ notification: NSNotification) {
-        
         QuoteDataStore.retrieveQuote(with: {
             self.showNewQuote()
         }) {
             self.configureViews()
         }
-        
         compareTime()
     }
     
@@ -110,7 +107,6 @@ class QuoteViewController: UIViewController {
         
         self.store.getQuotes {
             DispatchQueue.main.async {
-                
                 QuoteDataStore.storeQuoteToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
                 self.configureViews()
             }
