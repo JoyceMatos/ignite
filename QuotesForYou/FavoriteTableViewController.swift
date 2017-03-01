@@ -54,7 +54,6 @@ class FavoriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            
             let quote = self.store.favorites[indexPath.row]
 
             self.store.deleteFavorite(quote: quote)
@@ -63,11 +62,9 @@ class FavoriteTableViewController: UITableViewController {
 
             tableView.reloadData()
   
-            
         }
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
-
             let quote = self.store.favorites[indexPath.row]
             var shareArray = self.store.shareFavorite(quote: quote)
             
@@ -80,10 +77,9 @@ class FavoriteTableViewController: UITableViewController {
     // MARK: - Helper methods
 
     func addActivityVC(with shareArray: [String]) {
-        
         let activityVC = UIActivityViewController(activityItems: shareArray, applicationActivities: nil)
         
-        //TODO: - This is for ipads, must adjust
+        //TODO: - This is for ipads
         if let popoverController = activityVC.popoverPresentationController {
             popoverController.sourceView = self.view as? UIView
             popoverController.sourceRect = self.view.bounds

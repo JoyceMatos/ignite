@@ -17,7 +17,7 @@ final class FirebaseManager {
     
     private init() {}
     
-    func add(quote quote: String, author: String?) {
+    func add(_ quote: String, author: String?) {
         var feedRef = FIRDatabase.database().reference().child("newsfeed")
         
         let input = [

@@ -45,16 +45,6 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     // TODO: - Change header to "Explore what keeps others motivated"
-    // MARK: - Action methods
-    
-    @IBAction func postButton(_ sender: Any) {
-        
-        // TODO: - Show window with text field input
-        
-        
-        
-        
-    }
 
 }
 

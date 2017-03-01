@@ -51,7 +51,7 @@ class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         
        // TODO: - Check to see if quote is valid
         
-        firebaseManager.add(quote: quote, author: author)
+        firebaseManager.add(quote, author: author)
         dismiss(animated: true, completion: nil)
 
     }

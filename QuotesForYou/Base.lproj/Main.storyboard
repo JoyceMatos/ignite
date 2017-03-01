@@ -287,7 +287,6 @@
                                 <state key="normal" image="greyPost"/>
                                 <connections>
                                     <action selector="favButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uBS-I3-lFs"/>
-                                    <action selector="postButton:" destination="66J-nr-czc" eventType="touchUpInside" id="A5c-e1-Hku"/>
                                     <segue destination="7Qu-t6-ODS" kind="presentation" modalPresentationStyle="overCurrentContext" id="MYP-tt-4DF"/>
                                 </connections>
                             </button>
@@ -406,12 +405,6 @@
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="January 4, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGa-TA-2p9">
-                                <rect key="frame" x="126" y="120" width="122" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NDN-RM-gwH">
                                 <rect key="frame" x="0.0" y="687" width="414" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -448,7 +441,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vo8-JJ-Ksi" firstAttribute="centerX" secondItem="blE-nk-rgs" secondAttribute="centerX" id="8O3-BU-dc1"/>
-                            <constraint firstItem="PGa-TA-2p9" firstAttribute="top" secondItem="eeI-U6-hfe" secondAttribute="bottom" id="8l3-hT-Rdr"/>
                             <constraint firstItem="vo8-JJ-Ksi" firstAttribute="top" secondItem="blE-nk-rgs" secondAttribute="bottom" constant="45" id="Gxw-LO-HC3"/>
                             <constraint firstItem="aGM-vg-Ufi" firstAttribute="centerX" secondItem="vo8-JJ-Ksi" secondAttribute="centerX" id="KlV-kE-LX2"/>
                             <constraint firstItem="hkR-rb-Xqf" firstAttribute="width" secondItem="blE-nk-rgs" secondAttribute="width" id="MEd-BO-ahu"/>
@@ -461,7 +453,6 @@
                             <constraint firstItem="aGM-vg-Ufi" firstAttribute="top" secondItem="vo8-JJ-Ksi" secondAttribute="bottom" constant="90" id="qKi-6G-9hp"/>
                             <constraint firstItem="hkR-rb-Xqf" firstAttribute="height" secondItem="blE-nk-rgs" secondAttribute="height" id="reZ-Bg-aGB"/>
                             <constraint firstItem="eeI-U6-hfe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xrm-wR-lQt"/>
-                            <constraint firstItem="PGa-TA-2p9" firstAttribute="centerX" secondItem="eeI-U6-hfe" secondAttribute="centerX" id="zwo-Sg-gXY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt">
@@ -469,7 +460,6 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
-                        <outlet property="dateLabel" destination="PGa-TA-2p9" id="YBe-KQ-oXB"/>
                         <outlet property="gestureView" destination="hkR-rb-Xqf" id="Lga-6J-7gr"/>
                         <outlet property="headerLabel" destination="eeI-U6-hfe" id="eEe-iQ-rUE"/>
                         <outlet property="quoteLabel" destination="blE-nk-rgs" id="9Mq-jZ-3w1"/>

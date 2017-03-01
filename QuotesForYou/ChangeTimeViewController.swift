@@ -37,14 +37,12 @@ class ChangeTimeViewController: UIViewController {
         
         let chosenTimeforDay = timePicker.date
         let dateFormatter = DateFormatter()
-        print("Test With Picker: \(chosenTimeforDay)")
         
         
         // Store chosen time in user defaults
         
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
-        print("This is the stored default: \(storredDefault)")
         
         // Initiate daily notifications
         
