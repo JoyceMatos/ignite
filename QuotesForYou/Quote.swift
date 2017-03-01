@@ -12,6 +12,7 @@ class Quote {
     
     var quote: String?
     var author: String?
+    var quoteID = ""
     
     init(dictionary: [String : String]) {
         if let quote = dictionary["quoteText"], let author = dictionary["quoteAuthor"] {
@@ -23,6 +24,13 @@ class Quote {
     init(with quote: String, author: String) {
         self.quote = quote
         self.author = author
+        
+    }
+    
+    init(with quoteID: String, quote: String, author: String) {
+        self.quote = quote
+        self.author = author
+        self.quoteID = quoteID
         
     }
  

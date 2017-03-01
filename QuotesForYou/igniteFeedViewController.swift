@@ -8,7 +8,7 @@
 
 import UIKit
 
-class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class igniteFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let igniteCell = igniteTableViewCell()
@@ -36,8 +36,13 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         content.append(quote2)
         content.append(quote3)
         content.append(quote4)
-        
-        firebaseManager.createQuote()
+
+//        firebaseManager.createQuote { (quoteID, quote, author) in
+//            print("HELLLOOOOO")
+//            var quote = Quote(with: quoteID, quote: quote, author: author)
+//            self.content.append(quote)
+//          //  print(self.content.description)
+//        }
 
         
         
@@ -53,7 +58,7 @@ class igniteFeedViewController: UIViewController, UITableViewDelegate, UITableVi
 
 // MARK:- TableView methods
 
-extension igniteFeedViewController {
+extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1
@@ -80,4 +85,10 @@ extension igniteFeedViewController {
         return 200
     }
 }
+
+//extension Quote: CustomStringConvertible {
+//    var description: String {
+//        return igniteFeedViewController.content.description
+//    }
+//}
 
