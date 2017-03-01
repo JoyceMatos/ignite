@@ -27,7 +27,6 @@ class QuoteViewController: UIViewController {
         dateLabel.isHidden = true
         initializeGesture()
         beginToObserve()
-        
     }
     
     // MARK: - Notification Methods

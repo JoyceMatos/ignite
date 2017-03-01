@@ -50,20 +50,13 @@ final class FirebaseManager {
         
         
     }
-    
-    
-    // TODO: - Flag quote using their unique ID's
+        
     func flagQuote(with quoteID: String) {
-        
-    //    let quoteNode = FIRDatabase.database().reference().child("newsfeed").child(quoteID)
-        
         let flagRef = FIRDatabase.database().reference().child("flag")
-        
         let flaggedQuote = [quoteID : true]
         
         flagRef.setValue(flaggedQuote) { (error, ref) in
         }
-        
         
     }
     
