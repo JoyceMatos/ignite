@@ -25,22 +25,6 @@ class igniteFeedViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189
         
-      // Dummy Data
-        
-        let quote1 = Quote(with: "Let the sun shine down and wash away our fears", author: "Some song")
-        let quote2 = Quote(with: "I believe I believe I believe I believe I believe I believe I believe I believe I believe I believe I believe I believe I believe I believe", author: "Believer")
-        let quote3 = Quote(with: "I get so weak in the knees I can hardly breathe I lose all control and something takes over me in a day --", author: "SWV")
-        let quote4 = Quote(with: "I don't know what it is that you do to me, but it's a feeling that I want to stayayayayayayya", author: "SWV")
-
-//        content.append(quote1)
-//        content.append(quote2)
-//        content.append(quote3)
-//        content.append(quote4)
-
-    
-
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +41,11 @@ class igniteFeedViewController: UIViewController {
         
         tableView.reloadData()
 
+    }
+    
+    // MARK: - Action methods
+    func flagQuote(_ quote: Quote) {
+        firebaseManager.flagQuote(quoteID.quoteID)
     }
     
     
@@ -85,12 +74,14 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
-        
-        print("--------\(quote.quote?.description)------")
-        
         cell.quoteLabel.text = quote.quote?.description
         cell.authorLabel.text = quote.author?.description
         
+    //    var flag = flagQuote(quote.quoteID)
+        
+        
+        cell.flagButton.addTarget(self, action: #selector(flagQuote(_:)), for: .touchUpInside)
+
         
         return cell
     }
@@ -98,6 +89,8 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    
 }
 
 //extension Quote: CustomStringConvertible {

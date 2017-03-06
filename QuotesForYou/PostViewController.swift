@@ -16,6 +16,8 @@ class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     @IBOutlet weak var addAuthorTextField: UITextField!
     @IBOutlet weak var post: UIButton!
     @IBOutlet weak var cancel: UIButton!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,9 @@ class igniteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var flagButton: UIButton!
+    
+    let firebaseManager = FirebaseManager.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,6 +55,9 @@ class igniteTableViewCell: UITableViewCell {
  
         
     }
+    
+   
+    
     
     
 }

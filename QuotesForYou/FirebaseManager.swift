@@ -50,7 +50,7 @@ final class FirebaseManager {
         })
     }
         
-    func flagQuote(with quoteID: String) {
+    func flagQuote(_ quoteID: String) {
         let flagRef = FIRDatabase.database().reference().child("flag")
         let flaggedQuote = [quoteID : true]
         

@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="348" height="199"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="198.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="348" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
@@ -47,6 +47,11 @@
                         <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
+                        <rect key="frame" x="318" y="169" width="16" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="Flag"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="RHu-zg-8tV" secondAttribute="bottom" constant="19" id="Bg8-OP-rjV"/>
@@ -61,6 +66,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLabel" destination="RHu-zg-8tV" id="EAK-8G-zIF"/>
+                <outlet property="flagButton" destination="PaU-RT-sZE" id="Ikt-3y-hKS"/>
                 <outlet property="quoteLabel" destination="oka-yq-744" id="beQ-gw-tYu"/>
             </connections>
             <point key="canvasLocation" x="49" y="112.5"/>
@@ -68,5 +74,6 @@
     </objects>
     <resources>
         <image name="Fill 71" width="32" height="32"/>
+        <image name="Flag" width="25" height="32"/>
     </resources>
 </document>
