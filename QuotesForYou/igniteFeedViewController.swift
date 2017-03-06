@@ -32,20 +32,31 @@ class igniteFeedViewController: UIViewController {
         let quote3 = Quote(with: "I get so weak in the knees I can hardly breathe I lose all control and something takes over me in a day --", author: "SWV")
         let quote4 = Quote(with: "I don't know what it is that you do to me, but it's a feeling that I want to stayayayayayayya", author: "SWV")
 
-        content.append(quote1)
-        content.append(quote2)
-        content.append(quote3)
-        content.append(quote4)
+//        content.append(quote1)
+//        content.append(quote2)
+//        content.append(quote3)
+//        content.append(quote4)
 
-//        firebaseManager.createQuote { (quoteID, quote, author) in
-//            print("HELLLOOOOO")
-//            var quote = Quote(with: quoteID, quote: quote, author: author)
-//            self.content.append(quote)
-//          //  print(self.content.description)
-//        }
+    
 
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        firebaseManager.createQuote { (quoteID, quote, author) in
+            print("HELLLOOOOO")
+            var quote = Quote(with: quoteID, quote: quote, author: author)
+            self.content.append(quote)
+            print(quote.quote)
+            
+            //TODO: - Display content as a stack (most recent on top)
+            self.tableView.reloadData()
+
+        }
+        
+        tableView.reloadData()
+
     }
     
     
@@ -74,8 +85,11 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
-        cell.quoteLabel.text = quote.quote
-        cell.authorLabel.text = quote.author
+        
+        print("--------\(quote.quote?.description)------")
+        
+        cell.quoteLabel.text = quote.quote?.description
+        cell.authorLabel.text = quote.author?.description
         
         
         return cell
