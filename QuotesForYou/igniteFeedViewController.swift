@@ -11,7 +11,7 @@ import UIKit
 class igniteFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let igniteCell = igniteTableViewCell()
+    let igniteCell = IgniteTableViewCell()
     let firebaseManager = FirebaseManager.shared
     var content = [Quote]()
     
@@ -44,9 +44,9 @@ class igniteFeedViewController: UIViewController {
     }
     
     // MARK: - Action methods
-    func flagQuote(_ quote: Quote) {
-        firebaseManager.flagQuote(quoteID.quoteID)
-    }
+//    func flagQuote(_ quote: String) {
+//        firebaseManager.flagQuote(quote)
+//    }
     
     
     // TODO: - Change header to "Explore what keeps others motivated"
@@ -70,7 +70,10 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quote = content[indexPath.row]
-        let cell = Bundle.main.loadNibNamed("igniteTableViewCell", owner: self, options: nil)?.first as! igniteTableViewCell
+        let cell = Bundle.main.loadNibNamed("igniteTableViewCell", owner: self, options: nil)?.first as! IgniteTableViewCell
+        
+        
+        cell.quote = quote
         
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
@@ -78,12 +81,16 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.authorLabel.text = quote.author?.description
         
     //    var flag = flagQuote(quote.quoteID)
+    //    cell.flagButton.addTarget(self, action: #selector(flagQuote(_:)), for: .touchUpInside)
         
-        
-        cell.flagButton.addTarget(self, action: #selector(flagQuote(_:)), for: .touchUpInside)
 
         
         return cell
+    }
+    
+    func flagTapped(_ sender: UIButton) {
+        
+        
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,9 +100,4 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-//extension Quote: CustomStringConvertible {
-//    var description: String {
-//        return igniteFeedViewController.content.description
-//    }
-//}
 

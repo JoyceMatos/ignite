@@ -8,11 +8,23 @@
 
 import UIKit
 
-class igniteTableViewCell: UITableViewCell {
+protocol IgniteCellDelegate: class {
+    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote)
+}
+
+class IgniteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var flagButton: UIButton!
+    
+    var delegate: IgniteCellDelegate?
+    var quote: Quote! {
+        didSet {
+            quoteLabel.text = quote.quote?.description
+            authorLabel.text = quote.author?.description
+        }
+    }
     
     let firebaseManager = FirebaseManager.shared
     
@@ -57,6 +69,15 @@ class igniteTableViewCell: UITableViewCell {
     }
     
    
+    
+    //
+    
+    
+    
+    
+    func flagTapped() {
+        delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
+    }
     
     
     
