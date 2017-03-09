@@ -332,49 +332,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
-                                        <rect key="frame" x="23" y="55" width="365" height="206"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
-                                        <rect key="frame" x="23" y="274" width="369" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
-                                        <rect key="frame" x="280" y="308" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Vi-7DB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="55.333333333333336"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
+                                                <rect key="frame" x="354" y="19" width="52" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="8yX-3p-Z8g"/>
+                                                    <action selector="exitButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="jHt-uE-vZv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpz-pd-UQP">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="257.66666666666669"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
+                                                <rect key="frame" x="25" y="8" width="365" height="206"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
+                                                <rect key="frame" x="23" y="227" width="369" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0JD-Vi-7DB" firstAttribute="top" secondItem="UvD-W8-E5J" secondAttribute="top" id="0vw-XY-6QK"/>
+                                    <constraint firstItem="Rpz-pd-UQP" firstAttribute="width" secondItem="0JD-Vi-7DB" secondAttribute="width" id="1vL-eD-fiu"/>
+                                    <constraint firstItem="Rpz-pd-UQP" firstAttribute="height" secondItem="UvD-W8-E5J" secondAttribute="height" multiplier="0.7" id="61H-Ca-p8R"/>
+                                    <constraint firstItem="Rpz-pd-UQP" firstAttribute="top" secondItem="0JD-Vi-7DB" secondAttribute="bottom" constant="-0.3333333333333357" id="Cdp-6A-7GZ"/>
+                                    <constraint firstItem="0JD-Vi-7DB" firstAttribute="centerX" secondItem="UvD-W8-E5J" secondAttribute="centerX" id="JO0-OS-amb"/>
+                                    <constraint firstItem="0JD-Vi-7DB" firstAttribute="width" secondItem="UvD-W8-E5J" secondAttribute="width" id="RTr-t7-7eO"/>
+                                    <constraint firstItem="Rpz-pd-UQP" firstAttribute="centerX" secondItem="0JD-Vi-7DB" secondAttribute="centerX" id="Tlf-4o-iTG"/>
+                                    <constraint firstItem="0JD-Vi-7DB" firstAttribute="height" secondItem="UvD-W8-E5J" secondAttribute="height" multiplier="0.15" id="hc2-Lt-sfv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt7-jH-1Wd">
+                                <rect key="frame" x="0.0" y="319" width="414" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
+                                        <rect key="frame" x="-0.66666666666665719" y="-0.33333333333331439" width="414.33333333333337" height="49"/>
                                         <state key="normal" title="Post"/>
                                         <connections>
                                             <action selector="postButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="JCF-3s-Ydd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
-                                        <rect key="frame" x="85" y="305" width="52" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="8yX-3p-Z8g"/>
-                                            <action selector="exitButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="jHt-uE-vZv"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="centerX" secondItem="Qt7-jH-1Wd" secondAttribute="centerX" id="2e6-1X-w4b"/>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="height" secondItem="Qt7-jH-1Wd" secondAttribute="height" id="68t-wr-HwW"/>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="width" secondItem="Qt7-jH-1Wd" secondAttribute="width" id="h9T-1V-Wmv"/>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="centerY" secondItem="Qt7-jH-1Wd" secondAttribute="centerY" id="yyu-lv-67w"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qt7-jH-1Wd" firstAttribute="centerX" secondItem="UvD-W8-E5J" secondAttribute="centerX" id="1S3-vk-ldi"/>
+                            <constraint firstItem="UvD-W8-E5J" firstAttribute="top" secondItem="QZf-zE-Q8h" secondAttribute="top" id="6K2-wo-BNB"/>
+                            <constraint firstItem="Qt7-jH-1Wd" firstAttribute="bottom" secondItem="UvD-W8-E5J" secondAttribute="bottom" id="Hse-3W-1Vp"/>
+                            <constraint firstItem="UvD-W8-E5J" firstAttribute="centerX" secondItem="QZf-zE-Q8h" secondAttribute="centerX" id="L3e-Sh-reS"/>
+                            <constraint firstItem="Qt7-jH-1Wd" firstAttribute="width" secondItem="UvD-W8-E5J" secondAttribute="width" id="UPb-Me-b0T"/>
+                            <constraint firstItem="Qt7-jH-1Wd" firstAttribute="top" secondItem="Rpz-pd-UQP" secondAttribute="bottom" constant="6.3333333333333144" id="Xb3-JP-ay7"/>
+                            <constraint firstItem="UvD-W8-E5J" firstAttribute="height" secondItem="QZf-zE-Q8h" secondAttribute="height" multiplier="0.5" id="cXl-ha-rkI"/>
+                            <constraint firstItem="UvD-W8-E5J" firstAttribute="width" secondItem="QZf-zE-Q8h" secondAttribute="width" id="ksL-5U-AKz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addAuthorTextField" destination="rto-ZK-ftk" id="uXr-yR-iIZ"/>

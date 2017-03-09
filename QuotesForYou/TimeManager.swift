@@ -29,6 +29,7 @@ class TimeManager {
         
         // Compare dates
         // NOTE - Works but is a little delayed by the seconds
+        // Show quote on next day regardless of specific time. with time interval (regardless of notification for not)
         
         if chosenTimeforDay.compare(currentDate) == .orderedAscending {
             
@@ -68,7 +69,7 @@ class TimeManager {
             
         } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
             completion()
-            QuoteDataStore.hasSeenQuote(true)
+            QuoteDataStore.hasSeenQuote(false)
         }
         
     }
