@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lW8-Fl-5vC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Qu-t6-ODS">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -335,13 +335,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Vi-7DB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Vi-7DB" userLabel="CancelView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="55.333333333333336"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
                                                 <rect key="frame" x="354" y="19" width="52" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                                                 <state key="normal" title="X"/>
                                                 <connections>
                                                     <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="8yX-3p-Z8g"/>
@@ -350,21 +349,25 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="8hZ-gQ-zoK" firstAttribute="top" secondItem="0JD-Vi-7DB" secondAttribute="top" constant="19" id="1FN-vd-BbV"/>
+                                            <constraint firstAttribute="trailing" secondItem="8hZ-gQ-zoK" secondAttribute="trailing" constant="8" id="4D4-7t-d6C"/>
+                                            <constraint firstItem="8hZ-gQ-zoK" firstAttribute="leading" secondItem="0JD-Vi-7DB" secondAttribute="leading" constant="354" id="dYL-IE-hg2"/>
+                                            <constraint firstAttribute="bottom" secondItem="8hZ-gQ-zoK" secondAttribute="bottom" constant="0.3333333333333357" id="k7S-I2-Pjd"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpz-pd-UQP">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpz-pd-UQP" userLabel="QuoteView">
                                         <rect key="frame" x="0.0" y="55" width="414" height="257.66666666666669"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
-                                                <rect key="frame" x="25" y="8" width="365" height="206"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" text="What's your favorite quote?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-ZF-Aig">
+                                                <rect key="frame" x="21.333333333333343" y="8" width="372.33333333333337" height="206"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
                                                 <rect key="frame" x="23" y="227" width="369" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
@@ -372,6 +375,16 @@
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="width" secondItem="X9N-ZF-Aig" secondAttribute="width" id="50T-FH-Xpv"/>
+                                            <constraint firstItem="X9N-ZF-Aig" firstAttribute="centerX" secondItem="Rpz-pd-UQP" secondAttribute="centerX" id="I6C-iP-uHb"/>
+                                            <constraint firstItem="X9N-ZF-Aig" firstAttribute="top" secondItem="Rpz-pd-UQP" secondAttribute="top" constant="8" id="KNw-VZ-Qg3"/>
+                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="height" secondItem="X9N-ZF-Aig" secondAttribute="height" multiplier="0.1" id="MH7-mN-zY8"/>
+                                            <constraint firstItem="X9N-ZF-Aig" firstAttribute="width" secondItem="Rpz-pd-UQP" secondAttribute="width" multiplier="0.9" id="Vv5-3S-E7f"/>
+                                            <constraint firstItem="X9N-ZF-Aig" firstAttribute="height" secondItem="Rpz-pd-UQP" secondAttribute="height" multiplier="0.8" id="WB5-Mv-Jh9"/>
+                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="centerX" secondItem="X9N-ZF-Aig" secondAttribute="centerX" id="Yhs-tW-jEW"/>
+                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="top" secondItem="X9N-ZF-Aig" secondAttribute="bottom" constant="13" id="rbL-M6-1HR"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -386,7 +399,7 @@
                                     <constraint firstItem="0JD-Vi-7DB" firstAttribute="height" secondItem="UvD-W8-E5J" secondAttribute="height" multiplier="0.15" id="hc2-Lt-sfv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt7-jH-1Wd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt7-jH-1Wd" userLabel="PostView">
                                 <rect key="frame" x="0.0" y="319" width="414" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
