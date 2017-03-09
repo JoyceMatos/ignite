@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2501A90E1E203EF700C7CE28 /* DailyNotification.swift */; };
-		2505784F1E5E3A9600F72C87 /* igniteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505784E1E5E3A9600F72C87 /* igniteFeedViewController.swift */; };
-		250578581E5E3DD500F72C87 /* igniteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250578561E5E3DD500F72C87 /* igniteTableViewCell.swift */; };
-		250578591E5E3DD500F72C87 /* igniteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250578571E5E3DD500F72C87 /* igniteTableViewCell.xib */; };
+		2505784F1E5E3A9600F72C87 /* IgniteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505784E1E5E3A9600F72C87 /* IgniteFeedViewController.swift */; };
+		250578581E5E3DD500F72C87 /* IgniteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */; };
+		250578591E5E3DD500F72C87 /* IgniteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */; };
 		2505785B1E5E5D2200F72C87 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505785A1E5E5D2200F72C87 /* PostViewController.swift */; };
 		251BC0A41E57E176008D439B /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BC0A31E57E176008D439B /* TimeManager.swift */; };
 		251BC1301E5E3052008D439B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BC12F1E5E3052008D439B /* FirebaseManager.swift */; };
@@ -37,9 +37,9 @@
 
 /* Begin PBXFileReference section */
 		2501A90E1E203EF700C7CE28 /* DailyNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNotification.swift; sourceTree = "<group>"; };
-		2505784E1E5E3A9600F72C87 /* igniteFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = igniteFeedViewController.swift; sourceTree = "<group>"; };
-		250578561E5E3DD500F72C87 /* igniteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = igniteTableViewCell.swift; sourceTree = "<group>"; };
-		250578571E5E3DD500F72C87 /* igniteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = igniteTableViewCell.xib; sourceTree = "<group>"; };
+		2505784E1E5E3A9600F72C87 /* IgniteFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgniteFeedViewController.swift; sourceTree = "<group>"; };
+		250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgniteTableViewCell.swift; sourceTree = "<group>"; };
+		250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IgniteTableViewCell.xib; sourceTree = "<group>"; };
 		2505785A1E5E5D2200F72C87 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		251BC0A31E57E176008D439B /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		251BC12F1E5E3052008D439B /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 				255AA4B81E15DC7000B76FD4 /* LaunchScreen.storyboard */,
 				253B0BF11E1DE73000D82A84 /* TableViewCell1.swift */,
 				253B0BF21E1DE73000D82A84 /* TableViewCell1.xib */,
-				250578561E5E3DD500F72C87 /* igniteTableViewCell.swift */,
-				250578571E5E3DD500F72C87 /* igniteTableViewCell.xib */,
+				250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */,
+				250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 				2505785A1E5E5D2200F72C87 /* PostViewController.swift */,
 				253B0C371E1F121500D82A84 /* TimePreferenceViewController.swift */,
 				253B0BEB1E1C729400D82A84 /* FavoriteTableViewController.swift */,
-				2505784E1E5E3A9600F72C87 /* igniteFeedViewController.swift */,
+				2505784E1E5E3A9600F72C87 /* IgniteFeedViewController.swift */,
 				25CF6EE51E21AAD70016C66E /* ChangeTimeViewController.swift */,
 				257A73401E2E75A7005EAB30 /* AppController.swift */,
 			);
@@ -238,7 +238,7 @@
 				251BC1321E5E30FC008D439B /* GoogleService-Info.plist in Resources */,
 				255AA4BA1E15DC7000B76FD4 /* LaunchScreen.storyboard in Resources */,
 				255AA4B71E15DC7000B76FD4 /* Assets.xcassets in Resources */,
-				250578591E5E3DD500F72C87 /* igniteTableViewCell.xib in Resources */,
+				250578591E5E3DD500F72C87 /* IgniteTableViewCell.xib in Resources */,
 				255AA4B21E15DC7000B76FD4 /* Main.storyboard in Resources */,
 				253B0BF41E1DE73000D82A84 /* TableViewCell1.xib in Resources */,
 			);
@@ -302,7 +302,7 @@
 				253B0BF31E1DE73000D82A84 /* TableViewCell1.swift in Sources */,
 				255AA4AF1E15DC7000B76FD4 /* QuoteViewController.swift in Sources */,
 				255AA4B51E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld in Sources */,
-				2505784F1E5E3A9600F72C87 /* igniteFeedViewController.swift in Sources */,
+				2505784F1E5E3A9600F72C87 /* IgniteFeedViewController.swift in Sources */,
 				255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */,
 				257A73411E2E75A7005EAB30 /* AppController.swift in Sources */,
 				253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */,
@@ -313,7 +313,7 @@
 				257A73431E2E863F005EAB30 /* StoryboardID.swift in Sources */,
 				2505785B1E5E5D2200F72C87 /* PostViewController.swift in Sources */,
 				2501A90F1E203EF700C7CE28 /* DailyNotification.swift in Sources */,
-				250578581E5E3DD500F72C87 /* igniteTableViewCell.swift in Sources */,
+				250578581E5E3DD500F72C87 /* IgniteTableViewCell.swift in Sources */,
 				251BC1301E5E3052008D439B /* FirebaseManager.swift in Sources */,
 				255AA4C41E15EE7F00B76FD4 /* Quote.swift in Sources */,
 				25CF6EE61E21AAD70016C66E /* ChangeTimeViewController.swift in Sources */,

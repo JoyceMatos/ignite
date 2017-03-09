@@ -8,7 +8,7 @@
 
 import UIKit
 
-class igniteFeedViewController: UIViewController {
+class IgniteFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let igniteCell = IgniteTableViewCell()
@@ -58,7 +58,7 @@ class igniteFeedViewController: UIViewController {
 
 // MARK:- TableView methods
 
-extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
+extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1
@@ -70,20 +70,16 @@ extension igniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quote = content[indexPath.row]
-        let cell = Bundle.main.loadNibNamed("igniteTableViewCell", owner: self, options: nil)?.first as! IgniteTableViewCell
+        let cell = Bundle.main.loadNibNamed("IgniteTableViewCell", owner: self, options: nil)?.first as! IgniteTableViewCell
         
         
         cell.quote = quote
         
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
-        cell.quoteLabel.text = quote.quote?.description
-        cell.authorLabel.text = quote.author?.description
-        
-    //    var flag = flagQuote(quote.quoteID)
-    //    cell.flagButton.addTarget(self, action: #selector(flagQuote(_:)), for: .touchUpInside)
-        
-
+        cell.quoteLabel.text = cell.quote.quote?.description
+        cell.authorLabel.text = cell.quote.author?.description
+  
         
         return cell
     }
