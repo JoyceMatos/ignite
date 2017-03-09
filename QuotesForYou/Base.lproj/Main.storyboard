@@ -243,7 +243,7 @@
         <!--Explore-->
         <scene sceneID="RBf-J5-NrQ">
             <objects>
-                <viewController id="66J-nr-czc" customClass="IgniteFeedViewController" sceneMemberID="viewController">
+                <viewController id="66J-nr-czc" customClass="IgniteFeedViewController" customModule="QuotesForYou" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5z-hA-d5f"/>
                         <viewControllerLayoutGuide type="bottom" id="omy-uG-Fma"/>
@@ -313,7 +313,7 @@
                         <inset key="imageInsets" minX="4" minY="5" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="tableView" destination="NjA-DS-Bhy" id="HxO-EM-8Ls"/>
+                        <outlet property="tableView" destination="NjA-DS-Bhy" id="2Fb-sc-Hox"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBj-3F-J0F" userLabel="First Responder" sceneMemberID="firstResponder"/>

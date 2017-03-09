@@ -6,7 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,51 +20,85 @@
                 <rect key="frame" x="0.0" y="0.0" width="348" height="198"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
-                        <rect key="frame" x="313" y="8" width="27" height="25"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nws-5i-rCV">
+                        <rect key="frame" x="0.0" y="0.0" width="348" height="34"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
+                                <rect key="frame" x="315" y="7" width="21" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="Fill 71"/>
+                                <connections>
+                                    <action selector="favoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KVy-NH-VPf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="46" id="CFR-WH-z7a"/>
-                            <constraint firstAttribute="width" constant="45" id="Swx-pw-5Bh"/>
+                            <constraint firstItem="goh-LZ-s3h" firstAttribute="width" secondItem="Nws-5i-rCV" secondAttribute="height" multiplier="21:34" id="Dza-7J-yY7"/>
+                            <constraint firstItem="goh-LZ-s3h" firstAttribute="top" secondItem="Nws-5i-rCV" secondAttribute="top" constant="7" id="sWz-2h-R9M"/>
+                            <constraint firstAttribute="bottom" secondItem="goh-LZ-s3h" secondAttribute="bottom" constant="6" id="tFE-hu-beH"/>
+                            <constraint firstAttribute="trailing" secondItem="goh-LZ-s3h" secondAttribute="trailing" constant="12" id="xPa-fh-cLq"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                        <state key="normal" image="Fill 71"/>
-                        <connections>
-                            <action selector="favoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KVy-NH-VPf"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confucious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHu-zg-8tV">
-                        <rect key="frame" x="130" y="150" width="87" height="21"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGh-mx-OZf">
+                        <rect key="frame" x="0.0" y="34" width="348" height="139.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oka-yq-744">
+                                <rect key="frame" x="18" y="11" width="313" height="83.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confucious" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHu-zg-8tV">
+                                <rect key="frame" x="0.5" y="104.5" width="348" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="CPw-fd-VWV"/>
-                            <constraint firstAttribute="width" constant="87" id="jex-sn-Rli"/>
+                            <constraint firstItem="oka-yq-744" firstAttribute="width" secondItem="dGh-mx-OZf" secondAttribute="width" multiplier="0.9" id="7UT-lf-kDW"/>
+                            <constraint firstItem="RHu-zg-8tV" firstAttribute="width" secondItem="dGh-mx-OZf" secondAttribute="width" id="EmZ-EZ-48y"/>
+                            <constraint firstItem="RHu-zg-8tV" firstAttribute="centerX" secondItem="dGh-mx-OZf" secondAttribute="centerX" id="U2o-WX-f0h"/>
+                            <constraint firstItem="oka-yq-744" firstAttribute="top" secondItem="dGh-mx-OZf" secondAttribute="top" constant="11" id="ac8-ys-3iY"/>
+                            <constraint firstItem="RHu-zg-8tV" firstAttribute="top" secondItem="oka-yq-744" secondAttribute="bottom" constant="10" id="hjR-52-SgQ"/>
+                            <constraint firstItem="RHu-zg-8tV" firstAttribute="height" secondItem="dGh-mx-OZf" secondAttribute="height" multiplier="0.15" id="inJ-dJ-xna"/>
+                            <constraint firstItem="oka-yq-744" firstAttribute="height" secondItem="dGh-mx-OZf" secondAttribute="height" multiplier="0.6" id="pZk-vZ-pA2"/>
+                            <constraint firstItem="oka-yq-744" firstAttribute="centerX" secondItem="dGh-mx-OZf" secondAttribute="centerX" id="vIR-Ji-dL6"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oka-yq-744">
-                        <rect key="frame" x="34" y="51" width="278" height="75"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
-                        <rect key="frame" x="318" y="169" width="16" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="Flag"/>
-                    </button>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-Ho-g40">
+                        <rect key="frame" x="0.0" y="164" width="348" height="34"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
+                                <rect key="frame" x="319" y="5" width="20" height="21"/>
+                                <state key="normal" image="Flag"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PaU-RT-sZE" firstAttribute="width" secondItem="Gci-Ho-g40" secondAttribute="height" multiplier="10:17" id="IH3-UV-39i"/>
+                            <constraint firstItem="PaU-RT-sZE" firstAttribute="top" secondItem="Gci-Ho-g40" secondAttribute="top" constant="5" id="Id1-ZN-zHg"/>
+                            <constraint firstAttribute="bottom" secondItem="PaU-RT-sZE" secondAttribute="bottom" constant="8" id="atQ-aS-Mkv"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="RHu-zg-8tV" secondAttribute="bottom" constant="19" id="Bg8-OP-rjV"/>
-                    <constraint firstItem="oka-yq-744" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="43" id="CEe-bc-KGc"/>
-                    <constraint firstItem="goh-LZ-s3h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="M7Q-YV-FLh"/>
-                    <constraint firstItem="RHu-zg-8tV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MLw-uj-rkR"/>
-                    <constraint firstItem="oka-yq-744" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="26" id="hgc-QZ-hb1"/>
-                    <constraint firstItem="oka-yq-744" firstAttribute="centerX" secondItem="RHu-zg-8tV" secondAttribute="centerX" id="pTl-Pt-Chg"/>
-                    <constraint firstItem="goh-LZ-s3h" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yOj-I5-m7D"/>
-                    <constraint firstItem="RHu-zg-8tV" firstAttribute="top" secondItem="oka-yq-744" secondAttribute="bottom" constant="24" id="ytg-1L-oZP"/>
+                    <constraint firstItem="Gci-Ho-g40" firstAttribute="top" secondItem="dGh-mx-OZf" secondAttribute="bottom" constant="-9.5" id="ff4-HQ-k7T"/>
+                    <constraint firstItem="dGh-mx-OZf" firstAttribute="top" secondItem="Nws-5i-rCV" secondAttribute="bottom" id="phm-3m-hTm"/>
+                    <constraint firstItem="PaU-RT-sZE" firstAttribute="centerX" secondItem="goh-LZ-s3h" secondAttribute="centerX" id="v0y-I4-vHO"/>
                 </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="dGh-mx-OZf" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.7" id="29E-PZ-Pkl"/>
+                <constraint firstItem="dGh-mx-OZf" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="4YF-ED-P0b"/>
+                <constraint firstItem="Gci-Ho-g40" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="8Vt-Mt-liH"/>
+                <constraint firstItem="Nws-5i-rCV" firstAttribute="top" secondItem="KGk-i7-Jjw" secondAttribute="top" id="Adf-y4-teU"/>
+                <constraint firstItem="Nws-5i-rCV" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="Biq-m8-j2c"/>
+                <constraint firstAttribute="bottom" secondItem="Gci-Ho-g40" secondAttribute="bottom" constant="1" id="D0Z-lf-z7e"/>
+                <constraint firstItem="Nws-5i-rCV" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="TXC-dB-WHK"/>
+                <constraint firstItem="Gci-Ho-g40" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="j3i-iL-MeY"/>
+                <constraint firstItem="Nws-5i-rCV" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.17" id="nQ5-Co-4Uf"/>
+                <constraint firstItem="dGh-mx-OZf" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="sEb-7r-VDC"/>
+            </constraints>
             <connections>
                 <outlet property="authorLabel" destination="RHu-zg-8tV" id="EAK-8G-zIF"/>
                 <outlet property="flagButton" destination="PaU-RT-sZE" id="Ikt-3y-hKS"/>
