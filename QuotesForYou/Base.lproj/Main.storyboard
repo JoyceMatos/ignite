@@ -271,15 +271,22 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJi-nZ-xrV" userLabel="ExploreView">
                                 <rect key="frame" x="0.0" y="-4" width="414" height="144"/>
                                 <subviews>
-                                    <view alpha="0.14999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-Fe-SWc" userLabel="Divider">
+                                    <view alpha="0.14999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-Fe-SWc" userLabel="Divider">
                                         <rect key="frame" x="21" y="135" width="372.66666666666663" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJv-sq-jgU">
+                                        <rect key="frame" x="379" y="30" width="27" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="greyPost"/>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="gJd-Fe-SWc" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="width" multiplier="0.9" id="ifc-zz-Q8N"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore what inspires other people and ignite each other's day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU" userLabel="ExploreLabel">
-                                <rect key="frame" x="68.333333333333314" y="59.999999999999993" width="277.33333333333337" height="52.333333333333321"/>
+                                <rect key="frame" x="68.333333333333314" y="59.999999999999993" width="277.33333333333337" height="51.333333333333321"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -287,11 +294,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
                                 <rect key="frame" x="174.66666666666666" y="-4" width="64.666666666666686" height="66.333333333333343"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJv-sq-jgU">
-                                <rect key="frame" x="350" y="72" width="44" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="greyPost"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,10 +301,13 @@
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="top" secondItem="3Ts-qU-inj" secondAttribute="bottom" constant="-2.3333333333333428" id="0tt-9y-BXi"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="centerX" secondItem="OJi-nZ-xrV" secondAttribute="centerX" id="A3p-dU-3Ob"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.35" id="ACw-2B-PDB"/>
+                            <constraint firstItem="gJd-Fe-SWc" firstAttribute="top" secondItem="9h9-hJ-HzU" secondAttribute="bottom" constant="30" id="DQ4-js-M55"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="7:16" id="Ir4-Pc-i97"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="centerX" secondItem="xCc-sI-UA8" secondAttribute="centerX" id="RZR-GP-NWQ"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="width" secondItem="xCc-sI-UA8" secondAttribute="width" id="Tdx-Vb-emC"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.45" id="Tsm-aW-YLH"/>
+                            <constraint firstItem="gJd-Fe-SWc" firstAttribute="centerX" secondItem="9h9-hJ-HzU" secondAttribute="centerX" id="VFO-uV-JVG"/>
+                            <constraint firstItem="gJd-Fe-SWc" firstAttribute="height" secondItem="9h9-hJ-HzU" secondAttribute="height" multiplier="0.015" id="WOo-xv-OWx"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="-24" id="ZDg-9x-BY7"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="centerX" secondItem="3Ts-qU-inj" secondAttribute="centerX" id="akZ-Tj-8BY"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="top" id="dba-hL-aax"/>
