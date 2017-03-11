@@ -12,7 +12,7 @@ protocol IgniteCellDelegate: class {
     func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote)
 }
 
-class IgniteTableViewCell: UITableViewCell, IgniteCellDelegate {
+class IgniteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -73,19 +73,20 @@ class IgniteTableViewCell: UITableViewCell, IgniteCellDelegate {
         delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
     }
     
-    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
-        print("Right before flagging firebase")
-        
-        DispatchQueue.main.async {
-            self.firebaseManager.flagQuote(didFlagQuote.quoteID)
-
-        }
-    }
-    
-    
+//    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
+//        print("Right before flagging firebase")
+//        
+//        DispatchQueue.main.async {
+//            self.firebaseManager.flagQuote(didFlagQuote.quoteID)
+//
+//        }
+//    }
+//    
+//    
     
     @IBAction func flagTapped(_ sender: Any) {
-        
+        delegate = self
+
         print("HELLO flag")
         DispatchQueue.main.async {
             self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
@@ -97,12 +98,12 @@ class IgniteTableViewCell: UITableViewCell, IgniteCellDelegate {
     
 }
 
-//extension IgniteTableViewCell: IgniteCellDelegate {
-//    
-//    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
-//        print("Right before flagging firebase")
-//        FirebaseManager.shared.flagQuote(didFlagQuote.quoteID.description)
-//    }
-//    
-//    
-//}
+extension IgniteTableViewCell: IgniteCellDelegate {
+    
+    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
+        print("Right before flagging firebase")
+        FirebaseManager.shared.flagQuote(didFlagQuote.quoteID.description)
+    }
+    
+    
+}
