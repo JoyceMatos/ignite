@@ -15,16 +15,16 @@ class IgniteFeedViewController: UIViewController {
     let firebaseManager = FirebaseManager.shared
     var content = [Quote]()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    tableView.delegate = self
-    tableView.dataSource = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189
-
+        
         
     }
     
@@ -37,21 +37,12 @@ class IgniteFeedViewController: UIViewController {
             
             //TODO: - Display content as a stack (most recent on top)
             self.tableView.reloadData()
-
+            
         }
         
         tableView.reloadData()
-
+        
     }
-    
-    // MARK: - Action methods
-//    func flagQuote(_ quote: String) {
-//        firebaseManager.flagQuote(quote)
-//    }
-    
-    
-    // TODO: - Change header to "Explore what keeps others motivated"
-
 }
 
 
@@ -62,7 +53,7 @@ class IgniteFeedViewController: UIViewController {
 extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,17 +71,12 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.authorLabel.sizeToFit()
         cell.quoteLabel.text = cell.quote.quote?.description
         cell.authorLabel.text = cell.quote.author?.description
-  
+        
         
         return cell
     }
     
-    func flagTapped(_ sender: UIButton) {
-        
-        
-    }
-    
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
     

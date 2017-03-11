@@ -13,10 +13,9 @@ protocol IgniteCellDelegate: class {
 }
 
 class IgniteTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-  //  @IBOutlet weak var flagButton: UIButton!
     
     var delegate: IgniteCellDelegate?
     var quote: Quote! {
@@ -27,19 +26,22 @@ class IgniteTableViewCell: UITableViewCell {
     }
     
     let firebaseManager = FirebaseManager.shared
+    let favoriteStore = FavoritesDataStore.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
-    @IBAction func favoriteButton(_ sender: UIButton) {
+    
+    // TODO: - Seperate logic; Add this functionality to a protocal or function
+    @IBAction func favoriteTapped(_ sender: UIButton) {
         
         if sender.currentImage == #imageLiteral(resourceName: "Fill 71") {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -48,55 +50,31 @@ class IgniteTableViewCell: UITableViewCell {
             
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
             
-            guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
-            let author = authorLabel.text
+            guard let quoteText = quote.quote else { return }
+            guard let authorText = quote.author else { return }
             
-            // TODO: Figure out how to store to favorite
-            
-          //  favoriteStore.favorite(quote: quote, author: author)
+            favoriteStore.favorite(quote: quoteText, author: authorText)
             
         } else {
-            guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+            guard let quoteText = quote.quote else { return }
             
-            // TODO: Figure out how to store to favorite
-
-            
-         //   favoriteStore.unFavorite(selected: quote)
+            favoriteStore.unFavorite(selected: quoteText)
             sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
         }
- 
         
     }
     
-    
-    func flagTapped() {
-        delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
-    }
-    
-//    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
-//        print("Right before flagging firebase")
-//        
-//        DispatchQueue.main.async {
-//            self.firebaseManager.flagQuote(didFlagQuote.quoteID)
-//
-//        }
-//    }
-//    
-//    
     
     @IBAction func flagTapped(_ sender: Any) {
         delegate = self
-
-        print("HELLO flag")
         DispatchQueue.main.async {
             self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
-            // delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
         }
-     
-        
     }
     
 }
+
+// MARK : - Delegate methods
 
 extension IgniteTableViewCell: IgniteCellDelegate {
     

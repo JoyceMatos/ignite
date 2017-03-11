@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="Fill 71"/>
                                 <connections>
-                                    <action selector="favoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KVy-NH-VPf"/>
+                                    <action selector="favoriteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YNT-8b-dI2"/>
                                 </connections>
                             </button>
                         </subviews>
