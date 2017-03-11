@@ -51,11 +51,14 @@ final class FirebaseManager {
     }
         
     func flagQuote(_ quoteID: String) {
+        print("HELLO I AM IN FIREBASE")
         let flagRef = FIRDatabase.database().reference().child("flag")
         let flaggedQuote = [quoteID : true]
         
-        flagRef.setValue(flaggedQuote) { (error, ref) in
+        flagRef.updateChildValues(flaggedQuote) { (error, ref) in
         }
+        print("HELLO I HAVE FLAGGED IN FIREBASE")
+
         
     }
     

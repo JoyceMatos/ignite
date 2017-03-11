@@ -72,6 +72,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
                                 <rect key="frame" x="319" y="5" width="20" height="21"/>
                                 <state key="normal" image="Flag"/>
+                                <connections>
+                                    <action selector="flagTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HaI-ID-9tB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -101,7 +104,6 @@
             </constraints>
             <connections>
                 <outlet property="authorLabel" destination="RHu-zg-8tV" id="EAK-8G-zIF"/>
-                <outlet property="flagButton" destination="PaU-RT-sZE" id="Ikt-3y-hKS"/>
                 <outlet property="quoteLabel" destination="oka-yq-744" id="beQ-gw-tYu"/>
             </connections>
             <point key="canvasLocation" x="49" y="112.5"/>

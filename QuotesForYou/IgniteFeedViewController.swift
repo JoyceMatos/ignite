@@ -24,6 +24,7 @@ class IgniteFeedViewController: UIViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189
+
         
     }
     

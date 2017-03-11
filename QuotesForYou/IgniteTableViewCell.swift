@@ -12,11 +12,11 @@ protocol IgniteCellDelegate: class {
     func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote)
 }
 
-class IgniteTableViewCell: UITableViewCell {
+class IgniteTableViewCell: UITableViewCell, IgniteCellDelegate {
 
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var flagButton: UIButton!
+  //  @IBOutlet weak var flagButton: UIButton!
     
     var delegate: IgniteCellDelegate?
     var quote: Quote! {
@@ -68,17 +68,41 @@ class IgniteTableViewCell: UITableViewCell {
         
     }
     
-   
-    
-    //
-    
-    
-    
     
     func flagTapped() {
         delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
     }
     
+    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
+        print("Right before flagging firebase")
+        
+        DispatchQueue.main.async {
+            self.firebaseManager.flagQuote(didFlagQuote.quoteID)
+
+        }
+    }
     
+    
+    
+    @IBAction func flagTapped(_ sender: Any) {
+        
+        print("HELLO flag")
+        DispatchQueue.main.async {
+            self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
+            // delegate?.IgniteTableViewCell(self, didFlagQuote: quote)
+        }
+     
+        
+    }
     
 }
+
+//extension IgniteTableViewCell: IgniteCellDelegate {
+//    
+//    func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
+//        print("Right before flagging firebase")
+//        FirebaseManager.shared.flagQuote(didFlagQuote.quoteID.description)
+//    }
+//    
+//    
+//}

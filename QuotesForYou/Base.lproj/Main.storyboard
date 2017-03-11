@@ -267,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-C9-WeF">
-                                        <rect key="frame" x="368" y="66" width="25" height="29"/>
+                                        <rect key="frame" x="356" y="67" width="25" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <color key="tintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,7 +352,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="8hZ-gQ-zoK" firstAttribute="top" secondItem="0JD-Vi-7DB" secondAttribute="top" constant="19" id="1FN-vd-BbV"/>
                                             <constraint firstAttribute="trailing" secondItem="8hZ-gQ-zoK" secondAttribute="trailing" constant="8" id="4D4-7t-d6C"/>
@@ -378,7 +377,6 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="rto-ZK-ftk" firstAttribute="width" secondItem="X9N-ZF-Aig" secondAttribute="width" id="50T-FH-Xpv"/>
                                             <constraint firstItem="X9N-ZF-Aig" firstAttribute="centerX" secondItem="Rpz-pd-UQP" secondAttribute="centerX" id="I6C-iP-uHb"/>
@@ -414,7 +412,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="h5c-Ij-bUW" firstAttribute="centerX" secondItem="Qt7-jH-1Wd" secondAttribute="centerX" id="2e6-1X-w4b"/>
                                     <constraint firstItem="h5c-Ij-bUW" firstAttribute="height" secondItem="Qt7-jH-1Wd" secondAttribute="height" id="68t-wr-HwW"/>
