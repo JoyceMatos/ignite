@@ -253,9 +253,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NjA-DS-Bhy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NjA-DS-Bhy">
                                 <rect key="frame" x="0.0" y="148" width="414" height="531"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="VgQ-G1-xI1">
@@ -275,18 +274,24 @@
                                         <rect key="frame" x="21" y="135" width="372.66666666666663" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJv-sq-jgU">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJv-sq-jgU">
                                         <rect key="frame" x="379" y="30" width="27" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="greyPost"/>
+                                        <connections>
+                                            <segue destination="7Qu-t6-ODS" kind="presentation" modalPresentationStyle="overCurrentContext" id="kPy-gz-ZnE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="WJv-sq-jgU" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="width" multiplier="0.07" id="2BN-SN-4pO"/>
+                                    <constraint firstAttribute="trailing" secondItem="WJv-sq-jgU" secondAttribute="trailing" constant="5" id="B4Z-YH-sdp"/>
+                                    <constraint firstItem="WJv-sq-jgU" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="top" constant="25" id="BhS-O1-Rdd"/>
+                                    <constraint firstItem="WJv-sq-jgU" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.17" id="J3Y-GK-nK9"/>
                                     <constraint firstItem="gJd-Fe-SWc" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="width" multiplier="0.9" id="ifc-zz-Q8N"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore what inspires other people and ignite each other's day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU" userLabel="ExploreLabel">
-                                <rect key="frame" x="68.333333333333314" y="59.999999999999993" width="277.33333333333337" height="51.333333333333321"/>
+                                <rect key="frame" x="68.333333333333314" y="59.999999999999993" width="277.33333333333337" height="52.333333333333321"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -303,15 +308,19 @@
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.35" id="ACw-2B-PDB"/>
                             <constraint firstItem="gJd-Fe-SWc" firstAttribute="top" secondItem="9h9-hJ-HzU" secondAttribute="bottom" constant="30" id="DQ4-js-M55"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="7:16" id="Ir4-Pc-i97"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="width" secondItem="xCc-sI-UA8" secondAttribute="width" id="N4E-5S-7GA"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="centerX" secondItem="xCc-sI-UA8" secondAttribute="centerX" id="RZR-GP-NWQ"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="width" secondItem="xCc-sI-UA8" secondAttribute="width" id="Tdx-Vb-emC"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.45" id="Tsm-aW-YLH"/>
                             <constraint firstItem="gJd-Fe-SWc" firstAttribute="centerX" secondItem="9h9-hJ-HzU" secondAttribute="centerX" id="VFO-uV-JVG"/>
                             <constraint firstItem="gJd-Fe-SWc" firstAttribute="height" secondItem="9h9-hJ-HzU" secondAttribute="height" multiplier="0.015" id="WOo-xv-OWx"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="-24" id="ZDg-9x-BY7"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="height" secondItem="xCc-sI-UA8" secondAttribute="height" multiplier="0.8" id="Ztw-ah-1q6"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="centerX" secondItem="3Ts-qU-inj" secondAttribute="centerX" id="akZ-Tj-8BY"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="centerX" secondItem="OJi-nZ-xrV" secondAttribute="centerX" id="cyI-YA-YRU"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="top" id="dba-hL-aax"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="xCc-sI-UA8" secondAttribute="top" constant="-4" id="hpD-lM-V6e"/>
+                            <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="bottom" id="hrw-uY-hWS"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="height" secondItem="xCc-sI-UA8" secondAttribute="height" multiplier="0.2" id="jRr-dJ-T6Q"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="width" multiplier="0.67" id="zbE-KK-n0s"/>
                         </constraints>
@@ -339,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-W8-E5J" userLabel="GreyView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Vi-7DB" userLabel="CancelView">
@@ -350,8 +359,7 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                                                 <state key="normal" title="X"/>
                                                 <connections>
-                                                    <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="8yX-3p-Z8g"/>
-                                                    <action selector="exitButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="jHt-uE-vZv"/>
+                                                    <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="1h6-In-YwP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -408,7 +416,7 @@
                                 <rect key="frame" x="0.0" y="319" width="414" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
-                                        <rect key="frame" x="-1" y="0.0" width="415" height="49"/>
+                                        <rect key="frame" x="-0.66666666666665719" y="0.0" width="414.33333333333337" height="49"/>
                                         <state key="normal" title="Post"/>
                                         <connections>
                                             <action selector="postButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="JCF-3s-Ydd"/>
@@ -438,7 +446,6 @@
                     <connections>
                         <outlet property="addAuthorTextField" destination="rto-ZK-ftk" id="uXr-yR-iIZ"/>
                         <outlet property="addQuoteTextView" destination="X9N-ZF-Aig" id="Ngl-hM-X0f"/>
-                        <outlet property="cancel" destination="8hZ-gQ-zoK" id="ILL-GJ-iLg"/>
                         <outlet property="post" destination="h5c-Ij-bUW" id="qnt-5B-axR"/>
                     </connections>
                 </viewController>

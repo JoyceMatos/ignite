@@ -32,15 +32,11 @@ class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     func textViewDidBeginEditing(_ textView: UITextView) {
         addQuoteTextView.text = nil
         addQuoteTextView.textColor = UIColor.orange
-        post.isEnabled = true
-        cancel.isEnabled = true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         addAuthorTextField.text = nil
         addAuthorTextField.textColor = UIColor.orange
-        post.isEnabled = true
-        cancel.isEnabled = true
         
     }
     
@@ -58,12 +54,11 @@ class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
 
     }
   
-    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-
     }
-
+    
+ 
 }
 
 extension UIViewController {
