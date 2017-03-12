@@ -35,9 +35,7 @@ class ChangeTimeViewController: UIViewController {
             
             }, completion: nil)
         
-        let chosenTimeforDay = timePicker.date
-        let dateFormatter = DateFormatter()
-        
+        let chosenTimeforDay = timePicker.date        
         
         // Store chosen time in user defaults
         

@@ -66,7 +66,7 @@ class FavoriteTableViewController: UITableViewController {
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
             let quote = self.store.favorites[indexPath.row]
-            var shareArray = self.store.shareFavorite(quote: quote)
+            let shareArray = self.store.shareFavorite(quote: quote)
             
             self.addActivityVC(with: shareArray)
             
@@ -81,7 +81,7 @@ class FavoriteTableViewController: UITableViewController {
         
         //TODO: - This is for ipads
         if let popoverController = activityVC.popoverPresentationController {
-            popoverController.sourceView = self.view as? UIView
+            popoverController.sourceView = self.view as UIView
             popoverController.sourceRect = self.view.bounds
             
             self.present(activityVC, animated: true, completion: nil)

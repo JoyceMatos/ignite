@@ -38,7 +38,6 @@ class TimePreferenceViewController: UIViewController{
         UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: { [weak self] in sender.transform = .identity }, completion: nil)
         
         let chosenTimeforDay = timePicker.date
-        let dateFormatter = DateFormatter()
         
         // Store chosen time in user defaults
         defaults.set(chosenTimeforDay, forKey: "chosenTime")

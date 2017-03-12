@@ -31,9 +31,9 @@ class IgniteFeedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         firebaseManager.createQuote { (quoteID, quote, author) in
             print("HELLLOOOOO")
-            var quote = Quote(with: quoteID, quote: quote, author: author)
+            let quote = Quote(with: quoteID, quote: quote, author: author)
             self.content.append(quote)
-            print(quote.quote)
+            print(quote.quote ?? "no quote")
             
             //TODO: - Display content as a stack (most recent on top)
             self.tableView.reloadData()

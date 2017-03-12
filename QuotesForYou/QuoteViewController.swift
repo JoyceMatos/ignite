@@ -114,7 +114,7 @@ class QuoteViewController: UIViewController {
     
     func compareTime() {
         let currentDate = Date()
-        var timeManager = TimeManager()
+        let timeManager = TimeManager()
         
         timeManager.compareTime(using: currentDate) {
             self.showNewQuote()
