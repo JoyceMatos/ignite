@@ -10,7 +10,7 @@ import UIKit
 
 class ChangeTimeViewController: UIViewController {
     
-    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     
@@ -20,8 +20,7 @@ class ChangeTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        instructionLabel.sizeToFit()
-        timePicker.datePickerMode = .time
+        configureViews()
     }
     
     @IBAction func setTimeButton(_ sender: UIButton) {
@@ -42,10 +41,58 @@ class ChangeTimeViewController: UIViewController {
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         
+        let hr = Calendar.current.component(.hour, from: storredDefault)
+        let min = Calendar.current.component(.minute, from: storredDefault)
+        
+        if hr < 12 && hr > 0 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(hr):\(m) AM"
+        } else if hr == 12 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(12):\(m) PM"
+        } else if hr == 0 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(12):\(m) AM"
+        }else {
+            let m = String(format: "%02d", min)
+            let h = String(format: "%02d", (hr - 12))
+            currentTimeLabel.text = "\(h):\(m) PM"
+        }
+        
         // Initiate daily notifications
         
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
+        
+        
+    }
+    
+    func configureViews() {
+        
+        guard let storedTime = defaults.object(forKey: "chosenTime") as? Date else { print("noChosenTimeToConfigure: byeDefault"); return }
+        
+        let hr = Calendar.current.component(.hour, from: storedTime)
+        let min = Calendar.current.component(.minute, from: storedTime)
+        
+        if hr < 12 && hr > 0 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(hr):\(m) AM"
+        } else if hr == 12 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(12):\(m) PM"
+        } else if hr == 0 {
+            let m = String(format: "%02d", min)
+            currentTimeLabel.text = "\(12):\(m) AM"
+        } else {
+            let m = String(format: "%02d", min)
+            let h = String(format: "%02d", (hr - 12))
+            currentTimeLabel.text = "\(h):\(m) PM"
+        }
+
+        
+        instructionLabel.sizeToFit()
+        
+        timePicker.datePickerMode = .time
         
         
     }
