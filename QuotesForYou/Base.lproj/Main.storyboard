@@ -75,9 +75,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-3D-zRS">
-                                <rect key="frame" x="20.666666666666657" y="521.33333333333337" width="372.66666666666663" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Set Time"/>
+                                <rect key="frame" x="82.666666666666686" y="521.33333333333337" width="248.66666666666663" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Set Time">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="setTimeButton:" destination="96i-pt-8g4" eventType="touchUpInside" id="tac-zX-VJI"/>
                                     <segue destination="3Lr-K6-TuD" kind="show" identifier="showTabBar" id="Egv-VC-vxx"/>
@@ -87,7 +91,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W8h-Nr-rvo" firstAttribute="centerX" secondItem="AhZ-M0-1V7" secondAttribute="centerX" id="00z-T3-AeC"/>
-                            <constraint firstItem="vgs-3D-zRS" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" multiplier="0.9" id="09d-eG-ROv"/>
+                            <constraint firstItem="vgs-3D-zRS" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" multiplier="0.6" id="09d-eG-ROv"/>
                             <constraint firstItem="yag-Xj-HIJ" firstAttribute="top" secondItem="W8h-Nr-rvo" secondAttribute="bottom" constant="50" id="3cQ-8e-fFj"/>
                             <constraint firstItem="vgs-3D-zRS" firstAttribute="top" secondItem="kxR-4h-lmR" secondAttribute="bottom" constant="43" id="4DK-hS-mqK"/>
                             <constraint firstItem="yag-Xj-HIJ" firstAttribute="width" secondItem="AhZ-M0-1V7" secondAttribute="width" id="4Tg-55-4X3"/>
@@ -202,9 +206,12 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-TE-w8I">
-                                <rect key="frame" x="20.666666666666657" y="521.33333333333337" width="372.66666666666663" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Set Time"/>
+                                <rect key="frame" x="82.666666666666686" y="521.33333333333337" width="248.66666666666663" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Set Time">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="setTimeButton:" destination="96i-pt-8g4" eventType="touchUpInside" id="3mA-aB-rtr"/>
                                     <action selector="setTimeButton:" destination="EaL-Ky-f19" eventType="touchUpInside" id="uAL-3E-BMG"/>
@@ -226,7 +233,7 @@
                             <constraint firstItem="IDJ-J6-JSg" firstAttribute="top" secondItem="4Kw-Js-khG" secondAttribute="bottom" constant="25" id="BB5-LF-Zbp"/>
                             <constraint firstItem="yLi-TE-w8I" firstAttribute="top" secondItem="IDJ-J6-JSg" secondAttribute="bottom" constant="43" id="C2C-hK-iIX"/>
                             <constraint firstItem="IDJ-J6-JSg" firstAttribute="centerX" secondItem="iRm-Vf-7Lz" secondAttribute="centerX" id="JkT-TV-mpg"/>
-                            <constraint firstItem="yLi-TE-w8I" firstAttribute="width" secondItem="iRm-Vf-7Lz" secondAttribute="width" multiplier="0.9" id="LXq-hW-6gO"/>
+                            <constraint firstItem="yLi-TE-w8I" firstAttribute="width" secondItem="iRm-Vf-7Lz" secondAttribute="width" multiplier="0.6" id="LXq-hW-6gO"/>
                             <constraint firstItem="IDJ-J6-JSg" firstAttribute="centerY" secondItem="iRm-Vf-7Lz" secondAttribute="centerY" id="Lxj-io-Wh6"/>
                             <constraint firstItem="ZeL-XP-OhJ" firstAttribute="centerX" secondItem="iRm-Vf-7Lz" secondAttribute="centerX" id="MnH-J2-kuc"/>
                             <constraint firstItem="1IF-E6-VPE" firstAttribute="width" secondItem="iRm-Vf-7Lz" secondAttribute="width" id="Tdh-3N-NTI"/>
@@ -244,7 +251,7 @@
                         <inset key="imageInsets" minX="5" minY="6" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="headerLabel" destination="1IF-E6-VPE" id="FBg-5b-ayA"/>
+                        <outlet property="currentTimeLabel" destination="1IF-E6-VPE" id="FG6-24-saV"/>
                         <outlet property="instructionLabel" destination="4Kw-Js-khG" id="diL-bK-5Zt"/>
                         <outlet property="timePicker" destination="IDJ-J6-JSg" id="gnd-wH-qTR"/>
                     </connections>
