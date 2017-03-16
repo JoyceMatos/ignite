@@ -70,7 +70,11 @@ class IgniteTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
         }
+        
+        //TODO: - Add alert to flag quote
     }
+    
+  
     
 }
 

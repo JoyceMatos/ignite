@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell1: UITableViewCell {
+class FavTableViewCell1: UITableViewCell {
     
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!

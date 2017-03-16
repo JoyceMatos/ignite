@@ -57,27 +57,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kxR-4h-lmR">
-                                <rect key="frame" x="41.333333333333343" y="257.66666666666669" width="331.33333333333337" height="220.66666666666663"/>
+                                <rect key="frame" x="41" y="258" width="332" height="220"/>
                                 <date key="date" timeIntervalSinceReferenceDate="505352625.39981103">
                                     <!--2017-01-05 23:43:45 +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-Nr-rvo">
-                                <rect key="frame" x="0.0" y="128.66666666666666" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="29"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a time for your daily quote:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yag-Xj-HIJ">
-                                <rect key="frame" x="0.0" y="207.66666666666666" width="414" height="25"/>
+                                <rect key="frame" x="0.0" y="208" width="414" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-3D-zRS">
-                                <rect key="frame" x="82.666666666666686" y="521.33333333333337" width="248.66666666666663" height="36"/>
+                                <rect key="frame" x="83" y="521" width="248" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Set Time">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="56" id="Nyq-4S-gEB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Nyq-4S-gEB">
                                 <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
@@ -188,27 +188,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Select a new time for your daily quote:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kw-Js-khG">
-                                <rect key="frame" x="0.0" y="193.33333333333334" width="414" height="39.333333333333314"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current time is:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-XP-OhJ">
-                                <rect key="frame" x="0.0" y="70" width="414" height="36.666666666666671"/>
+                                <rect key="frame" x="0.0" y="70" width="414" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IDJ-J6-JSg">
-                                <rect key="frame" x="41.333333333333343" y="257.66666666666669" width="331.33333333333337" height="220.66666666666663"/>
+                                <rect key="frame" x="41" y="258" width="332" height="220"/>
                                 <date key="date" timeIntervalSinceReferenceDate="505352625.39981103">
                                     <!--2017-01-05 23:43:45 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-TE-w8I">
-                                <rect key="frame" x="82.666666666666686" y="521.33333333333337" width="248.66666666666663" height="36"/>
+                                <rect key="frame" x="83" y="521" width="248" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Set Time">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -218,7 +218,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:45 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-E6-VPE">
-                                <rect key="frame" x="0.0" y="106.66666666666666" width="414" height="36.666666666666657"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -273,10 +273,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NjA-DS-Bhy">
-                                <rect key="frame" x="0.0" y="143.33333333333331" width="414" height="588.66666666666674"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="200" id="VgQ-G1-xI1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="VgQ-G1-xI1">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgQ-G1-xI1" id="Owo-6N-JQ7">
@@ -287,14 +287,14 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJi-nZ-xrV" userLabel="ExploreView">
-                                <rect key="frame" x="0.0" y="-4" width="414" height="147.33333333333334"/>
+                                <rect key="frame" x="0.0" y="-4" width="414" height="147"/>
                                 <subviews>
                                     <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-Fe-SWc" userLabel="Divider">
-                                        <rect key="frame" x="21" y="145.66666666666666" width="372.66666666666669" height="1"/>
+                                        <rect key="frame" x="21" y="146" width="373" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJv-sq-jgU">
-                                        <rect key="frame" x="370" y="63.000000000000007" width="29" height="25.666666666666679"/>
+                                        <rect key="frame" x="370" y="63" width="29" height="25"/>
                                         <state key="normal" image="greyPost"/>
                                         <connections>
                                             <segue destination="7Qu-t6-ODS" kind="presentation" modalPresentationStyle="overCurrentContext" id="kPy-gz-ZnE"/>
@@ -310,13 +310,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore what inspires other people and ignite each other's day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU" userLabel="ExploreLabel">
-                                <rect key="frame" x="68" y="60.333333333333329" width="278" height="51.333333333333329"/>
+                                <rect key="frame" x="68" y="60" width="278" height="52"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
-                                <rect key="frame" x="174.66666666666666" y="-4" width="64.666666666666686" height="66.333333333333343"/>
+                                <rect key="frame" x="175" y="-4" width="64" height="66"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,8 +374,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-gQ-zoK">
-                                                <rect key="frame" x="354" y="19" width="52" height="36"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <rect key="frame" x="369" y="19" width="30" height="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                                 <state key="normal" title="X"/>
                                                 <connections>
                                                     <action selector="cancelButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="1h6-In-YwP"/>
@@ -384,8 +384,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="8hZ-gQ-zoK" firstAttribute="top" secondItem="0JD-Vi-7DB" secondAttribute="top" constant="19" id="1FN-vd-BbV"/>
-                                            <constraint firstAttribute="trailing" secondItem="8hZ-gQ-zoK" secondAttribute="trailing" constant="8" id="4D4-7t-d6C"/>
-                                            <constraint firstItem="8hZ-gQ-zoK" firstAttribute="leading" secondItem="0JD-Vi-7DB" secondAttribute="leading" constant="354" id="dYL-IE-hg2"/>
+                                            <constraint firstAttribute="trailing" secondItem="8hZ-gQ-zoK" secondAttribute="trailing" constant="15" id="4D4-7t-d6C"/>
                                             <constraint firstAttribute="bottom" secondItem="8hZ-gQ-zoK" secondAttribute="bottom" constant="0.3333333333333357" id="k7S-I2-Pjd"/>
                                         </constraints>
                                     </view>
@@ -400,7 +399,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
-                                                <rect key="frame" x="21" y="227" width="373" height="20.666666666666686"/>
+                                                <rect key="frame" x="21" y="227" width="373" height="21"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
@@ -435,18 +434,22 @@
                                 <rect key="frame" x="0.0" y="319" width="414" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-Ij-bUW">
-                                        <rect key="frame" x="-0.66666666666665719" y="0.0" width="414.33333333333337" height="49"/>
-                                        <state key="normal" title="Post"/>
+                                        <rect key="frame" x="103" y="3" width="207" height="31.666666666666686"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="postButton:" destination="7Qu-t6-ODS" eventType="touchUpInside" id="JCF-3s-Ydd"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="top" secondItem="Qt7-jH-1Wd" secondAttribute="top" constant="3" id="0kX-xu-WbL"/>
                                     <constraint firstItem="h5c-Ij-bUW" firstAttribute="centerX" secondItem="Qt7-jH-1Wd" secondAttribute="centerX" id="2e6-1X-w4b"/>
-                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="height" secondItem="Qt7-jH-1Wd" secondAttribute="height" id="68t-wr-HwW"/>
-                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="width" secondItem="Qt7-jH-1Wd" secondAttribute="width" id="h9T-1V-Wmv"/>
-                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="centerY" secondItem="Qt7-jH-1Wd" secondAttribute="centerY" id="yyu-lv-67w"/>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="height" secondItem="Qt7-jH-1Wd" secondAttribute="height" multiplier="0.65" id="68t-wr-HwW"/>
+                                    <constraint firstItem="h5c-Ij-bUW" firstAttribute="width" secondItem="Qt7-jH-1Wd" secondAttribute="width" multiplier="0.5" id="h9T-1V-Wmv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -485,7 +488,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of The Day " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-U6-hfe">
-                                <rect key="frame" x="107.33333333333331" y="85" width="199.33333333333337" height="33"/>
+                                <rect key="frame" x="107" y="85" width="200" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -509,13 +512,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confucius" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo8-JJ-Ksi">
-                                <rect key="frame" x="179.66666666666666" y="327.66666666666674" width="75" height="23.333333333333314"/>
+                                <rect key="frame" x="180" y="327.66666666666669" width="75" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-vg-Ufi">
-                                <rect key="frame" x="201" y="441" width="32" height="32"/>
+                                <rect key="frame" x="201" y="441.66666666666669" width="32" height="32"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="Fill 71"/>
                                 <connections>

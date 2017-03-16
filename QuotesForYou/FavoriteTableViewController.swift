@@ -39,7 +39,7 @@ class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quote = store.favorites[indexPath.row]
-        let cell = Bundle.main.loadNibNamed("TableViewCell1", owner: self, options: nil)?.first as! TableViewCell1
+        let cell = Bundle.main.loadNibNamed("FavTableViewCell", owner: self, options: nil)?.first as! FavTableViewCell
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
         cell.quoteLabel.text = quote.value(forKey: "quote") as? String

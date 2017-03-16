@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="326" height="207"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="326" height="207"/>
+                <rect key="frame" x="0.0" y="0.0" width="326" height="206"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-Vp-CKh">
@@ -49,10 +49,6 @@
                 <constraint firstItem="eZ0-gb-K7E" firstAttribute="top" secondItem="KGk-i7-Jjw" secondAttribute="top" constant="32" id="YwO-I5-ZXW"/>
                 <constraint firstAttribute="trailing" secondItem="eZ0-gb-K7E" secondAttribute="trailing" constant="25" id="mRP-HZ-6JW"/>
             </constraints>
-            <connections>
-                <outlet property="authorLabel" destination="BCC-WG-ODE" id="NhK-ao-uZL"/>
-                <outlet property="quoteLabel" destination="eZ0-gb-K7E" id="Zhg-Ua-1qX"/>
-            </connections>
             <point key="canvasLocation" x="-7" y="140"/>
         </tableViewCell>
     </objects>

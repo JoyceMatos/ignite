@@ -23,8 +23,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nws-5i-rCV">
                         <rect key="frame" x="0.0" y="0.0" width="348" height="34"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
-                                <rect key="frame" x="315" y="7" width="21" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-LZ-s3h">
+                                <rect key="frame" x="298" y="15" width="20" height="19"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="Fill 71"/>
                                 <connections>
@@ -33,30 +33,30 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="goh-LZ-s3h" firstAttribute="height" secondItem="Nws-5i-rCV" secondAttribute="height" multiplier="0.6" id="BbB-T7-ZNm"/>
                             <constraint firstItem="goh-LZ-s3h" firstAttribute="width" secondItem="Nws-5i-rCV" secondAttribute="height" multiplier="21:34" id="Dza-7J-yY7"/>
-                            <constraint firstItem="goh-LZ-s3h" firstAttribute="top" secondItem="Nws-5i-rCV" secondAttribute="top" constant="7" id="sWz-2h-R9M"/>
-                            <constraint firstAttribute="bottom" secondItem="goh-LZ-s3h" secondAttribute="bottom" constant="6" id="tFE-hu-beH"/>
-                            <constraint firstAttribute="trailing" secondItem="goh-LZ-s3h" secondAttribute="trailing" constant="12" id="xPa-fh-cLq"/>
+                            <constraint firstItem="goh-LZ-s3h" firstAttribute="top" secondItem="Nws-5i-rCV" secondAttribute="top" constant="18" id="sWz-2h-R9M"/>
+                            <constraint firstAttribute="trailing" secondItem="goh-LZ-s3h" secondAttribute="trailing" constant="15" id="xPa-fh-cLq"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGh-mx-OZf">
-                        <rect key="frame" x="0.0" y="34" width="348" height="139.5"/>
+                        <rect key="frame" x="0.0" y="34" width="348" height="140"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What the superior man seeks is in himself; what the small man seeks is in others.” " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oka-yq-744">
-                                <rect key="frame" x="18" y="11" width="313" height="83.5"/>
+                                <rect key="frame" x="35.5" y="11" width="278" height="84"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confucious" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHu-zg-8tV">
-                                <rect key="frame" x="0.5" y="104.5" width="348" height="21"/>
+                                <rect key="frame" x="0.0" y="105" width="348" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="oka-yq-744" firstAttribute="width" secondItem="dGh-mx-OZf" secondAttribute="width" multiplier="0.9" id="7UT-lf-kDW"/>
+                            <constraint firstItem="oka-yq-744" firstAttribute="width" secondItem="dGh-mx-OZf" secondAttribute="width" multiplier="0.8" id="7UT-lf-kDW"/>
                             <constraint firstItem="RHu-zg-8tV" firstAttribute="width" secondItem="dGh-mx-OZf" secondAttribute="width" id="EmZ-EZ-48y"/>
                             <constraint firstItem="RHu-zg-8tV" firstAttribute="centerX" secondItem="dGh-mx-OZf" secondAttribute="centerX" id="U2o-WX-f0h"/>
                             <constraint firstItem="oka-yq-744" firstAttribute="top" secondItem="dGh-mx-OZf" secondAttribute="top" constant="11" id="ac8-ys-3iY"/>
@@ -69,8 +69,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-Ho-g40">
                         <rect key="frame" x="0.0" y="164" width="348" height="34"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
-                                <rect key="frame" x="319" y="5" width="20" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-RT-sZE">
+                                <rect key="frame" x="310" y="5" width="25" height="21"/>
                                 <state key="normal" image="Flag"/>
                                 <connections>
                                     <action selector="flagTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HaI-ID-9tB"/>
@@ -78,9 +78,9 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="PaU-RT-sZE" firstAttribute="width" secondItem="Gci-Ho-g40" secondAttribute="height" multiplier="10:17" id="IH3-UV-39i"/>
                             <constraint firstItem="PaU-RT-sZE" firstAttribute="top" secondItem="Gci-Ho-g40" secondAttribute="top" constant="5" id="Id1-ZN-zHg"/>
                             <constraint firstAttribute="bottom" secondItem="PaU-RT-sZE" secondAttribute="bottom" constant="8" id="atQ-aS-Mkv"/>
+                            <constraint firstItem="PaU-RT-sZE" firstAttribute="height" secondItem="Gci-Ho-g40" secondAttribute="height" multiplier="0.6" id="ntQ-jh-zuj"/>
                         </constraints>
                     </view>
                 </subviews>
