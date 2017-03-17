@@ -10,7 +10,15 @@ import UIKit
 
 protocol IgniteCellDelegate: class {
     func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote)
+    
 }
+
+protocol FlagNotification: class {
+    
+    func sendAlert(completion: @escaping () -> Void)
+    
+}
+
 
 class IgniteTableViewCell: UITableViewCell {
     
@@ -18,6 +26,7 @@ class IgniteTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     
     var delegate: IgniteCellDelegate?
+    var flagDelegate: FlagNotification?
     var quote: Quote! {
         didSet {
             quoteLabel.text = quote.quote?.description
@@ -67,9 +76,14 @@ class IgniteTableViewCell: UITableViewCell {
     
     @IBAction func flagTapped(_ sender: Any) {
         delegate = self
-        DispatchQueue.main.async {
-            self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
+        
+        flagDelegate?.sendAlert {
+            DispatchQueue.main.async {
+                self.delegate?.IgniteTableViewCell(self, didFlagQuote: self.quote)
+            }
         }
+        
+       
         
         //TODO: - Add alert to flag quote
     }
@@ -86,6 +100,20 @@ extension IgniteTableViewCell: IgniteCellDelegate {
         print("Right before flagging firebase")
         FirebaseManager.shared.flagQuote(didFlagQuote.quoteID.description)
     }
+    
+//    func sendFlagAlert() {
+//        let alertController = UIAlertController(title: "Reminder", message: "Your reminder has been updated to: \(time)", preferredStyle: .alert)
+//        
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+//            UIAlertAction in
+//            print("OK Pressed")
+//        }
+//        
+//        alertController.addAction(okAction)
+//        
+//        // Present the controller
+//        self.present(alertController, animated: true, completion: nil)
+//    }
     
     
 }

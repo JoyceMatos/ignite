@@ -15,9 +15,8 @@ class FavoriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 189
+        
+        configureViews()
 
     }
     
@@ -72,6 +71,21 @@ class FavoriteTableViewController: UITableViewController {
             
         }
         return [delete, share]
+    }
+    
+    // MARK: - View methods
+    
+    func configureViews() {
+        
+        // TableView Height
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 189
+        
+        // TabBar Height
+        let tabBarHeight = self.tabBarController?.tabBar.bounds.height
+        self.edgesForExtendedLayout = UIRectEdge.all
+        self.tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: tabBarHeight!, right: 0.0)
+    
     }
 
     // MARK: - Helper methods

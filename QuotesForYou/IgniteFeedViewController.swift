@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class IgniteFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,17 +23,15 @@ class IgniteFeedViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 189
-        
+        configureViews()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         firebaseManager.createQuote { (quoteID, quote, author) in
-            print("HELLLOOOOO")
             let quote = Quote(with: quoteID, quote: quote, author: author)
-            self.content.append(quote)
+            self.content.insert(quote, at: 0)
+           // self.content.append(quote)
             print(quote.quote ?? "no quote")
             
             //TODO: - Display content as a stack (most recent on top)
@@ -43,6 +42,20 @@ class IgniteFeedViewController: UIViewController {
         tableView.reloadData()
         
     }
+    
+    func configureViews() {
+        
+        // TableView Height
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 189
+        
+        // TabBar Height
+        let tabBarHeight = self.tabBarController?.tabBar.bounds.height
+        self.edgesForExtendedLayout = UIRectEdge.all
+        self.tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: tabBarHeight!, right: 0.0)
+
+    }
+    
     
 }
 
@@ -65,7 +78,7 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         let quote = content[indexPath.row]
         let cell = Bundle.main.loadNibNamed("IgniteTableViewCell", owner: self, options: nil)?.first as! IgniteTableViewCell
         
-        
+        cell.flagDelegate = self
         cell.quote = quote
         
         cell.quoteLabel.sizeToFit()
@@ -81,6 +94,31 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     
+    
+}
+
+extension IgniteFeedViewController: FlagNotification {
+    
+    func sendAlert(completion: @escaping () -> Void) {
+        
+        let alertController = UIAlertController(title: "Report", message: "Are you sure you want to report this quote?" , preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (UIAlertAction) in
+            print("OK Pressed")
+            completion()
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+            
+        }
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
 }
 
