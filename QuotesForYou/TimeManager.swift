@@ -38,28 +38,33 @@ class TimeManager {
             print("1")
             
         } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
+           // completion()
+              QuoteDataStore.hasSeenQuote(false)
             completion()
-            //  QuoteDataStore.hasSeenQuote(true)
             print("2")
             
         } else if chosenHour < currentHour && !userHasSeenQuote {
+          //  completion()
+              QuoteDataStore.hasSeenQuote(false)
             completion()
-            //   QuoteDataStore.hasSeenQuote(true)
             print("3")
             
         } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
+          //  completion()
+            QuoteDataStore.hasSeenQuote(false)
             completion()
-            //  QuoteDataStore.hasSeenQuote(true)
             print("4")
             
             
         } else if chosenHour == currentHour && chosenMin > currentMin {
-            QuoteDataStore.hasSeenQuote(false)
+            QuoteDataStore.hasSeenQuote(true)
+          //  completion()
             print("5")
             
             
         } else if chosenHour > currentHour {
-            QuoteDataStore.hasSeenQuote(false)
+            QuoteDataStore.hasSeenQuote(true)
+         //   completion()
             print("6")
             
         }
