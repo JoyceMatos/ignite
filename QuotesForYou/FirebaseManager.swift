@@ -40,29 +40,20 @@ final class FirebaseManager {
             
             let quote = quoteDict["quote"] as! String
             let author = quoteDict["author"] as! String
-            
-            print("This is the snapshot key: \(snapshot.key)")
-            print(quote)
-            print(author)
-            
+
             completion(quoteID, quote, author)
             
         })
     }
         
     func flagQuote(_ quoteID: String) {
-        print("HELLO I AM IN FIREBASE")
         let flagRef = FIRDatabase.database().reference().child("flag")
         let flaggedQuote = [quoteID : true]
         
         flagRef.updateChildValues(flaggedQuote) { (error, ref) in
         }
-        print("HELLO I HAVE FLAGGED IN FIREBASE")
-
         
     }
-    
-    
     
     
 }

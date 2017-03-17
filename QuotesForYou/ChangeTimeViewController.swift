@@ -24,12 +24,9 @@ class ChangeTimeViewController: UIViewController {
     }
     
     @IBAction func setTimeButton(_ sender: UIButton) {
-        
-        
         let chosenTimeforDay = timePicker.date        
         
         // Store chosen time in user defaults
-        
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
         
@@ -52,7 +49,6 @@ class ChangeTimeViewController: UIViewController {
         }
         
         // Initiate daily notifications
-        
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
         
@@ -64,7 +60,6 @@ class ChangeTimeViewController: UIViewController {
     }
     
     func configureViews() {
-        
         guard let storedTime = defaults.object(forKey: "chosenTime") as? Date else { print("noChosenTimeToConfigure: byeDefault"); return }
         
         let hr = Calendar.current.component(.hour, from: storedTime)
@@ -85,7 +80,6 @@ class ChangeTimeViewController: UIViewController {
             currentTimeLabel.text = "\(h):\(m) PM"
         }
 
-        
         instructionLabel.sizeToFit()
         
         timePicker.datePickerMode = .time

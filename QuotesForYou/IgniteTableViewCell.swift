@@ -14,7 +14,6 @@ protocol IgniteCellDelegate: class {
 }
 
 protocol FlagNotification: class {
-    
     func sendAlert(completion: @escaping () -> Void)
     
 }

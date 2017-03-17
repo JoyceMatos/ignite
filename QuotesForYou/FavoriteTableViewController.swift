@@ -57,8 +57,6 @@ class FavoriteTableViewController: UITableViewController {
 
             self.store.deleteFavorite(quote: quote)
             
-            // TODO: - Add Notification once it's been deleted (feedback)
-
             tableView.reloadData()
   
         }
@@ -76,7 +74,6 @@ class FavoriteTableViewController: UITableViewController {
     // MARK: - View methods
     
     func configureViews() {
-        
         // TableView Height
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189

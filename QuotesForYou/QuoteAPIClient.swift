@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class QuoteAPIClient {
     
@@ -16,10 +17,12 @@ class QuoteAPIClient {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
-            if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : String] {
-                if let responseJSON = responseJSON {
-                    completion(responseJSON)
-                }
+            
+            do {
+                let responseJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String : String]
+                completion(responseJSON)
+            } catch {
+                print(error.localizedDescription)
             }
         }
         task.resume()

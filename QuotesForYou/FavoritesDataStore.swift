@@ -57,7 +57,6 @@ class FavoritesDataStore {
     }
     
     func fetchFavorites() {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -87,7 +86,6 @@ class FavoritesDataStore {
     }
     
     func shareFavorite(quote: NSManagedObject) -> [String] {
-
         let message = "Check out my quote of the day: "
         var shareArray = [String]()
         

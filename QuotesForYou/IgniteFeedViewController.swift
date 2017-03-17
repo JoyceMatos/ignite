@@ -31,10 +31,7 @@ class IgniteFeedViewController: UIViewController {
         firebaseManager.createQuote { (quoteID, quote, author) in
             let quote = Quote(with: quoteID, quote: quote, author: author)
             self.content.insert(quote, at: 0)
-           // self.content.append(quote)
-            print(quote.quote ?? "no quote")
             
-            //TODO: - Display content as a stack (most recent on top)
             self.tableView.reloadData()
             
         }
@@ -44,7 +41,6 @@ class IgniteFeedViewController: UIViewController {
     }
     
     func configureViews() {
-        
         // TableView Height
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 189
@@ -77,12 +73,10 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.flagDelegate = self
         cell.quote = quote
-        
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
         cell.quoteLabel.text = cell.quote.quote?.description
         cell.authorLabel.text = cell.quote.author?.description
-        
         
         return cell
     }
@@ -97,7 +91,6 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
 extension IgniteFeedViewController: FlagNotification {
     
     func sendAlert(completion: @escaping () -> Void) {
-        
         let alertController = UIAlertController(title: "Report", message: "Are you sure you want to report this quote?" , preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (UIAlertAction) in
@@ -105,6 +98,7 @@ extension IgniteFeedViewController: FlagNotification {
             completion()
             
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
             
         }

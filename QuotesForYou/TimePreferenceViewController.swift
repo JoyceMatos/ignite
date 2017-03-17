@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class TimePreferenceViewController: UIViewController{
+class TimePreferenceViewController: UIViewController {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -27,7 +27,7 @@ class TimePreferenceViewController: UIViewController{
         timePicker.datePickerMode = .time
         
         requestAuthorization()
-
+        
     }
     
     // MARK: - Action methods
@@ -42,7 +42,7 @@ class TimePreferenceViewController: UIViewController{
         // Store chosen time in user defaults
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
         guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { return }
-
+        
         // Initiate daily notifications
         let dailyNotifier = DailyNotification()
         dailyNotifier.scheduleLocal(on: storredDefault)
@@ -50,10 +50,10 @@ class TimePreferenceViewController: UIViewController{
         QuoteDataStore.hasSeenQuote()
         
         performSegue(withIdentifier: "showTabBar", sender: self)
-
-        }
+        
+    }
     
-  //  MARK: - Notification methods
+    //  MARK: - Notification methods
     
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (didAllow, error) in
@@ -61,5 +61,7 @@ class TimePreferenceViewController: UIViewController{
         }
     }
     
-
+    
 }
+
+

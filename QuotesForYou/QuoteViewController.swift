@@ -66,27 +66,9 @@ class QuoteViewController: UIViewController {
         }
     }
     
-    
-    // TODO: - Add pan gesture
-    
-    func initializeGesture() {
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(recognizeLongPressGesture))
-        gestureView.addGestureRecognizer(longPress)
-        
-    }
-    
-    func recognizeLongPressGesture() {
-        
-        print("Yes Yes I am being pressed")
-        
-    }
-    
-    
     // MARK:- View Methods
     
     func configureViews() {
-        
         guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("configureQuote: byeDefault"); return }
         guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
         
@@ -99,11 +81,9 @@ class QuoteViewController: UIViewController {
         authorLabel.sizeToFit()
     }
     
-    
     // MARK:- Helper Methods
     
     func showNewQuote() {
-        
         self.store.getQuotes {
             DispatchQueue.main.async {
                 QuoteDataStore.storeQuoteToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
@@ -122,8 +102,6 @@ class QuoteViewController: UIViewController {
         }
     }
 
-    
-    
 }
 
 
