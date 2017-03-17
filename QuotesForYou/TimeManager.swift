@@ -31,45 +31,37 @@ class TimeManager {
         // NOTE - Works but is a little delayed by the seconds
         // Show quote on next day regardless of specific time. with time interval (regardless of notification for not)
         
-        if chosenTimeforDay.compare(currentDate) == .orderedAscending {
-            
-            if userHasSeenQuote {
-                QuoteDataStore.hasSeenQuote(true)
-                
-            } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                completion()
-                QuoteDataStore.hasSeenQuote(true)
-                
-                
-            } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
-                completion()
-                QuoteDataStore.hasSeenQuote(true)
-                
-                
-            } else if chosenHour < currentHour && !userHasSeenQuote {
-                completion()
-                QuoteDataStore.hasSeenQuote(true)
-                
-            }
-            
-        } else if chosenTimeforDay.compare(currentDate) == .orderedDescending {
-            
-            if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
-                completion()
-                QuoteDataStore.hasSeenQuote(true)
-                
-            } else if chosenHour == currentHour && chosenMin > currentMin {
-                QuoteDataStore.hasSeenQuote(false)
-                
-                
-            } else if chosenHour > currentHour {
-                QuoteDataStore.hasSeenQuote(false)
-                
-            }
-            
-        } else if chosenTimeforDay.compare(currentDate) == .orderedSame {
-            completion()
+
+        if chosenHour == currentHour && chosenMin == currentMin {
             QuoteDataStore.hasSeenQuote(false)
+            completion()
+            print("1")
+            
+        } else if chosenHour == currentHour && chosenMin < currentMin && !userHasSeenQuote {
+            completion()
+            //  QuoteDataStore.hasSeenQuote(true)
+            print("2")
+            
+        } else if chosenHour < currentHour && !userHasSeenQuote {
+            completion()
+            //   QuoteDataStore.hasSeenQuote(true)
+            print("3")
+            
+        } else if chosenHour == currentHour && chosenMin == currentMin && !userHasSeenQuote {
+            completion()
+            //  QuoteDataStore.hasSeenQuote(true)
+            print("4")
+            
+            
+        } else if chosenHour == currentHour && chosenMin > currentMin {
+            QuoteDataStore.hasSeenQuote(false)
+            print("5")
+            
+            
+        } else if chosenHour > currentHour {
+            QuoteDataStore.hasSeenQuote(false)
+            print("6")
+            
         }
         
     }

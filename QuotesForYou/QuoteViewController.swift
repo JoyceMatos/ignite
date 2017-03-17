@@ -108,6 +108,7 @@ class QuoteViewController: UIViewController {
             DispatchQueue.main.async {
                 QuoteDataStore.storeQuoteToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
                 self.configureViews()
+                QuoteDataStore.hasSeenQuote(true)
             }
         }
     }

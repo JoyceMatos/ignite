@@ -59,9 +59,6 @@ class IgniteFeedViewController: UIViewController {
     
 }
 
-
-
-
 // MARK:- TableView methods
 
 extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
