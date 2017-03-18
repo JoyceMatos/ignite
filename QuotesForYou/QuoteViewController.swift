@@ -24,7 +24,6 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeGesture()
         beginToObserve()
     }
     

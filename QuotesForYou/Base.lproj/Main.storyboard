@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyq-4S-gEB" id="jOg-Is-dGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-VH-y5l">
@@ -280,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgQ-G1-xI1" id="Owo-6N-JQ7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -399,7 +399,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who's it by?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rto-ZK-ftk">
-                                                <rect key="frame" x="21" y="227" width="373" height="21"/>
+                                                <rect key="frame" x="21" y="227" width="373" height="31"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
@@ -410,7 +410,7 @@
                                             <constraint firstItem="rto-ZK-ftk" firstAttribute="width" secondItem="X9N-ZF-Aig" secondAttribute="width" id="50T-FH-Xpv"/>
                                             <constraint firstItem="X9N-ZF-Aig" firstAttribute="centerX" secondItem="Rpz-pd-UQP" secondAttribute="centerX" id="I6C-iP-uHb"/>
                                             <constraint firstItem="X9N-ZF-Aig" firstAttribute="top" secondItem="Rpz-pd-UQP" secondAttribute="top" constant="8" id="KNw-VZ-Qg3"/>
-                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="height" secondItem="X9N-ZF-Aig" secondAttribute="height" multiplier="0.1" id="MH7-mN-zY8"/>
+                                            <constraint firstItem="rto-ZK-ftk" firstAttribute="height" secondItem="X9N-ZF-Aig" secondAttribute="height" multiplier="0.15" id="MH7-mN-zY8"/>
                                             <constraint firstItem="X9N-ZF-Aig" firstAttribute="width" secondItem="Rpz-pd-UQP" secondAttribute="width" multiplier="0.9" id="Vv5-3S-E7f"/>
                                             <constraint firstItem="X9N-ZF-Aig" firstAttribute="height" secondItem="Rpz-pd-UQP" secondAttribute="height" multiplier="0.8" id="WB5-Mv-Jh9"/>
                                             <constraint firstItem="rto-ZK-ftk" firstAttribute="centerX" secondItem="X9N-ZF-Aig" secondAttribute="centerX" id="Yhs-tW-jEW"/>
