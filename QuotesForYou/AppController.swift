@@ -25,9 +25,6 @@ class AppController: UIViewController {
 extension AppController {
     
     func addNotificationObservers() {
-        
-        // Listening to two channels and performing function based on it's name
-        // When something happens on a channel, the function will fire off and pass in the name as the arguement
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeTimeVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeTabVC, object: nil)
         
@@ -43,16 +40,13 @@ extension AppController {
         let defaults = UserDefaults.standard
         let id: StoryboardID
         
-        print("inside initial view function")
-        
         // Unwrap storredDefault - if value exist, set id to to TabVC , else - set to timeVC
         if let storredDefault = defaults.object(forKey: "chosenTime") as? Date {
             
             // This can be swapped for currentUser credentials if we decide to use Firebase
             id = .tabVC
             print(storredDefault)
-        }
-        else {
+        } else {
             id = .timeVC
         }
         
@@ -141,8 +135,6 @@ extension AppController {
 // MARK: - Notification Extension
 extension Notification.Name {
     
-    // Creating two channels for Notification Center
-    // NOTE: - Research Static
     static let closeTimeVC = Notification.Name("close-time-view-controller")
     static let closeTabVC = Notification.Name("close-tab-view-controller")
 }

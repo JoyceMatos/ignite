@@ -25,13 +25,7 @@ class TimeManager {
         
         let currentHour = Calendar.current.component(.hour, from: currentDate)
         let currentMin = Calendar.current.component(.minute, from: currentDate)
-        print("This is chosen time being set to stored default value: \(chosenTimeforDay)")
         
-        // Compare dates
-        // NOTE - Works but is a little delayed by the seconds
-        // Show quote on next day regardless of specific time. with time interval (regardless of notification for not)
-        
-
         if chosenHour == currentHour && chosenMin == currentMin {
             QuoteDataStore.hasSeenQuote(false)
             completion()

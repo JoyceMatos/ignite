@@ -17,7 +17,7 @@ class FavoritesDataStore {
     
     private init() { }
     
-    func favorite(quote: String, author: String?) {
+    func favorite(_ quote: String, author: String?) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
@@ -69,7 +69,7 @@ class FavoritesDataStore {
         }
     }
     
-    func deleteFavorite(quote: NSManagedObject) {
+    func deleteFavorite(_ quote: NSManagedObject) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
@@ -85,7 +85,7 @@ class FavoritesDataStore {
         
     }
     
-    func shareFavorite(quote: NSManagedObject) -> [String] {
+    func shareFavorite(_ quote: NSManagedObject) -> [String] {
         let message = "Check out my quote of the day: "
         var shareArray = [String]()
         

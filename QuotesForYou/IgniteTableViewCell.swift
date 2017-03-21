@@ -50,7 +50,6 @@ class IgniteTableViewCell: UITableViewCell {
     
     // TODO: - Seperate logic; Add this functionality to a protocal or function
     @IBAction func favoriteTapped(_ sender: UIButton) {
-        
         if sender.currentImage == #imageLiteral(resourceName: "Fill 71") {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             
@@ -61,7 +60,7 @@ class IgniteTableViewCell: UITableViewCell {
             guard let quoteText = quote.quote else { return }
             guard let authorText = quote.author else { return }
             
-            favoriteStore.favorite(quote: quoteText, author: authorText)
+            favoriteStore.favorite(quoteText, author: authorText)
             
         } else {
             guard let quoteText = quote.quote else { return }
@@ -82,12 +81,8 @@ class IgniteTableViewCell: UITableViewCell {
             }
         }
         
-       
-        
-        //TODO: - Add alert to flag quote
     }
     
-  
     
 }
 
@@ -96,23 +91,7 @@ class IgniteTableViewCell: UITableViewCell {
 extension IgniteTableViewCell: IgniteCellDelegate {
     
     func IgniteTableViewCell(_ sender: IgniteTableViewCell, didFlagQuote: Quote) {
-        print("Right before flagging firebase")
         FirebaseManager.shared.flagQuote(didFlagQuote.quoteID.description)
     }
-    
-//    func sendFlagAlert() {
-//        let alertController = UIAlertController(title: "Reminder", message: "Your reminder has been updated to: \(time)", preferredStyle: .alert)
-//        
-//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-//            UIAlertAction in
-//            print("OK Pressed")
-//        }
-//        
-//        alertController.addAction(okAction)
-//        
-//        // Present the controller
-//        self.present(alertController, animated: true, completion: nil)
-//    }
-    
     
 }

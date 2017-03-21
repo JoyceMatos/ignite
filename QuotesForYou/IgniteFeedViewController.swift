@@ -96,7 +96,6 @@ extension IgniteFeedViewController: FlagNotification {
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (UIAlertAction) in
             print("OK Pressed")
             completion()
-            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in

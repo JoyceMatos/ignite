@@ -30,7 +30,7 @@ class QuoteDataStore {
         
     }
     
-    static func storeQuoteToUserDefaults(using currentQuote: String?, and currentAuthor: String?) {
+    static func storeToUserDefaults(using currentQuote: String?, and currentAuthor: String?) {
         guard let quote = currentQuote else { print("leaving user defaults"); return }
         guard let author = currentAuthor else { print("leaving user defaults"); return }
         

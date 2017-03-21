@@ -32,7 +32,7 @@ final class FirebaseManager {
   
     }
     
-    func createQuote(completion:@escaping (String, String, String) -> Void) {
+    func createQuote(_ completion: @escaping (String, String, String) -> Void) {
         let feedRef = FIRDatabase.database().reference().child("newsfeed").observe(.childAdded, with: { (snapshot) in
             
             let quoteDict = snapshot.value as! [String: Any]

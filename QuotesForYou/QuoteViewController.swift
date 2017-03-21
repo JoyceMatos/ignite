@@ -55,7 +55,7 @@ class QuoteViewController: UIViewController {
             
             guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
             let author = authorLabel.text
-            favoriteStore.favorite(quote: quote, author: author)
+            favoriteStore.favorite(quote, author: author)
             
         } else {
             guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
@@ -85,7 +85,7 @@ class QuoteViewController: UIViewController {
     func showNewQuote() {
         self.store.getQuotes {
             DispatchQueue.main.async {
-                QuoteDataStore.storeQuoteToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
+                QuoteDataStore.storeToUserDefaults(using: self.store.quote?.quote, and: self.store.quote?.author)
                 self.configureViews()
                 QuoteDataStore.hasSeenQuote(true)
             }
