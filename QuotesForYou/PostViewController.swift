@@ -42,8 +42,12 @@ class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     // MARK: - Action methods
     
     @IBAction func postButton(_ sender: Any) {
-        guard let quote = addQuoteTextView.text else { return }
-        guard let author = addAuthorTextField.text else { return }
+        guard let quote = addQuoteTextView.text else {
+            return
+        }
+        guard let author = addAuthorTextField.text else {
+            return
+        }
         
        // TODO: - Check to see if quote is valid
         

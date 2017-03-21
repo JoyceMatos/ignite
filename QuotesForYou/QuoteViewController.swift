@@ -53,12 +53,19 @@ class QuoteViewController: UIViewController {
             
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
             
-            guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+            guard let quote = quoteLabel.text else {
+                print("no quote - leave favorites")
+                return
+            }
+            
             let author = authorLabel.text
             favoriteStore.favorite(quote, author: author)
             
         } else {
-            guard let quote = quoteLabel.text else { print("no quote - leave favorites"); return }
+            guard let quote = quoteLabel.text else {
+                print("no quote - leave favorites")
+                return
+            }
             
             favoriteStore.unFavorite(selected: quote)
             sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
@@ -68,8 +75,14 @@ class QuoteViewController: UIViewController {
     // MARK:- View Methods
     
     func configureViews() {
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { print("configureQuote: byeDefault"); return }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { print("configureAuthor: byeDefault"); return }
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else {
+            print("configureQuote: byeDefault")
+            return
+        }
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else {
+            print("configureAuthor: byeDefault")
+            return
+        }
         
         // Quote Label
         quoteLabel.text = storedQuote

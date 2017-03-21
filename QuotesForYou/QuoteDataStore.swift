@@ -31,14 +31,26 @@ class QuoteDataStore {
     }
     
     static func storeToUserDefaults(using currentQuote: String?, and currentAuthor: String?) {
-        guard let quote = currentQuote else { print("leaving user defaults"); return }
-        guard let author = currentAuthor else { print("leaving user defaults"); return }
+        guard let quote = currentQuote else {
+            print("leaving user defaults")
+            return
+        }
+        
+        guard let author = currentAuthor else {
+            print("leaving user defaults")
+            return
+        }
         
         defaults.set(quote, forKey: "quoteOfTheDay")
         defaults.set(author, forKey: "authorOfTheDay")
         
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else { return }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else { return }
+        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else {
+            return
+        }
+        
+        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else {
+            return
+        }
         
     }
     

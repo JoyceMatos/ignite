@@ -38,7 +38,9 @@ class TimePreferenceViewController: UIViewController {
         
         // Store chosen time in user defaults
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
-        guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { return }
+        guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else {
+            return
+        }
         
         // Initiate daily notifications
         let dailyNotifier = DailyNotification()

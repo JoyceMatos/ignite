@@ -28,7 +28,11 @@ class ChangeTimeViewController: UIViewController {
         
         // Store chosen time in user defaults
         defaults.set(chosenTimeforDay, forKey: "chosenTime")
-        guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else { print("byeDefault"); return }
+        
+        guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else {
+            print("byeDefault")
+            return
+        }
         
         let hr = Calendar.current.component(.hour, from: storredDefault)
         let min = Calendar.current.component(.minute, from: storredDefault)
@@ -53,14 +57,20 @@ class ChangeTimeViewController: UIViewController {
         dailyNotifier.scheduleLocal(on: storredDefault)
         
         // Add an alert
-        guard let currentTime = currentTimeLabel.text else { return }
+        guard let currentTime = currentTimeLabel.text else {
+            return
+        }
+        
         addAlert(currentTime)
         
         
     }
     
     func configureViews() {
-        guard let storedTime = defaults.object(forKey: "chosenTime") as? Date else { print("noChosenTimeToConfigure: byeDefault"); return }
+        guard let storedTime = defaults.object(forKey: "chosenTime") as? Date else {
+            print("noChosenTimeToConfigure: byeDefault")
+            return
+        }
         
         let hr = Calendar.current.component(.hour, from: storedTime)
         let min = Calendar.current.component(.minute, from: storedTime)

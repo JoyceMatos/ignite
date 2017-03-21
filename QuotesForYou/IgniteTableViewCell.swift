@@ -57,13 +57,19 @@ class IgniteTableViewCell: UITableViewCell {
             
             sender.setImage(#imageLiteral(resourceName: "Fill 71 Full"), for: .normal)
             
-            guard let quoteText = quote.quote else { return }
-            guard let authorText = quote.author else { return }
+            guard let quoteText = quote.quote else {
+                return
+            }
+            guard let authorText = quote.author else {
+                return
+            }
             
             favoriteStore.favorite(quoteText, author: authorText)
             
         } else {
-            guard let quoteText = quote.quote else { return }
+            guard let quoteText = quote.quote else {
+                return
+            }
             
             favoriteStore.unFavorite(selected: quoteText)
             sender.setImage(#imageLiteral(resourceName: "Fill 71"), for: .normal)
