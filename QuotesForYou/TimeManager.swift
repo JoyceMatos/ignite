@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimeManager {
+final class TimeManager {
     
     func compareTime(using currentDate: Date, completion: @escaping () -> Void) {
         let defaults = UserDefaults.standard

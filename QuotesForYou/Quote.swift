@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Quote {
+final class Quote {
     
     var quote: String?
     var author: String?

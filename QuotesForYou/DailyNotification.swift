@@ -11,7 +11,7 @@ import UserNotifications
 import UIKit
 
 
-class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
+final class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
     
     // MARK: - Delegate method
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

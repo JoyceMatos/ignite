@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class FavoritesDataStore {
+final class FavoritesDataStore {
     
     static let shared = FavoritesDataStore()
     var favorites: [NSManagedObject] = []
@@ -21,6 +21,7 @@ class FavoritesDataStore {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
+        
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
         let favQuote = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -41,6 +42,7 @@ class FavoritesDataStore {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
+        
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteQuote")
         

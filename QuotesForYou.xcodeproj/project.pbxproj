@@ -12,8 +12,6 @@
 		250578581E5E3DD500F72C87 /* IgniteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */; };
 		250578591E5E3DD500F72C87 /* IgniteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */; };
 		2505785B1E5E5D2200F72C87 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505785A1E5E5D2200F72C87 /* PostViewController.swift */; };
-		250F344F1E7A02580001E543 /* FavTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F344D1E7A02580001E543 /* FavTableViewCell1.swift */; };
-		250F34501E7A02580001E543 /* FavTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250F344E1E7A02580001E543 /* FavTableViewCell1.xib */; };
 		250F34531E7A06660001E543 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F34511E7A06660001E543 /* FavTableViewCell.swift */; };
 		250F34541E7A06660001E543 /* FavTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250F34521E7A06660001E543 /* FavTableViewCell.xib */; };
 		251BC0A41E57E176008D439B /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BC0A31E57E176008D439B /* TimeManager.swift */; };
@@ -43,8 +41,6 @@
 		250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgniteTableViewCell.swift; sourceTree = "<group>"; };
 		250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IgniteTableViewCell.xib; sourceTree = "<group>"; };
 		2505785A1E5E5D2200F72C87 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		250F344D1E7A02580001E543 /* FavTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavTableViewCell1.swift; sourceTree = "<group>"; };
-		250F344E1E7A02580001E543 /* FavTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavTableViewCell1.xib; sourceTree = "<group>"; };
 		250F34511E7A06660001E543 /* FavTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		250F34521E7A06660001E543 /* FavTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavTableViewCell.xib; sourceTree = "<group>"; };
 		251BC0A31E57E176008D439B /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 				255AA4B81E15DC7000B76FD4 /* LaunchScreen.storyboard */,
 				250F34511E7A06660001E543 /* FavTableViewCell.swift */,
 				250F34521E7A06660001E543 /* FavTableViewCell.xib */,
-				250F344D1E7A02580001E543 /* FavTableViewCell1.swift */,
-				250F344E1E7A02580001E543 /* FavTableViewCell1.xib */,
 				250578561E5E3DD500F72C87 /* IgniteTableViewCell.swift */,
 				250578571E5E3DD500F72C87 /* IgniteTableViewCell.xib */,
 			);
@@ -247,7 +241,6 @@
 				255AA4B71E15DC7000B76FD4 /* Assets.xcassets in Resources */,
 				250578591E5E3DD500F72C87 /* IgniteTableViewCell.xib in Resources */,
 				255AA4B21E15DC7000B76FD4 /* Main.storyboard in Resources */,
-				250F34501E7A02580001E543 /* FavTableViewCell1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +302,6 @@
 				255AA4AF1E15DC7000B76FD4 /* QuoteViewController.swift in Sources */,
 				255AA4B51E15DC7000B76FD4 /* QuotesForYou.xcdatamodeld in Sources */,
 				2505784F1E5E3A9600F72C87 /* IgniteFeedViewController.swift in Sources */,
-				250F344F1E7A02580001E543 /* FavTableViewCell1.swift in Sources */,
 				255AA4C61E16D6B500B76FD4 /* QuoteDataStore.swift in Sources */,
 				257A73411E2E75A7005EAB30 /* AppController.swift in Sources */,
 				253B0C381E1F121500D82A84 /* TimePreferenceViewController.swift in Sources */,

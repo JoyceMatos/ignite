@@ -9,7 +9,7 @@
 import Foundation
 
 
-class QuoteDataStore {
+final class QuoteDataStore {
     
     static let shared = QuoteDataStore()
     var quote: Quote?
@@ -19,7 +19,6 @@ class QuoteDataStore {
     func getQuotes(completion: @escaping () -> Void) {
         QuoteAPIClient.getQuotes { (randomQuote) in
             self.quote = Quote(dictionary: randomQuote)
-            print(self.quote?.quote)
             completion()
         }
     }
@@ -43,15 +42,6 @@ class QuoteDataStore {
         
         defaults.set(quote, forKey: "quoteOfTheDay")
         defaults.set(author, forKey: "authorOfTheDay")
-        
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else {
-            return
-        }
-        
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else {
-            return
-        }
-        
     }
     
     static func retrieveQuote(with completion1: @escaping () -> Void, and completion2: @escaping () -> Void) {
