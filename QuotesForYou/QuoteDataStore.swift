@@ -24,7 +24,7 @@ final class QuoteDataStore {
     }
     
    static func hasSeenQuote(_ value: Bool = false) {
-        defaults.set(value, forKey: "hasSeenQuote")
+        defaults.set(value, forKey: UserDefaultKey.hasSeenQuote)
         print("USERDEFAULT: hasSeenQuote ----> \(value)")
         
     }
@@ -40,13 +40,13 @@ final class QuoteDataStore {
             return
         }
         
-        defaults.set(quote, forKey: "quoteOfTheDay")
-        defaults.set(author, forKey: "authorOfTheDay")
+        defaults.set(quote, forKey: UserDefaultKey.quote)
+        defaults.set(author, forKey: UserDefaultKey.author)
     }
     
     static func retrieveQuote(with completion1: @escaping () -> Void, and completion2: @escaping () -> Void) {
-        let quote = defaults.object(forKey: "quoteOfTheDay") as? String
-        let author = defaults.object(forKey: "authorOfTheDay") as? String
+        let quote = defaults.object(forKey: UserDefaultKey.quote) as? String
+        let author = defaults.object(forKey: UserDefaultKey.author) as? String
         
         if quote == nil && author == nil {
             completion1()

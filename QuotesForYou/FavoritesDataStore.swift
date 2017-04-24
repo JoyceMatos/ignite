@@ -25,8 +25,8 @@ final class FavoritesDataStore {
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "FavoriteQuote", in: managedContext)!
         let favQuote = NSManagedObject(entity: entity, insertInto: managedContext)
-        favQuote.setValue(quote, forKeyPath: "quote")
-        favQuote.setValue(author, forKey: "author")
+        favQuote.setValue(quote, forKeyPath: coreDataKey.quote)
+        favQuote.setValue(author, forKey: coreDataKey.author)
         
         do {
             try managedContext.save()
@@ -48,7 +48,7 @@ final class FavoritesDataStore {
         
         for (index, value) in favorites.enumerated() {
             
-            if quote == value.value(forKey: "quote") as! String {
+            if quote == value.value(forKey: coreDataKey.quote) as! String {
                 context.delete(favorites[index])
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
                 
@@ -99,7 +99,7 @@ final class FavoritesDataStore {
         let message = "Check out my quote of the day: "
         var shareArray = [String]()
         
-        if let shareQuote = quote.value(forKey: "quote") as? String, let shareAuthor = quote.value(forKey: "author") as? String {
+        if let shareQuote = quote.value(forKey: coreDataKey.quote) as? String, let shareAuthor = quote.value(forKey: coreDataKey.author) as? String {
             
             shareArray.append(message)
             shareArray.append("\"\(shareQuote)\" - ")

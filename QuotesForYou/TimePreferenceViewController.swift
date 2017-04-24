@@ -37,8 +37,8 @@ class TimePreferenceViewController: UIViewController {
         let chosenTimeforDay = timePicker.date
         
         // Store chosen time in user defaults
-        defaults.set(chosenTimeforDay, forKey: "chosenTime")
-        guard let storredDefault = defaults.object(forKey: "chosenTime") as? Date else {
+        defaults.set(chosenTimeforDay, forKey: UserDefaultKey.chosenTime)
+        guard let storredDefault = defaults.object(forKey: UserDefaultKey.chosenTime) as? Date else {
             return
         }
         
@@ -48,7 +48,7 @@ class TimePreferenceViewController: UIViewController {
         
         QuoteDataStore.hasSeenQuote()
         
-        performSegue(withIdentifier: "showTabBar", sender: self)
+        performSegue(withIdentifier: segueIdentifier.showTabBar, sender: self)
         
     }
     

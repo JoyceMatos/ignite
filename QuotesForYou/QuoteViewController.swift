@@ -76,11 +76,11 @@ class QuoteViewController: UIViewController {
     // MARK:- View Methods
     
     func configureViews() {
-        guard let storedQuote = defaults.object(forKey: "quoteOfTheDay") as? String else {
+        guard let storedQuote = defaults.object(forKey: UserDefaultKey.quote) as? String else {
             print("configureQuote: byeDefault")
             return
         }
-        guard let storedAuthor = defaults.object(forKey: "authorOfTheDay") as? String else {
+        guard let storedAuthor = defaults.object(forKey: UserDefaultKey.author) as? String else {
             print("configureAuthor: byeDefault")
             return
         }
