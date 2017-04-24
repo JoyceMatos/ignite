@@ -48,7 +48,7 @@ class TimePreferenceViewController: UIViewController {
         
         QuoteDataStore.hasSeenQuote()
         
-        performSegue(withIdentifier: segueIdentifier.showTabBar, sender: self)
+        performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: self)
         
     }
     

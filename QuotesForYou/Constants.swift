@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct QuoteAPI {
+    
+    static let baseURLString = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
+}
+
 struct UserDefaultKey {
     
     static let quote = "quoteOfTheDay"
@@ -17,7 +22,12 @@ struct UserDefaultKey {
     
 }
 
-struct coreDataKey {
+struct CoreDataEntity {
+    
+    static let favoriteQuote = "FavoriteQuote"
+}
+
+struct CoreDataKey {
     
     static let quote = "quote"
     static let author = "author"
@@ -25,16 +35,21 @@ struct coreDataKey {
 }
 
 
-struct segueIdentifier {
+struct SegueIdentifier {
     
     static let showTabBar = "showTabBar"
     
 }
 
-struct cellIdentifier {
+struct CellIdentifier {
     
     static let favoriteCell = "FavTableViewCell"
     static let igniteFeedCell = "IgniteTableViewCell"
     
+}
+
+struct FirebaseRef {
     
+    static let newsfeed = "newsfeed"
+    static let flag = "flag"
 }

@@ -38,11 +38,11 @@ class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quote = store.favorites[indexPath.row]
-        let cell = Bundle.main.loadNibNamed(cellIdentifier.favoriteCell, owner: self, options: nil)?.first as! FavTableViewCell
+        let cell = Bundle.main.loadNibNamed(CellIdentifier.favoriteCell, owner: self, options: nil)?.first as! FavTableViewCell
         cell.quoteLabel.sizeToFit()
         cell.authorLabel.sizeToFit()
-        cell.quoteLabel.text = quote.value(forKey: coreDataKey.quote) as? String
-        cell.authorLabel.text = quote.value(forKey: coreDataKey.author) as? String
+        cell.quoteLabel.text = quote.value(forKey: CoreDataKey.quote) as? String
+        cell.authorLabel.text = quote.value(forKey: CoreDataKey.author) as? String
         return cell
     }
     

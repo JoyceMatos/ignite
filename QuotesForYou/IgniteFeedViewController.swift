@@ -69,7 +69,7 @@ extension IgniteFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quote = content[indexPath.row]
-        let cell = Bundle.main.loadNibNamed(cellIdentifier.igniteFeedCell, owner: self, options: nil)?.first as! IgniteTableViewCell
+        let cell = Bundle.main.loadNibNamed(CellIdentifier.igniteFeedCell, owner: self, options: nil)?.first as! IgniteTableViewCell
         
         cell.flagDelegate = self
         cell.quote = quote

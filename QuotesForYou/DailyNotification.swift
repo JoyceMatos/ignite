@@ -55,7 +55,7 @@ final class DailyNotification: NSObject, UNUserNotificationCenterDelegate {
         
         let content = UNMutableNotificationContent()
         content.title = "Daily Reminder"
-        content.body = "Your quote of the day is ready!"
+        content.body = "Your quote of the day is ready"
         content.categoryIdentifier = "customIdentifier"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default()

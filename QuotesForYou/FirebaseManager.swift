@@ -17,7 +17,7 @@ final class FirebaseManager {
     private init() {}
     
     func add(_ quote: String, author: String?) {
-        let feedRef = FIRDatabase.database().reference().child("newsfeed")
+        let feedRef = FIRDatabase.database().reference().child(FirebaseRef.newsfeed)
         
         let input = [
             "quote": quote,
@@ -32,7 +32,7 @@ final class FirebaseManager {
     }
     
     func createQuote(_ completion: @escaping (String, String, String) -> Void) {
-        FIRDatabase.database().reference().child("newsfeed").observe(.childAdded, with: { (snapshot) in
+        FIRDatabase.database().reference().child(FirebaseRef.newsfeed).observe(.childAdded, with: { (snapshot) in
             
             let quoteDict = snapshot.value as! [String: Any]
             let quoteID = snapshot.key
@@ -46,7 +46,7 @@ final class FirebaseManager {
     }
         
     func flagQuote(_ quoteID: String) {
-        let flagRef = FIRDatabase.database().reference().child("flag")
+        let flagRef = FIRDatabase.database().reference().child(FirebaseRef.flag)
         let flaggedQuote = [quoteID : true]
         
         flagRef.updateChildValues(flaggedQuote) { (error, ref) in

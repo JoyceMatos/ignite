@@ -127,8 +127,8 @@
 		255AA4C71E16DA1300B76FD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
 				254625891EAE609D00DA7811 /* Constants.swift */,
+				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
 				255AA4C31E15EE7F00B76FD4 /* Quote.swift */,
 				255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */,
 				2501A90E1E203EF700C7CE28 /* DailyNotification.swift */,
