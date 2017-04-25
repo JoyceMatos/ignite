@@ -13,7 +13,7 @@ final class TimeManager {
     func compareTime(using currentDate: Date, completion: @escaping () -> Void) {
         let defaults = UserDefaults.standard
         
-        guard let userHasSeenQuote = defaults.object(forKey: UserDefaultKey.chosenTime) as? Bool else {
+        guard let userHasSeenQuote = defaults.object(forKey: UserDefaultKey.hasSeenQuote) as? Bool else {
             print("hasSeenQuote not found- byedefault")
             return
         }
