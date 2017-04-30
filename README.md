@@ -1,14 +1,13 @@
 # Ignite - Be Inspired
 
-An app that sends users a daily dose of inspiration at the time of their choice.
+An iOS app designed to keep you motivated throughout your day. Users receive inspirational messages at the time of their choice and can share their own inspiring messages.
 
-- Accessed Forismatic through Restful APIs to display random quotes 
+- Configured Firebase Realtime Database to store and display user created content in real-time
+- Accessed Forismatic through Restful API to display random quotes 
 - Utilized Core Data and NSUserDefaults for data persistence
-- Implemented local notifications to send daily reminders containing the quote of the day
-- Integrated UIActivityController to share content 
-- Created algorithm for comparing current time with chosen time
+- Implemented local notifications to send daily reminders with an inspiring message
+- Integrated UIActivityController to share content with others
 
 Written in Swift and compatible with iPhones.
 Now available in the [App Store](https://itunes.apple.com/us/app/ignite-be-inspired/id1200049702?mt=8)	
 
-* Currently adding a feature that allows users to inspire one another by adding an inspiring quote of their own.  
