@@ -1,5 +1,10 @@
 # Ignite - Be Inspired
 
+<img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-06-02%20at%204.52.27%20PM.png" width = "170"> <img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-06-02%20at%204.56.10%20PM.png" width = "170"> <img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-06-02%20at%204.53.06%20PM.png" width = "170">
+
 An iOS app designed to keep you motivated throughout your day. Users receive inspirational messages at the time of their choice and can share their own inspiring messages.
 
 Written in Swift and compatible with iPhones.
