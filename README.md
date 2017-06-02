@@ -1,10 +1,10 @@
 # Ignite - Be Inspired
 
 <img
-src="https://github.com/JoyceMatos/ignite/blob/master/4.7-inch%20(iPhone6)-Screenshot2.png" width = "210"> <img
-src="https://github.com/JoyceMatos/ignite/blob/master/4.7-inch%20(iPhone6)-Screenshot4.png" width = "210"> <img
-src="https://github.com/JoyceMatos/ignite/blob/master/4.7-inch%20(iPhone6)-Screenshot1.png" width = "210"> <img
-src="https://github.com/JoyceMatos/ignite/blob/master/4.7-inch%20(iPhone6)-Screenshot3.png" width = "210"> 
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-04-24%20at%207.59.07%20PM.png" width = "210"> <img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-04-24%20at%208.04.53%20PM.png" width = "210"> <img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-04-24%20at%207.57.51%20PM.png" width = "210"> <img
+src="https://github.com/JoyceMatos/ignite/blob/master/Screen%20Shot%202017-04-24%20at%207.58.44%20PM.png" width = "210"> 
 
 An iOS app designed to keep you motivated throughout your day. Users receive inspirational messages at the time of their choice and can share their own inspiring messages.
 
