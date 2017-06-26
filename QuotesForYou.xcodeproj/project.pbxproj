@@ -113,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				255AA4AC1E15DC7000B76FD4 /* AppDelegate.swift */,
+				25FD97F21EE206D7003AB886 /* Networking */,
 				255AA4C71E16DA1300B76FD4 /* Model */,
 				255AA4C81E16DA3B00B76FD4 /* View */,
 				255AA4C91E16DA4900B76FD4 /* Controller */,
@@ -128,14 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				254625891EAE609D00DA7811 /* Constants.swift */,
-				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
 				255AA4C31E15EE7F00B76FD4 /* Quote.swift */,
 				255AA4C51E16D6B500B76FD4 /* QuoteDataStore.swift */,
 				2501A90E1E203EF700C7CE28 /* DailyNotification.swift */,
 				253B0BE91E1C6F5E00D82A84 /* FavoritesDataStore.swift */,
 				257A73421E2E863F005EAB30 /* StoryboardID.swift */,
 				251BC0A31E57E176008D439B /* TimeManager.swift */,
-				251BC12F1E5E3052008D439B /* FirebaseManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,6 +164,15 @@
 				257A73401E2E75A7005EAB30 /* AppController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		25FD97F21EE206D7003AB886 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				255AA4C11E15DC8900B76FD4 /* QuoteAPIClient.swift */,
+				251BC12F1E5E3052008D439B /* FirebaseManager.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		6BF5D225A350F30972B79E4E /* Frameworks */ = {

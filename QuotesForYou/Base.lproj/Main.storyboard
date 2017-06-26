@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lW8-Fl-5vC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lW8-Fl-5vC">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -167,9 +167,7 @@
                             <outlet property="delegate" destination="7Sa-Kx-gfS" id="fbA-Pe-hCe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="2" title="Favorite" image="Fav" id="Xyg-a4-eEr">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="2" title="Favorite" image="Fav" id="Xyg-a4-eEr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-Es-jOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,7 +191,7 @@
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current time is:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-XP-OhJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current reminder is set to:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-XP-OhJ">
                                 <rect key="frame" x="0.0" y="70" width="414" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -247,9 +245,7 @@
                             <constraint firstItem="4Kw-Js-khG" firstAttribute="width" secondItem="iRm-Vf-7Lz" secondAttribute="width" id="xUQ-0k-hce"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Settings" image="Settings" id="Spc-cH-BU3">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="3" title="Settings" image="Settings" id="Spc-cH-BU3"/>
                     <connections>
                         <outlet property="currentTimeLabel" destination="1IF-E6-VPE" id="FG6-24-saV"/>
                         <outlet property="instructionLabel" destination="4Kw-Js-khG" id="diL-bK-5Zt"/>
@@ -273,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NjA-DS-Bhy">
-                                <rect key="frame" x="0.0" y="143" width="414" height="589"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="VgQ-G1-xI1">
@@ -287,7 +283,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJi-nZ-xrV" userLabel="ExploreView">
-                                <rect key="frame" x="0.0" y="-4" width="414" height="147"/>
+                                <rect key="frame" x="0.0" y="27" width="414" height="147"/>
                                 <subviews>
                                     <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-Fe-SWc" userLabel="Divider">
                                         <rect key="frame" x="21" y="146" width="373" height="1"/>
@@ -310,13 +306,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore what inspires other people and ignite each other's day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h9-hJ-HzU" userLabel="ExploreLabel">
-                                <rect key="frame" x="68" y="60" width="278" height="52"/>
+                                <rect key="frame" x="68" y="91" width="278" height="52"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ignite2" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-qU-inj">
-                                <rect key="frame" x="175" y="-4" width="64" height="66"/>
+                                <rect key="frame" x="175" y="27" width="64" height="66"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -333,20 +329,17 @@
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="height" secondItem="OJi-nZ-xrV" secondAttribute="height" multiplier="0.45" id="Tsm-aW-YLH"/>
                             <constraint firstItem="gJd-Fe-SWc" firstAttribute="centerX" secondItem="9h9-hJ-HzU" secondAttribute="centerX" id="VFO-uV-JVG"/>
                             <constraint firstItem="gJd-Fe-SWc" firstAttribute="height" secondItem="9h9-hJ-HzU" secondAttribute="height" multiplier="0.015" id="WOo-xv-OWx"/>
-                            <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="-24" id="ZDg-9x-BY7"/>
+                            <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="r5z-hA-d5f" secondAttribute="bottom" constant="7" id="ZDg-9x-BY7"/>
                             <constraint firstItem="NjA-DS-Bhy" firstAttribute="height" secondItem="xCc-sI-UA8" secondAttribute="height" multiplier="0.8" id="Ztw-ah-1q6"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="centerX" secondItem="3Ts-qU-inj" secondAttribute="centerX" id="akZ-Tj-8BY"/>
                             <constraint firstItem="NjA-DS-Bhy" firstAttribute="centerX" secondItem="OJi-nZ-xrV" secondAttribute="centerX" id="cyI-YA-YRU"/>
                             <constraint firstItem="3Ts-qU-inj" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="top" id="dba-hL-aax"/>
-                            <constraint firstItem="OJi-nZ-xrV" firstAttribute="top" secondItem="xCc-sI-UA8" secondAttribute="top" constant="-4" id="hpD-lM-V6e"/>
                             <constraint firstItem="NjA-DS-Bhy" firstAttribute="top" secondItem="OJi-nZ-xrV" secondAttribute="bottom" id="hrw-uY-hWS"/>
                             <constraint firstItem="OJi-nZ-xrV" firstAttribute="height" secondItem="xCc-sI-UA8" secondAttribute="height" multiplier="0.2" id="jRr-dJ-T6Q"/>
                             <constraint firstItem="9h9-hJ-HzU" firstAttribute="width" secondItem="OJi-nZ-xrV" secondAttribute="width" multiplier="0.67" id="zbE-KK-n0s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="ExploreIcon" id="x35-Y7-gmX">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Explore" image="ExploreIcon" id="x35-Y7-gmX"/>
                     <connections>
                         <outlet property="tableView" destination="NjA-DS-Bhy" id="2Fb-sc-Hox"/>
                     </connections>
@@ -543,9 +536,7 @@
                             <constraint firstItem="eeI-U6-hfe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xrm-wR-lQt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt">
-                        <inset key="imageInsets" minX="2" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="HomeLine" selectedImage="HomeLine" id="9jp-1U-sCt"/>
                     <connections>
                         <outlet property="authorLabel" destination="vo8-JJ-Ksi" id="pgZ-E0-rra"/>
                         <outlet property="gestureView" destination="hkR-rb-Xqf" id="Lga-6J-7gr"/>
