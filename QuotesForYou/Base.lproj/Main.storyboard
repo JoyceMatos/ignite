@@ -249,6 +249,7 @@
                     <connections>
                         <outlet property="currentTimeLabel" destination="1IF-E6-VPE" id="FG6-24-saV"/>
                         <outlet property="instructionLabel" destination="4Kw-Js-khG" id="diL-bK-5Zt"/>
+                        <outlet property="setTimeButton" destination="yLi-TE-w8I" id="XVg-R5-8yS"/>
                         <outlet property="timePicker" destination="IDJ-J6-JSg" id="gnd-wH-qTR"/>
                     </connections>
                 </viewController>

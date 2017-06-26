@@ -13,6 +13,7 @@ class ChangeTimeViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var setTimeButton: UIButton!
     
     let chosenTimeforDay = Date()
     let defaults = UserDefaults.standard
@@ -61,8 +62,8 @@ class ChangeTimeViewController: UIViewController {
             return
         }
         
+        animateButtonToUpdate()
         addAlert(currentTime)
-        
         
     }
     
@@ -102,13 +103,35 @@ class ChangeTimeViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            print("OK Pressed")
+            self.animateButtonToOriginalState()
         }
 
         alertController.addAction(okAction)
         
         // Present the controller
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // TODO: - Refactor
+    
+    func animateButtonToUpdate() {
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromTop
+        transition.duration = 0.5
+        setTimeButton.titleLabel?.layer.add(transition, forKey: kCATransition)
+        setTimeButton.setTitle("Updating Reminder...", for: .normal)
+        setTimeButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    func animateButtonToOriginalState() {
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromTop
+        transition.duration = 0.5
+        setTimeButton.titleLabel?.layer.add(transition, forKey: kCATransition)
+        setTimeButton.setTitle("Set Time", for: .normal)
+        setTimeButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     
